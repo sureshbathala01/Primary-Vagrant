@@ -1,6 +1,8 @@
 Primary Vagrant
 =============
 
+Varying Vagrant Vagrants by 10-up is good, but I wanted a few major changes. First, I wanted Apache instead of NGINX and, second, I wanted to use Puppet instead of Bash. Using VVV and Puphet as a base this repository attempts to address their shortcomings for my own work with a Vagrant configuration that is ready to go for WordPress plugin or theme development.
+
 The repository contains a basic Vagrant configuration that will configure the following goodies:
 
 * Ubuntu 12.04 LTS
