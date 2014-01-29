@@ -36,7 +36,6 @@ Vagrant.configure("2") do |config|
 			"stable.wordpress.vagrant",
 			"trunk.wordpress.vagrant",
 			"replacedb.vagrant",
-			"chriswiegman.dev",
 		]
 	end
 
