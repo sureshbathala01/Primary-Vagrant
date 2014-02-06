@@ -93,10 +93,6 @@ php::augeas {
 	entry  => 'XDEBUG/xdebug.profiler_output_name',
 	value  => '"cachegrind.out.%t-%s"',
 	require => Class['php'];
-	'php-xdebug.remote_autostart':
-	entry  => 'XDEBUG/xdebug.remote_autostart',
-	value  => '1',
-	require => Class['php'];
 	'php-xdebug.remote_enable':
 	entry  => 'XDEBUG/xdebug.remote_enable',
 	value  => '1',
