@@ -65,8 +65,8 @@ php::module { 'php-apc': }
 php::pecl::module { "xdebug": }
 
 php::augeas {
-  'php-xdebug.auto_trace':
-  entry  => 'XDEBUG/xdebug.auto_trace',
+  'php-xdebug.trace_enable_trigger':
+  entry  => 'XDEBUG/xdebug.trace_enable_trigger',
   value  => '1',
   require => Class['php'];
   'xdebug.trace_output_dir':
@@ -79,6 +79,14 @@ php::augeas {
   require => Class['php'];
   'php-xdebug.collect_params':
   entry  => 'XDEBUG/xdebug.collect_params',
+  value  => '1',
+  require => Class['php'];
+  'php-xdebug.collect_vars':
+  entry  => 'XDEBUG/xdebug.collect_vars',
+  value  => '1',
+  require => Class['php'];
+  'php-xdebug.collect_return':
+  entry  => 'XDEBUG/xdebug.collect_return',
   value  => '1',
   require => Class['php'];
   'php-xdebug.dump_globals':
