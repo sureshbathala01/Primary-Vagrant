@@ -66,11 +66,11 @@ Vagrant.configure("2") do |config|
 	# For each project you're working on map a folder to it. The first argument is the location
 	# on the host computer. The second argument is the location on the guest matching. Finally the 
 	# 3rd arguement is a unique ID given to each folder mapped
-	config.vm.synced_folder "sites/stable.wordpress.vagrant", "/var/www/stable.wordpress.vagrant", id: "stable.wordpress.vagrant", :owner => "www-data", :group => "www-data"
-	config.vm.synced_folder "sites/stable.wordpress.vagrant/uploads", "/var/www/stable.wordpress.vagrant/wordpress/wp-content/uploads", id: "stable-uploads", :owner => "www-data", :group => "www-data"
-	config.vm.synced_folder "sites/trunk.wordpress.vagrant", "/var/www/trunk.wordpress.vagrant", id: "trunk.wordpress.vagrant", :owner => "www-data", :group => "www-data"
-	config.vm.synced_folder "sites/trunk.wordpress.vagrant/uploads", "/var/www/trunk.wordpress.vagrant/wordpress/wp-content/uploads", id: "trunk-uploads", :owner => "www-data", :group => "www-data"
-	config.vm.synced_folder "sites/Search-Replace-DB", "/var/www/replacedb.vagrant", id: "replacedb.vagrant", :owner => "www-data", :group => "www-data"
+	config.vm.synced_folder "sites/stable.wordpress.vagrant", "/var/www/stable.wordpress.vagrant", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "sites/stable.wordpress.vagrant/uploads", "/var/www/stable.wordpress.vagrant/wordpress/wp-content/uploads", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "sites/trunk.wordpress.vagrant", "/var/www/trunk.wordpress.vagrant", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "sites/trunk.wordpress.vagrant/uploads", "/var/www/trunk.wordpress.vagrant/wordpress/wp-content/uploads", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "sites/Search-Replace-DB", "/var/www/replacedb.vagrant", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 
 	# /Vagrant Data
 	# 
@@ -78,6 +78,7 @@ Vagrant.configure("2") do |config|
 	config.vm.synced_folder "xdebug", "/var/xdebug", :mount_options => [ "dmode=777", "fmode=777" ]
  	config.vm.synced_folder "ssl", "/etc/apache2/ssl", :mount_options => [ "dmode=777", "fmode=777" ]
  	config.vm.synced_folder "conf", "/var/vagrant/conf", :mount_options => [ "dmode=777", "fmode=777" ]
+ 	config.vm.synced_folder "mysql", "/var/lib/mysql", :mount_options => [ "dmode=777", "fmode=777" ]
 
 	# Provisioning
 	#
