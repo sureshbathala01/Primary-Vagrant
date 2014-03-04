@@ -13,6 +13,7 @@ The repository contains a basic Vagrant configuration that will configure the fo
 * PHPUnit
 * Postfix
 * wp-cli
+* phpMyAdmin
 * WordPress (Stable and Core)
 * [Search Replace DB](http://interconnectit.com/products/search-and-replace-for-wordpress-databases/)
 
