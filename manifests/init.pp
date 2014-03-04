@@ -19,6 +19,14 @@ class { 'apache': }
 
 include apache::ssl
 
+apache::vhost { 'phpmyadmin.vagrant':
+  docroot                    => '/var/www/phpmyadmin.vagrant',
+  directory                    => '/var/www/phpmyadmin.vagrant',
+  directory_allow_override    => 'All',
+  ssl                            => true,
+  template                    => '/var/vagrant/conf/vhost.conf.erb',
+}
+
 apache::vhost { 'replacedb.vagrant':
   docroot                    => '/var/www/replacedb.vagrant',
   directory                    => '/var/www/replacedb.vagrant',

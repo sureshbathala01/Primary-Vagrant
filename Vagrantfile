@@ -33,9 +33,10 @@ Vagrant.configure("2") do |config|
 	# required to enter a password for Vagrant to access your hosts file.
 	if defined? VagrantPlugins::HostsUpdater
 		config.hostsupdater.aliases = [
+			"phpmyadmin.vagrant",
+			"replacedb.vagrant",
 			"stable.wordpress.vagrant",
 			"trunk.wordpress.vagrant",
-			"replacedb.vagrant",
 		]
 	end
 
@@ -71,6 +72,7 @@ Vagrant.configure("2") do |config|
 	config.vm.synced_folder "sites/trunk.wordpress.vagrant", "/var/www/trunk.wordpress.vagrant", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "sites/trunk.wordpress.vagrant/uploads", "/var/www/trunk.wordpress.vagrant/wordpress/wp-content/uploads", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "sites/Search-Replace-DB", "/var/www/replacedb.vagrant", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "sites/phpmyadmin", "/var/www/phpmyadmin.vagrant", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 
 	# /Vagrant Data
 	# 
