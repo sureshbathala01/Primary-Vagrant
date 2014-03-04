@@ -40,3 +40,6 @@
 [submodule "modules/augeas"]
 	path = modules/augeas
 	url = git@github.com:camptocamp/puppet-augeas.git
+[submodule "sites/phpmyadmin.vagrant"]
+	path = sites/phpmyadmin.vagrant
+	url = git@github.com:ChrisWiegman/Primary-Vagrant.git
