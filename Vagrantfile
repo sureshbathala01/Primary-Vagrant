@@ -84,6 +84,10 @@ Vagrant.configure("2") do |config|
  	config.vm.synced_folder "conf", "/var/vagrant/conf", :mount_options => [ "dmode=777", "fmode=777" ]
  	config.vm.synced_folder "mysql", "/var/lib/mysql", :mount_options => [ "dmode=777", "fmode=777" ]
 
+ 	# Custom Mappings
+ 	#
+ 	# Use this section to specifiy custom mapptings for your own development.
+
 	# Provisioning
 	#
 	# Process one or more provisioning scripts depending on the existence of custom files.
