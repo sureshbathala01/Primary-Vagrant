@@ -1,3 +1,5 @@
+# Note: that much of the documentation in this file is from Varying Vagrant Vagrants, the original base for this project
+
 Vagrant.configure("2") do |config|
 	
 	# Store the current version of Vagrant for use in conditionals when dealing
