@@ -3,17 +3,14 @@
 Vagrant.configure("2") do |config|
 	
 	# Store the current version of Vagrant for use in conditionals when dealing
-		# with possible backward compatible issues.
-		vagrant_version = Vagrant::VERSION.sub(/^v/, '')
+	# with possible backward compatible issues.
+	vagrant_version = Vagrant::VERSION.sub(/^v/, '')
 
 	# Default Ubuntu Box
 	# 
 	# This box is provided directly by Canonical and is updated almost nightly. Currently it is
 	# configured to use Ubuntu 12.04 x64. For a full list of boxes provided by Canonical visit
 	# http://cloud-images.ubuntu.com/vagrant/
-	if vagrant_version >= "1.5.0"
-		config.vm.box_check_update = false
-	end
 	config.vm.box = "precise32"
 	config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-i386-vagrant-disk1.box"
 
