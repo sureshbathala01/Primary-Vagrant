@@ -43,3 +43,6 @@
 [submodule "sites/phpmyadmin"]
 	path = sites/phpmyadmin
 	url = git@github.com:phpmyadmin/phpmyadmin.git
+[submodule "sites/webgrind"]
+	path = sites/webgrind
+	url = git@github.com:jokkedk/webgrind.git
