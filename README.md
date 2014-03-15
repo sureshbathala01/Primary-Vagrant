@@ -16,8 +16,17 @@ The repository contains a basic Vagrant configuration that will configure the fo
 * phpMyAdmin
 * WordPress (Stable and Core)
 * [Search Replace DB](http://interconnectit.com/products/search-and-replace-for-wordpress-databases/)
+* [webgrind](https://github.com/jokkedk/webgrind/)
 
 ##Getting Started
+
+### Default domains
+
+* phpmyadmin.vagrant - phpMyAdmin
+* replacedb.vagrant - Search Replace DB
+* stable.wordpress.vagrant - latest WordPress stable
+* trunk.wordpress.vagrant - WordPress trunk
+* webgrind.vagrant - webgrind
 
 ###Install the software
 
