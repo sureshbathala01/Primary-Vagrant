@@ -50,6 +50,14 @@ apache::vhost { 'trunk.wordpress.vagrant':
   template                    => '/var/vagrant/conf/vhost.conf.erb',
 }
 
+apache::vhost { 'webgrind.vagrant':
+  docroot                    => '/var/www/webgrind.vagrant',
+  directory                    => '/var/www/webgrind.vagrant',
+  directory_allow_override    => 'All',
+  ssl                            => true,
+  template                    => '/var/vagrant/conf/vhost.conf.erb',
+}
+
 class { 'php':
   service             => 'apache',
   service_autorestart => false,

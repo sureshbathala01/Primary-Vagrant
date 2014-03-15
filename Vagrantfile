@@ -39,6 +39,7 @@ Vagrant.configure("2") do |config|
 			"replacedb.vagrant",
 			"stable.wordpress.vagrant",
 			"trunk.wordpress.vagrant",
+			"webgrind.vagrant",
 		]
 	end
 
@@ -75,6 +76,7 @@ Vagrant.configure("2") do |config|
 	config.vm.synced_folder "sites/trunk.wordpress.vagrant/uploads", "/var/www/trunk.wordpress.vagrant/wordpress/wp-content/uploads", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "sites/Search-Replace-DB", "/var/www/replacedb.vagrant", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "sites/phpmyadmin", "/var/www/phpmyadmin.vagrant", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "sites/webgrind", "/var/www/webgrind.vagrant", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 
 	# /Vagrant Data
 	# 
