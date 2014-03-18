@@ -129,6 +129,10 @@ php::augeas {
   entry  => 'XDEBUG/xdebug.remote_enable',
   value  => '1',
   require => Class['php'];
+   'php-xdebug.remote_mode':
+    entry  => 'XDEBUG/xdebug.remote_mode',
+    value  => 'jit',
+    require => Class['php'];
   'php-xdebug.remote_host':
   entry  => 'XDEBUG/xdebug.remote_host',
   value  => '"192.168.56.1"',
