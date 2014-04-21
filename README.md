@@ -5,7 +5,7 @@ Primary Vagrant
 
 The repository contains a basic Vagrant configuration that will configure the following goodies:
 
-* Ubuntu 14.04 LTS (if you want 12.04 use the Precise32 branch)
+* Ubuntu 12.04 LTS
 * Apache
 * PHP 5.5
 * MySQL
