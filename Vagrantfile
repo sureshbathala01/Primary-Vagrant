@@ -11,8 +11,8 @@ Vagrant.configure("2") do |config|
 	# This box is provided directly by Canonical and is updated almost nightly. Currently it is
 	# configured to use Ubuntu 12.04 x64. For a full list of boxes provided by Canonical visit
 	# http://cloud-images.ubuntu.com/vagrant/
-	config.vm.box = "precise32"
-	config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-i386-vagrant-disk1.box"
+	config.vm.box = "trusty32"
+	config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-i386-vagrant-disk1.box"
 
 	config.vm.hostname = "local.vagrant"
 
