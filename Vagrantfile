@@ -11,8 +11,7 @@ Vagrant.configure("2") do |config|
 	# This box is provided directly by Canonical and is updated almost nightly. Currently it is
 	# configured to use Ubuntu 12.04 x64. For a full list of boxes provided by Canonical visit
 	# http://cloud-images.ubuntu.com/vagrant/
-	config.vm.box = "precise32"
-	config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-i386-vagrant-disk1.box"
+	config.vm.box = "ubuntu/trusty64"
 
 	config.vm.hostname = "local.vagrant"
 
@@ -53,7 +52,7 @@ Vagrant.configure("2") do |config|
 	config.vm.provider :virtualbox do |v|
 		v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
 		v.customize ["modifyvm", :id, "--memory", 512]
-		v.customize ["modifyvm", :id, "--name", "Primary Vagrant"]
+		v.customize ["modifyvm", :id, "--name", "Primary Vagrant - Trusty"]
 	end
 
 	# Drive mapping
