@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
 	# http://cloud-images.ubuntu.com/vagrant/
 	config.vm.box = "ubuntu/trusty64"
 
-	config.vm.hostname = "local.vagrant"
+	config.vm.hostname = "pv"
 
 	# Default Box IP Address
 	#
