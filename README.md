@@ -1,6 +1,12 @@
 Primary Vagrant
 =============
 
+##Note
+
+I've done some heavy updates to Primary Vagrant to utilize Ubuntu 14.04 as well as a few other goodies. If you don't want to or can't update for some reason you can fine the old version in the [Precise](https://github.com/ChrisWiegman/Primary-Vagrant/tree/Precise) branch.
+
+##About
+
 [Varying Vagrant Vagrants](https://github.com/Varying-Vagrant-Vagrants/VVV) by 10-up is great (and I still use it for NGINX work), but I wanted a few major changes. First, I wanted Apache instead of NGINX and, second, I wanted to use Puppet instead of Bash. Using VVV and Puphet as a base this repository attempts to address their shortcomings for my own work with a Vagrant configuration that is ready to go for WordPress plugin or theme development.
 
 The repository contains a basic Vagrant configuration that will configure the following goodies:
