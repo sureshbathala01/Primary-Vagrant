@@ -22,6 +22,10 @@ class { 'apache': }
 
 include apache::ssl
 
+apache::vhost { 'pv':
+	docroot                    => '/var/www/pv',
+}
+
 apache::vhost { 'phpmyadmin.vagrant':
   docroot                    => '/var/www/phpmyadmin.vagrant',
   directory                    => '/var/www/phpmyadmin.vagrant',

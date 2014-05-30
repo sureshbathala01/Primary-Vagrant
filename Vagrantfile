@@ -69,6 +69,7 @@ Vagrant.configure("2") do |config|
 	# For each project you're working on map a folder to it. The first argument is the location
 	# on the host computer. The second argument is the location on the guest matching. Finally the 
 	# 3rd arguement is a unique ID given to each folder mapped
+	config.vm.synced_folder "sites/default", "/var/www/pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "sites/stable.wordpress.vagrant", "/var/www/stable.wordpress.vagrant", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "sites/stable.wordpress.vagrant/uploads", "/var/www/stable.wordpress.vagrant/wordpress/wp-content/uploads", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "sites/trunk.wordpress.vagrant", "/var/www/trunk.wordpress.vagrant", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
