@@ -46,6 +46,6 @@
 [submodule "sites/webgrind"]
 	path = sites/webgrind
 	url = git@github.com:jokkedk/webgrind.git
-[submodule "modules/oh-my-zsh"]
-	path = modules/oh-my-zsh
+[submodule "modules/ohmyzsh"]
+	path = modules/ohmyzsh
 	url = git@github.com:acme/puppet-acme-oh-my-zsh.git
