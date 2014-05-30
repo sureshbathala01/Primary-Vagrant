@@ -134,7 +134,7 @@ php::augeas {
     require => Class['php'];
   'php-xdebug.remote_mode':
     entry  => 'XDEBUG/xdebug.remote_mode',
-    value  => 'jit',
+    value  => 'req',
     require => Class['php'];
   'php-xdebug.remote_host':
     entry  => 'XDEBUG/xdebug.remote_host',
