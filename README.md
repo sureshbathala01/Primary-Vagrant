@@ -5,7 +5,7 @@ Primary Vagrant
 
 The repository contains a basic Vagrant configuration that will configure the following goodies:
 
-* Ubuntu 12.04 LTS
+* Ubuntu 14.04 LTS
 * Apache
 * PHP 5.5
 * MySQL
@@ -17,11 +17,13 @@ The repository contains a basic Vagrant configuration that will configure the fo
 * WordPress (Stable and Core)
 * [Search Replace DB](http://interconnectit.com/products/search-and-replace-for-wordpress-databases/)
 * [webgrind](https://github.com/jokkedk/webgrind/)
+* [oh-my-zsh](http://ohmyz.sh)
 
 ##Getting Started
 
 ### Default domains
 
+* pv - Default menu
 * phpmyadmin.vagrant - phpMyAdmin
 * replacedb.vagrant - Search Replace DB
 * stable.wordpress.vagrant - latest WordPress stable
