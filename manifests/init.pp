@@ -15,6 +15,9 @@ package { "vim":
   ensure => "installed"
 }
 
+class { 'ohmyzsh': }
+ohmyzsh::install { 'vagrant': }
+
 class { 'apache': }
 
 include apache::ssl
