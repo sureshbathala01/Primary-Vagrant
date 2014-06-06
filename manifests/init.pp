@@ -169,7 +169,7 @@ php::augeas {
 class { 'wp-cli': }
 
 class {'postfix':
-  relayhost           => '192.168.56.1',
+  relayhost           => '192.168.13.1',
   relayhost_port  => '1025',
 }
 
