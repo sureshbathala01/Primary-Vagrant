@@ -142,7 +142,7 @@ php::augeas {
     require => Class['php'];
   'php-xdebug.remote_host':
     entry  => 'XDEBUG/xdebug.remote_host',
-    value  => '192.168.56.1',
+    value  => '192.168.13.1',
     require => Class['php'];
   'php-xdebug.remote_log':
     entry  => 'XDEBUG/xdebug.remote_log',
