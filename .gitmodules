@@ -49,3 +49,6 @@
 [submodule "modules/ohmyzsh"]
 	path = modules/ohmyzsh
 	url = git@github.com:acme/puppet-acme-oh-my-zsh.git
+[submodule "sites/mailcatcher.pv"]
+	path = sites/mailcatcher.pv
+	url = git@github.com:actionjack/puppet-mailcatcher.git
