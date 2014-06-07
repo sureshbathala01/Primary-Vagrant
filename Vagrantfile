@@ -34,11 +34,12 @@ Vagrant.configure("2") do |config|
 	# required to enter a password for Vagrant to access your hosts file.
 	if defined? VagrantPlugins::HostsUpdater
 		config.hostsupdater.aliases = [
-			"phpmyadmin.vagrant",
-			"replacedb.vagrant",
-			"stable.wordpress.vagrant",
-			"trunk.wordpress.vagrant",
-			"webgrind.vagrant",
+		    "mailcatcher.pv",
+			"phpmyadmin.pv",
+			"replacedb.pv",
+			"stable.wordpress.pv",
+			"trunk.wordpress.pv",
+			"webgrind.pv",
 		]
 	end
 
@@ -70,13 +71,14 @@ Vagrant.configure("2") do |config|
 	# on the host computer. The second argument is the location on the guest matching. Finally the 
 	# 3rd arguement is a unique ID given to each folder mapped
 	config.vm.synced_folder "sites/default", "/var/www/pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "sites/stable.wordpress.vagrant", "/var/www/stable.wordpress.vagrant", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "sites/stable.wordpress.vagrant/uploads", "/var/www/stable.wordpress.vagrant/wordpress/wp-content/uploads", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "sites/trunk.wordpress.vagrant", "/var/www/trunk.wordpress.vagrant", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "sites/trunk.wordpress.vagrant/uploads", "/var/www/trunk.wordpress.vagrant/wordpress/wp-content/uploads", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "sites/Search-Replace-DB", "/var/www/replacedb.vagrant", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "sites/phpmyadmin", "/var/www/phpmyadmin.vagrant", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "sites/webgrind", "/var/www/webgrind.vagrant", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "sites/wordpress/stable", "/var/www/wordpress.stable.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "sites/wordpress/stable/uploads", "/var/www/wordpress/stable/wordpress/wp-content/uploads", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "sites/wordpress/trunk", "/var/www/wordpress.trunk.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "sites/wordpress/trunk/uploads", "/var/www/wordpress.trunk.pv/wordpress/wp-content/uploads", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "sites/Search-Replace-DB", "/var/www/replacedb.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "sites/phpmyadmin", "/var/www/phpmyadmin.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "sites/webgrind", "/var/www/webgrind.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "sites/mailcatcher", "/var/www/mailcatcher.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 
 	# /Vagrant Data
 	# 
@@ -100,7 +102,7 @@ Vagrant.configure("2") do |config|
 		puppet.manifests_path = "manifests"
 		puppet.manifest_file = "init.pp"
 		puppet.module_path = "modules"
-		puppet.facter = { "fqdn" => "local.vagrant" }
+		puppet.facter = { "fqdn" => "pv" }
 	end
 
 
