@@ -16,7 +16,7 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'stable.wordpress.vagrant');
+define('DB_NAME', 'wordpress.stable.pv');
 
 /** MySQL database username */
 define('DB_USER', 'username');
@@ -80,7 +80,7 @@ define('WPLANG', '');
  */
 define( 'WP_DEBUG', true );
 define( 'WP_DEBUG_LOG', true );
-define( 'WP_DEBUG_DISPLAY', false );
+define( 'WP_DEBUG_DISPLAY', true );
 define( 'SCRIPT_DEBUG', true );
 define( 'SAVEQUERIES', true );
 define( 'WP_LOCAL_DEV', true );
@@ -93,4 +93,3 @@ if ( !defined('ABSPATH') )
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
-
