@@ -37,8 +37,8 @@ Vagrant.configure("2") do |config|
 		    "mailcatcher.pv",
 			"phpmyadmin.pv",
 			"replacedb.pv",
-			"stable.wordpress.pv",
-			"trunk.wordpress.pv",
+			"wordpress.stable.pv",
+			"wordpress.trunk.pv",
 			"webgrind.pv",
 		]
 	end
