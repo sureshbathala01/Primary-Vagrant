@@ -25,12 +25,6 @@
 [submodule "modules/phpunit"]
 	path = modules/phpunit
 	url = git@github.com:ChrisWiegman/puppet-phpunit.git
-[submodule "sites/stable.wordpress.vagrant/wordpress"]
-	path = sites/stable.wordpress.vagrant/wordpress
-	url = git@github.com:WordPress/WordPress.git
-[submodule "sites/trunk.wordpress.vagrant/wordpress"]
-	path = sites/trunk.wordpress.vagrant/wordpress
-	url = git@github.com:WordPress/WordPress.git
 [submodule "modules/wp-cli"]
 	path = modules/wp-cli
 	url = git@github.com:ChrisWiegman/puppet-wpcli.git
@@ -52,3 +46,9 @@
 [submodule "sites/mailcatcher"]
 	path = sites/mailcatcher
 	url = git@github.com:actionjack/puppet-mailcatcher.git
+[submodule "sites/wordpress/stable/wordpress"]
+	path = sites/wordpress/stable/wordpress
+	url = git@github.com:WordPress/WordPress.git
+[submodule "sites/wordpress/trunk/wordpress"]
+	path = sites/wordpress/trunk/wordpress
+	url = git@github.com:WordPress/WordPress.git
