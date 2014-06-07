@@ -49,6 +49,3 @@
 [submodule "sites/wordpress/trunk/wordpress"]
 	path = sites/wordpress/trunk/wordpress
 	url = git@github.com:WordPress/WordPress.git
-[submodule "modules/mailcatcher"]
-	path = modules/mailcatcher
-	url = git@github.com:puphpet/puppet-mailcatcher.git
