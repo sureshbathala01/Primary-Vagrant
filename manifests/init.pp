@@ -49,6 +49,14 @@ apache::vhost { 'replacedb.pv':
 	template                    => '/var/vagrant/conf/vhost.conf.erb',
 }
 
+apache::vhost { 'wordpress.core.pv':
+	docroot                    => '/var/www/wordpress.core.pv/src',
+	directory                    => '/var/www/wordpress.core.pv/src',
+	directory_allow_override    => 'All',
+	ssl                            => true,
+	template                    => '/var/vagrant/conf/vhost.conf.erb',
+}
+
 apache::vhost { 'wordpress.stable.pv':
 	docroot                    => '/var/www/wordpress.stable.pv/wordpress',
 	directory                    => '/var/www/wordpress.stable.pv/wordpress',
@@ -192,6 +200,12 @@ mysql_database { 'wordpress.stable.pv':
 }
 
 mysql_database { 'wordpress.trunk.pv':
+	ensure  => 'present',
+	charset => 'utf8',
+	collate => 'utf8_swedish_ci',
+}
+
+mysql_database { 'wordpress.core.pv':
 	ensure  => 'present',
 	charset => 'utf8',
 	collate => 'utf8_swedish_ci',

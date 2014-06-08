@@ -38,6 +38,7 @@ Vagrant.configure("2") do |config|
 			"phpmyadmin.pv",
 			"replacedb.pv",
 			"wordpress.stable.pv",
+			"wordpress.core.pv",
 			"wordpress.trunk.pv",
 			"webgrind.pv",
 		]
@@ -74,6 +75,7 @@ Vagrant.configure("2") do |config|
 	config.vm.synced_folder "sites/wordpress/stable", "/var/www/wordpress.stable.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "sites/wordpress/stable/uploads", "/var/www/wordpress/stable/wordpress/wp-content/uploads", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "sites/wordpress/trunk", "/var/www/wordpress.trunk.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "sites/wordpress/core", "/var/www/wordpress.core.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "sites/wordpress/trunk/uploads", "/var/www/wordpress.trunk.pv/wordpress/wp-content/uploads", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "sites/Search-Replace-DB", "/var/www/replacedb.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "sites/phpmyadmin", "/var/www/phpmyadmin.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
