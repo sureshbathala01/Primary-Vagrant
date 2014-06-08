@@ -26,6 +26,7 @@
 <h2>Development Sites</h2>
 
 	<ul>
+		<li><a href="http://wordpress.core.pv" target="_blank">WordPress Core (src folder for WordPress core development)</a></li>
 		<li><a href="http://wordpress.stable.pv" target="_blank">WordPress Stable Branch (current version)</a></li>
 		<li><a href="http://wordpress.trunk.pv" target="_blank">WordPress Trunk (development) Version</a></li>
 	</ul>
