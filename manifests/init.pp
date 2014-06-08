@@ -26,14 +26,6 @@ apache::vhost { 'pv':
 	docroot                    => '/var/www/pv',
 }
 
-apache::vhost { 'mailcatcher.pv':
-	docroot                    => '/var/www/mailcatcher.pv',
-	directory                    => '/var/www/mailcatcher.pv',
-	directory_allow_override    => 'All',
-	ssl                            => true,
-	template                    => '/var/vagrant/conf/vhost.conf.erb',
-}
-
 apache::vhost { 'phpmyadmin.pv':
 	docroot                    => '/var/www/phpmyadmin.pv',
 	directory                    => '/var/www/phpmyadmin.pv',
