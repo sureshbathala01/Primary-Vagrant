@@ -17,16 +17,17 @@
 <h2>Primary Vagrant Tools</h2>
 
 	<ul>
-		<li><a href="http://phpmyadmin.vagrant" target="_blank">Manage MySQL with phpMyAdmin</a></li>
-		<li><a href="http://replacedb.vagrant" target="_blank">Easily Search and Replace MySQL database values with Search and Replace DB</a>< (this makes migrating sites a breeze)/li>
-		<li><a href="http://webgrind.vagrant" target="_blank">Profile your application with Webgrind</a></li>
+		<li><a href="http://phpmyadmin.pv" target="_blank">Manage MySQL with phpMyAdmin</a></li>
+		<li><a href="http://replacedb.pv" target="_blank">Easily Search and Replace MySQL database values with Search and Replace DB</a>< (this makes migrating sites a breeze)/li>
+		<li><a href="http://webgrind.pv" target="_blank">Profile your application with Webgrind</a></li>
+		<li><a href="http://mailcatcher.pv:1080" target="_blank">Collect email with MailCatcher</a></li>
 	</ul>
 
 <h2>Development Sites</h2>
 
 	<ul>
-		<li><a href="http://stable.wordpress.vagrant" target="_blank">WordPress Stable Branch (current version)</a></li>
-		<li><a href="http://trunk.wordpress.vagrant" target="_blank">WordPress Trunk (development) Version</a></li>
+		<li><a href="http://wordpress.stable.pv" target="_blank">WordPress Stable Branch (current version)</a></li>
+		<li><a href="http://wordpress.trunk.pv" target="_blank">WordPress Trunk (development) Version</a></li>
 	</ul>
 
 </body>
