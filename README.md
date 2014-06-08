@@ -20,7 +20,7 @@ The repository contains a basic Vagrant configuration that will configure the fo
 * Postfix
 * wp-cli
 * phpMyAdmin
-* WordPress (Stable and Core)
+* WordPress (Stable and Core, and Dev)
 * [Search Replace DB](http://interconnectit.com/products/search-and-replace-for-wordpress-databases/)
 * [webgrind](https://github.com/jokkedk/webgrind/)
 * [oh-my-zsh](http://ohmyz.sh)
@@ -33,6 +33,7 @@ The repository contains a basic Vagrant configuration that will configure the fo
 * pv - Default menu
 * phpmyadmin.pv - phpMyAdmin
 * replacedb.pv - Search Replace DB
+* wordpress.core.pv - WordPress Development (for core dev)
 * wordpress.stable.pv - latest WordPress stable
 * wordpress.trunk.pv - WordPress trunk
 * webgrind.pv - webgrind
@@ -59,9 +60,12 @@ The following websites come pre-configured in the system:
 
 * [The mail menu](http://pv)
 
-* WordPress (latest stable release) at [http://stable.wordpress.vagrant](http://wordpress.stable.pv)
-* WordPress Trunk at [http://trunk.wordpress.vagrant](http://wordpress.trunk.pv)
+* WordPress (latest stable release) at [http://wordpress.stable.pv](http://wordpress.stable.pv)
+* WordPress Trunk at [http://wordpress.trunk.pv](http://wordpress.trunk.pv)
+* WordPress Core Development at [http://wordpress.core.pv](http://wordpress.core.pv)
 * Search Replace DB [https://www.virtualbox.org/wiki/Downloads](https://replacedb.pv)
+
+*Note: WordPress Core dev is taken from git://develop.git.wordpress.org/. Only the src folder is mapped. You can manually set up a build site if desired.
 
 ###Configure your Apache VirtualHosts
 
@@ -71,15 +75,15 @@ Edit **manifests/whosts.pp**. This is where you define virtualhosts and database
 
 example:
 
-```apache::vhost { 'hostname.whatever':
+```apache::vhost { 'mysite.pv':
 	docroot       				=> 'path/to/your/site',
 	directory					=> 'path/to/your/site',
-	directory_allow_override	    => 'All',
+	directory_allow_override	=> 'All',
 	ssl							=> true,
-	template                     => '/var/vagrant/conf/vhost.conf.erb',
+	template                    => '/var/vagrant/conf/vhost.conf.erb',
 }```
 
-*Note: I've provided a top-level wildcard SSL certificatate. If using ssl you might still want to add a custom ssl certificate with the name of hostname to the ssl folder in the repository directory and make sure you don't delete the template line above.*
+*Note: I've provided a top-level wildcard SSL certificatate. No further SSL certificate should be needed.
 
 ###Change PHP Versions
 
