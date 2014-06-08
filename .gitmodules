@@ -52,3 +52,6 @@
 [submodule "modules/mailcatcher"]
 	path = modules/mailcatcher
 	url = git@github.com:ChrisWiegman/puppet-mailcatcher.git
+[submodule "modules/ruby"]
+	path = modules/ruby
+	url = git@github.com:puppetlabs/puppetlabs-ruby.git
