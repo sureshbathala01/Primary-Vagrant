@@ -11,10 +11,6 @@ title != 'python-software-properties'
 and title != 'software-properties-common'
 |>
 
-class { 'ruby':
-	gems_version  => 'latest'
-}
-
 package { "vim":
 	ensure => "installed"
 }
