@@ -24,17 +24,19 @@ The repository contains a basic Vagrant configuration that will configure the fo
 * [Search Replace DB](http://interconnectit.com/products/search-and-replace-for-wordpress-databases/)
 * [webgrind](https://github.com/jokkedk/webgrind/)
 * [oh-my-zsh](http://ohmyz.sh)
+* [MailCather](http://mailcatcher.me)
 
 ##Getting Started
 
 ### Default domains
 
 * pv - Default menu
-* phpmyadmin.vagrant - phpMyAdmin
-* replacedb.vagrant - Search Replace DB
-* stable.wordpress.vagrant - latest WordPress stable
-* trunk.wordpress.vagrant - WordPress trunk
-* webgrind.vagrant - webgrind
+* phpmyadmin.pv - phpMyAdmin
+* replacedb.pv - Search Replace DB
+* wordpress.stable.pv - latest WordPress stable
+* wordpress.trunk.pv - WordPress trunk
+* webgrind.pv - webgrind
+* mailcatcher.pv - MailCatcher
 
 ###Install the software
 
@@ -55,9 +57,11 @@ Once Vagrant is installed you'll want two plugins to update your local hosts fil
 
 The following websites come pre-configured in the system:
 
-* WordPress (latest stable release) at [http://stable.wordpress.vagrant](http://stable.wordpress.vagrant)
-* WordPress Trunk at [http://trunk.wordpress.vagrant](http://trunk.wordpress.vagrant)
-* Search Replace DB [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
+* [The mail menu](http://pv)
+
+* WordPress (latest stable release) at [http://stable.wordpress.vagrant](http://wordpress.stable.pv)
+* WordPress Trunk at [http://trunk.wordpress.vagrant](http://wordpress.trunk.pv)
+* Search Replace DB [https://www.virtualbox.org/wiki/Downloads](https://replacedb.pv)
 
 ###Configure your Apache VirtualHosts
 
@@ -75,11 +79,11 @@ example:
 	template                     => '/var/vagrant/conf/vhost.conf.erb',
 }```
 
-*Note: if using ssl you will need to add a custom ssl certificate with the name of hostname to the ssl folder in the repository directory and make sure you don't delete the template line above.*
+*Note: I've provided a top-level wildcard SSL certificatate. If using ssl you might still want to add a custom ssl certificate with the name of hostname to the ssl folder in the repository directory and make sure you don't delete the template line above.*
 
 ###Change PHP Versions
 
-To change from PHP 5.5 remove the line ```apt::ppa { 'ppa:ondrej/php5': }``` from *manifests/php.pp*. This will install the default PHP 5.3.
+To change from PHP 5.5 I recommend using a PGP package from [https://launchpad.net/~ondrej/+archive/php5](https://launchpad.net/~ondrej/+archive/php5). You can do so by adding  ```apt::ppa { 'ppa:ondrej/php5': }``` to *manifests/php.pp*. Make sure to choose the correct repository for the PHP version you want to use.
 
 Note this file can also be used to change any php.ini value following the example included in the file.
 
@@ -99,7 +103,7 @@ To create a new database use the following example to edit manifests/mysql.pp
 
 ###Postfix Configuration
 
-Postfix is configured and set to use your host computer as a mail relay. To receive messages you will need an application such as [MockSmtp](http://mocksmtpapp.com) on your host computer configured to listen on port 1025
+Postfix is configured and set to use your host computer as a mail relay. To receive messages you can use the built in [MailCatcher installation](http://mailcatcher.pv:1080) (this will prevent your real SMTP mail server and mailbox from getting too much abuse).
 
 ##Note
 
