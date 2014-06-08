@@ -52,3 +52,6 @@
 [submodule "modules/mailcatcher"]
 	path = modules/mailcatcher
 	url = git@github.com:ChrisWiegman/puppet-mailcatcher.git
+[submodule "sites/wordpress/dev"]
+	path = sites/wordpress/dev
+	url = git://develop.git.wordpress.org/
