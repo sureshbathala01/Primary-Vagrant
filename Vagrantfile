@@ -80,7 +80,6 @@ Vagrant.configure("2") do |config|
 	config.vm.synced_folder "sites/Search-Replace-DB", "/var/www/replacedb.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "sites/phpmyadmin", "/var/www/phpmyadmin.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "sites/webgrind", "/var/www/webgrind.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "sites/mailcatcher", "/var/www/mailcatcher.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 
 	# /Vagrant Data
 	# 
