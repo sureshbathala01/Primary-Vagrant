@@ -16,6 +16,10 @@ package { 'vim':
 	ensure => 'installed'
 }
 
+package { 'ntp':
+	ensure => 'installed'
+}
+
 class { 'ohmyzsh': }
 ohmyzsh::install { 'vagrant': }
 
