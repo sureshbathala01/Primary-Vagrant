@@ -34,9 +34,6 @@
 [submodule "modules/augeas"]
 	path = modules/augeas
 	url = git@github.com:camptocamp/puppet-augeas.git
-[submodule "sites/phpmyadmin"]
-	path = sites/phpmyadmin
-	url = git@github.com:phpmyadmin/phpmyadmin.git
 [submodule "sites/webgrind"]
 	path = sites/webgrind
 	url = git@github.com:jokkedk/webgrind.git
