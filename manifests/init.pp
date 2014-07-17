@@ -32,8 +32,8 @@ apache::vhost { 'pv':
 }
 
 apache::vhost { 'phpmyadmin.pv':
-	docroot                  => '/var/www/phpmyadmin.pv',
-	directory                => '/var/www/phpmyadmin.pv',
+	docroot                  => '/var/www/phpmyadmin.pv/phpmyadmin',
+	directory                => '/var/www/phpmyadmin.pv/phpmyadmin',
 	directory_allow_override => 'All',
 	ssl                      => true,
 	template                 => '/var/vagrant/conf/vhost.conf.erb',
