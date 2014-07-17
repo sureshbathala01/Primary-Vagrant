@@ -24,7 +24,7 @@ The repository contains a basic Vagrant configuration that will configure the fo
 * [Search Replace DB](http://interconnectit.com/products/search-and-replace-for-wordpress-databases/)
 * [webgrind](https://github.com/jokkedk/webgrind/)
 * [oh-my-zsh](http://ohmyz.sh)
-* [MailCather](http://mailcatcher.me)
+* [MailCatcher](http://mailcatcher.me)
 
 ##Getting Started
 
