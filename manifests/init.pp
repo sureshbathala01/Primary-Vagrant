@@ -54,9 +54,9 @@ apache::vhost { 'wordpress.core.pv':
 	template                 => '/var/vagrant/conf/vhost.conf.erb',
 }
 
-apache::vhost { 'wordpress.last.pv':
-	docroot                  => '/var/www/wordpress.last.pv/wordpress',
-	directory                => '/var/www/wordpress.last.pv/wordpress',
+apache::vhost { 'wordpress.legacy.pv':
+	docroot                  => '/var/www/wordpress.legacy.pv/wordpress',
+	directory                => '/var/www/wordpress.legacy.pv/wordpress',
 	directory_allow_override => 'All',
 	ssl                      => true,
 	template                 => '/var/vagrant/conf/vhost.conf.erb',
@@ -204,7 +204,7 @@ mysql_database { 'wordpress.stable.pv':
 	collate => 'utf8_swedish_ci',
 }
 
-mysql_database { 'wordpress.last.pv':
+mysql_database { 'wordpress.legacy.pv':
 	ensure  => 'present',
 	charset => 'utf8',
 	collate => 'utf8_swedish_ci',

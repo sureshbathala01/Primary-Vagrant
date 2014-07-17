@@ -39,7 +39,7 @@ Vagrant.configure("2") do |config|
 			"replacedb.pv",
 			"wordpress.stable.pv",
 			"wordpress.core.pv",
-			"wordpress.last.pv",
+			"wordpress.legacy.pv",
 			"wordpress.trunk.pv",
 			"webgrind.pv",
 		]
@@ -74,7 +74,7 @@ Vagrant.configure("2") do |config|
 	# 3rd arguement is a unique ID given to each folder mapped
 	config.vm.synced_folder "sites/default", "/var/www/pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "sites/wordpress/stable", "/var/www/wordpress.stable.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "sites/wordpress/last", "/var/www/wordpress.last.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "sites/wordpress/legacy", "/var/www/wordpress.legacy.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "sites/wordpress/trunk", "/var/www/wordpress.trunk.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
     config.vm.synced_folder "sites/wordpress/core", "/var/www/wordpress.core.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "sites/wordpress/content", "/var/www/wordpress.stable.pv/content", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
