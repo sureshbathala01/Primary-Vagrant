@@ -55,3 +55,6 @@
 [submodule "sites/wordpress/last/wordpress"]
 	path = sites/wordpress/last/wordpress
 	url = git@github.com:WordPress/WordPress.git
+[submodule "sites/phpmyadmin/phpmyadmin"]
+	path = sites/phpmyadmin/phpmyadmin
+	url = git@github.com:phpmyadmin/phpmyadmin.git
