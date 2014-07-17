@@ -79,7 +79,7 @@ Vagrant.configure("2") do |config|
     config.vm.synced_folder "sites/wordpress/core", "/var/www/wordpress.core.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "sites/wordpress/content", "/var/www/wordpress.stable.pv/content", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "sites/wordpress/content", "/var/www/wordpress.trunk.pv/content", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "sites/wordpress/content", "/var/www/wordpress.last.pv/content", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "sites/wordpress/content", "/var/www/wordpress.legacy.pv/content", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "sites/Search-Replace-DB", "/var/www/replacedb.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "sites/phpmyadmin", "/var/www/phpmyadmin.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "sites/webgrind", "/var/www/webgrind.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
