@@ -14,6 +14,7 @@ The repository contains a basic Vagrant configuration that will configure the fo
 * Ubuntu 14.04 LTS
 * Apache
 * PHP 5.5
+* phpbrew (experimental but will eventually allow for multiple PHP versions)
 * MySQL
 * Xdebug
 * PHPUnit
