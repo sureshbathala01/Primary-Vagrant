@@ -239,4 +239,9 @@ mysql_grant { 'username@localhost/*.*':
 
 class { 'mailcatcher': }
 
+file { '/var/www/phpmyadmin.pv/phpmyadmin/config.inc.php':
+	ensure => 'link',
+	target => '/var/www/phpmyadmin.pv/config.inc.php',
+}
+
 import 'custom/*.pp'
