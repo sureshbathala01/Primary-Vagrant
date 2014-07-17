@@ -61,3 +61,6 @@
 [submodule "sites/wordpress/content/plugins/debug-bar"]
 	path = sites/wordpress/content/plugins/debug-bar
 	url = git@github.com:wp-mirrors/debug-bar.git
+[submodule "modules/phpbrew"]
+	path = modules/phpbrew
+	url = git@github.com:ChrisWiegman/puppet-phpbrew.git
