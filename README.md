@@ -20,7 +20,8 @@ The repository contains a basic Vagrant configuration that will configure the fo
 * Postfix
 * wp-cli
 * phpMyAdmin
-* WordPress (Stable and Core, and Dev)
+* WordPress (Last, Stable, Core and Dev)
+* wp-debug plugin
 * [Search Replace DB](http://interconnectit.com/products/search-and-replace-for-wordpress-databases/)
 * [webgrind](https://github.com/jokkedk/webgrind/)
 * [oh-my-zsh](http://ohmyz.sh)
@@ -34,7 +35,8 @@ The repository contains a basic Vagrant configuration that will configure the fo
 * phpmyadmin.pv - phpMyAdmin
 * replacedb.pv - Search Replace DB
 * wordpress.core.pv - WordPress Development (for core dev)
-* wordpress.stable.pv - latest WordPress stable
+* wordpress.legacy.pv - Last version of WordPress (currently 3.8.3)
+* wordpress.stable.pv - latest WordPress stable (currently 3.9.1)
 * wordpress.trunk.pv - WordPress trunk
 * webgrind.pv - webgrind
 * mailcatcher.pv - MailCatcher
