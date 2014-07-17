@@ -7,7 +7,9 @@ I've done some heavy updates to Primary Vagrant to utilize Ubuntu 14.04 as well 
 
 ##About
 
-[Varying Vagrant Vagrants](https://github.com/Varying-Vagrant-Vagrants/VVV) by 10-up is great (and I still use it for NGINX work), but I wanted a few major changes. First, I wanted Apache instead of NGINX and, second, I wanted to use Puppet instead of Bash. Using VVV and Puppet as a base this repository attempts to address their shortcomings for my own work with a Vagrant configuration that is ready to go for WordPress plugin or theme development.
+Primary Vagrant is intended for WordPress plugin, theme and core development as well as general PHP development  and can be used as a replacement for local development stacks such as MAMP, XAMPP and others.
+
+Although [Varying Vagrant Vagrants](https://github.com/Varying-Vagrant-Vagrants/VVV) by 10-up is great (and I still use it for NGINX work), but I wanted a few major changes. First, I wanted Apache instead of NGINX and, second, I wanted to use Puppet instead of Bash. Using VVV and Puppet as a base this repository attempts to address their shortcomings for my own work with a Vagrant configuration that is ready to go for WordPress plugin or theme development.
 
 The repository contains a basic Vagrant configuration that will configure the following goodies:
 
@@ -27,6 +29,18 @@ The repository contains a basic Vagrant configuration that will configure the fo
 * [webgrind](https://github.com/jokkedk/webgrind/)
 * [oh-my-zsh](http://ohmyz.sh)
 * [MailCatcher](http://mailcatcher.me)
+
+##Contributors
+
+* [ChrisWiegman](https://github.com/ChrisWiegman)
+* [kraftner](https://github.com/kraftner)
+* [michaelbeil](https://github.com/michaelbeil)
+
+##Want to help?
+
+If you find any issues please don't hesitate to submit a pull request.
+
+Current development of the project is focusing on instituting multiple PHP versions using (at least for now) [phpbrew](https://github.com/phpbrew/phpbrew). It needs a lot of work so if you have a few minutes head on over to the [phpbrew puppet module](https://github.com/ChrisWiegman/puppet-phpbrew) and dig in.
 
 ##Getting Started
 
