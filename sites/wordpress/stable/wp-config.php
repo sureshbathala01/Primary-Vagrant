@@ -85,6 +85,9 @@ define( 'SCRIPT_DEBUG', true );
 define( 'SAVEQUERIES', true );
 define( 'WP_LOCAL_DEV', true );
 
+define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/content' );
+define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/content' );
+
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */

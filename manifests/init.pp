@@ -54,6 +54,14 @@ apache::vhost { 'wordpress.core.pv':
 	template                 => '/var/vagrant/conf/vhost.conf.erb',
 }
 
+apache::vhost { 'wordpress.last.pv':
+	docroot                  => '/var/www/wordpress.last.pv/wordpress',
+	directory                => '/var/www/wordpress.last.pv/wordpress',
+	directory_allow_override => 'All',
+	ssl                      => true,
+	template                 => '/var/vagrant/conf/vhost.conf.erb',
+}
+
 apache::vhost { 'wordpress.stable.pv':
 	docroot                  => '/var/www/wordpress.stable.pv/wordpress',
 	directory                => '/var/www/wordpress.stable.pv/wordpress',
@@ -191,6 +199,12 @@ class { 'mysql::server':
 }
 
 mysql_database { 'wordpress.stable.pv':
+	ensure  => 'present',
+	charset => 'utf8',
+	collate => 'utf8_swedish_ci',
+}
+
+mysql_database { 'wordpress.last.pv':
 	ensure  => 'present',
 	charset => 'utf8',
 	collate => 'utf8_swedish_ci',
