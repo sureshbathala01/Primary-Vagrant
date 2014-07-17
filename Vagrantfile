@@ -39,6 +39,7 @@ Vagrant.configure("2") do |config|
 			"replacedb.pv",
 			"wordpress.stable.pv",
 			"wordpress.core.pv",
+			"wordpress.last.pv",
 			"wordpress.trunk.pv",
 			"webgrind.pv",
 		]
