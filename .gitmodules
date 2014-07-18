@@ -64,3 +64,12 @@
 [submodule "modules/phpbrew"]
 	path = modules/phpbrew
 	url = git@github.com:ChrisWiegman/puppet-phpbrew.git
+[submodule "sites/wordpress/legacy/htdocs/wordpress"]
+	path = sites/wordpress/legacy/htdocs/wordpress
+	url = git@github.com:WordPress/WordPress.git
+[submodule "sites/wordpress/stable/htdocs/wordpress"]
+	path = sites/wordpress/stable/htdocs/wordpress
+	url = git@github.com:WordPress/WordPress.git
+[submodule "sites/wordpress/trunk/htdocs/wordpress"]
+	path = sites/wordpress/trunk/htdocs/wordpress
+	url = git@github.com:WordPress/WordPress.git
