@@ -85,6 +85,8 @@ define( 'SCRIPT_DEBUG', true );
 define( 'SAVEQUERIES', true );
 define( 'WP_LOCAL_DEV', true );
 
+define( 'WP_AUTO_UPDATE_CORE', false );
+
 define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/content' );
 define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/content' );
 

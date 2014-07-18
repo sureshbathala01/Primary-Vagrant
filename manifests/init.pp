@@ -55,24 +55,24 @@ apache::vhost { 'wordpress.core.pv':
 }
 
 apache::vhost { 'wordpress.legacy.pv':
-	docroot                  => '/var/www/wordpress.legacy.pv/wordpress',
-	directory                => '/var/www/wordpress.legacy.pv/wordpress',
+	docroot                  => '/var/www/wordpress.legacy.pv/htdocs',
+	directory                => '/var/www/wordpress.legacy.pv/htdocs',
 	directory_allow_override => 'All',
 	ssl                      => true,
 	template                 => '/var/vagrant/conf/vhost.conf.erb',
 }
 
 apache::vhost { 'wordpress.stable.pv':
-	docroot                  => '/var/www/wordpress.stable.pv/wordpress',
-	directory                => '/var/www/wordpress.stable.pv/wordpress',
+	docroot                  => '/var/www/wordpress.stable.pv/htdocs',
+	directory                => '/var/www/wordpress.stable.pv/htdocs',
 	directory_allow_override => 'All',
 	ssl                      => true,
 	template                 => '/var/vagrant/conf/vhost.conf.erb',
 }
 
 apache::vhost { 'wordpress.trunk.pv':
-	docroot                  => '/var/www/wordpress.trunk.pv/wordpress',
-	directory                => '/var/www/wordpress.trunk.pv/wordpress',
+	docroot                  => '/var/www/wordpress.trunk.pv/htdocs',
+	directory                => '/var/www/wordpress.trunk.pv/htdocs',
 	directory_allow_override => 'All',
 	ssl                      => true,
 	template                 => '/var/vagrant/conf/vhost.conf.erb',
