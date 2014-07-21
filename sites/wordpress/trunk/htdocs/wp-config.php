@@ -94,9 +94,7 @@ define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/content' );
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
+	define('ABSPATH', dirname(__FILE__) . '/wordpress/');
 
 /** Sets up WordPress vars and included files. */
-if ( !defined( 'ABSPATH' ) )
-	define( 'ABSPATH', dirname( __FILE__ ) . '/wordpress/' );
 require_once( ABSPATH . 'wp-settings.php' );
