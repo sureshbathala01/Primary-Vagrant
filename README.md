@@ -7,9 +7,9 @@ I've done some heavy updates to Primary Vagrant to utilize Ubuntu 14.04 as well 
 
 ##About
 
-Primary Vagrant is intended for WordPress plugin, theme and core development as well as general PHP development  and can be used as a replacement for local development stacks such as MAMP, XAMPP and others.
+Primary Vagrant is intended for WordPress plugin, theme, and core development, as well as general PHP development, and can be used as a replacement for local development stacks such as MAMP, XAMPP, and others.
 
-Although [Varying Vagrant Vagrants](https://github.com/Varying-Vagrant-Vagrants/VVV) by 10-up is great (and I still use it for NGINX work), but I wanted a few major changes. First, I wanted Apache instead of NGINX and, second, I wanted to use Puppet instead of Bash. Using VVV and Puppet as a base this repository attempts to address their shortcomings for my own work with a Vagrant configuration that is ready to go for WordPress plugin or theme development.
+Although [Varying Vagrant Vagrants](https://github.com/Varying-Vagrant-Vagrants/VVV) by 10up is great (and I still use it for NGINX work), I wanted a few major changes. First, I wanted Apache instead of NGINX and, second, I wanted to use Puppet instead of Bash. Using VVV and Puppet as a base this repository attempts to address their shortcomings for my own work with a Vagrant configuration that is ready to go for WordPress plugin or theme development.
 
 The repository contains a basic Vagrant configuration that will configure the following goodies:
 
@@ -40,7 +40,7 @@ The repository contains a basic Vagrant configuration that will configure the fo
 
 If you find any issues please don't hesitate to submit a pull request.
 
-Current development of the project is focusing on instituting multiple PHP versions using (at least for now) [phpbrew](https://github.com/phpbrew/phpbrew). It needs a lot of work so if you have a few minutes head on over to the [phpbrew puppet module](https://github.com/ChrisWiegman/puppet-phpbrew) and dig in.
+Current development of the project is focusing on instituting multiple PHP versions using (at least for now) [phpbrew](https://github.com/phpbrew/phpbrew). It needs a lot of work, so if you have a few minutes head on over to the [phpbrew puppet module](https://github.com/ChrisWiegman/puppet-phpbrew) and dig in.
 
 ##Getting Started
 
@@ -58,9 +58,9 @@ Current development of the project is focusing on instituting multiple PHP versi
 
 ###Install the software
 
-Install [Vagrant](http://vagrantup.com), [VirtualBox](http://virtualbox.org) and the [VirtualBox extensions](https://www.virtualbox.org/wiki/Downloads) for your environment.
+Install [Vagrant](http://vagrantup.com), [VirtualBox](http://virtualbox.org), and the [VirtualBox extensions](https://www.virtualbox.org/wiki/Downloads) for your environment.
 
-Once Vagrant is installed you'll want two plugins to update your local hosts file and update the VirtualBox Guest additions in the Ubuntu install
+Once Vagrant is installed you'll want two plugins to update your local hosts file and update the VirtualBox Guest additions in the Ubuntu install.
 
 ```vagrant plugin install vagrant-vbguest```
 
@@ -86,11 +86,11 @@ The following websites come pre-configured in the system:
 
 ###Configure your Apache VirtualHosts
 
-Edit the file **Vagrantfile** and add paths to your own websites as well as a host entry to reach it
+Edit the file **Vagrantfile** and add paths to your own websites as well as a host entry to reach it.
 
 Edit **manifests/whosts.pp**. This is where you define virtualhosts and databases. Copy what is there and ask me if you have any questions.
 
-example:
+Example:
 
 ```apache::vhost { 'mysite.pv':
 	docroot       				=> 'path/to/your/site',
@@ -104,13 +104,13 @@ example:
 
 ###Change PHP Versions
 
-To change from PHP 5.5 I recommend using a PGP package from [https://launchpad.net/~ondrej/+archive/php5](https://launchpad.net/~ondrej/+archive/php5). You can do so by adding  ```apt::ppa { 'ppa:ondrej/php5': }``` to *manifests/php.pp*. Make sure to choose the correct repository for the PHP version you want to use.
+To change from PHP 5.5 I recommend using a PGP package from [https://launchpad.net/~ondrej/+archive/php5](https://launchpad.net/~ondrej/+archive/php5). You can do so by adding ```apt::ppa { 'ppa:ondrej/php5': }``` to *manifests/php.pp*. Make sure to choose the correct repository for the PHP version you want to use.
 
-Note this file can also be used to change any php.ini value following the example included in the file.
+Note: this file can also be used to change any php.ini value following the example included in the file.
 
 ###Database Access
 
-You can access the database via ssh tunnel into the machine using the *local.vagrant* hostname and the username *vagrant* and the password *vagrant* for ssh and the username *root* without a password for MySQL
+You can access the database via ssh tunnel into the machine using the *local.vagrant* hostname, the username *vagrant*, the password *vagrant* for ssh, and the username *root* without a password for MySQL.
 
 In addition to the *root* MySQL account the account *username* with the password *password* has also been created and has been granted all privileges.
 
