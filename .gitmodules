@@ -73,3 +73,6 @@
 [submodule "sites/wordpress/trunk/htdocs/wordpress"]
 	path = sites/wordpress/trunk/htdocs/wordpress
 	url = git@github.com:WordPress/WordPress.git
+[submodule "sites/wordpress/content/plugins/whats-running"]
+	path = sites/wordpress/content/plugins/whats-running
+	url = git@github.com:szepeviktor/whats-running.git
