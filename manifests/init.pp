@@ -188,7 +188,6 @@ php::augeas {
 }
 
 class { 'wp-cli': }
-class{ 'phpbrew': }
 
 class { 'postfix':
 	relayhost      => '127.0.0.1',
