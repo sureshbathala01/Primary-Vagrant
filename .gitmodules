@@ -73,3 +73,6 @@
 [submodule "sites/wordpress/content/plugins/whats-running"]
 	path = sites/wordpress/content/plugins/whats-running
 	url = git@github.com:szepeviktor/whats-running.git
+[submodule "sites/wordpress/content/plugins/query-monitor"]
+	path = sites/wordpress/content/plugins/query-monitor
+	url = git@github.com:johnbillion/query-monitor.git
