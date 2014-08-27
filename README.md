@@ -76,13 +76,11 @@ Once Vagrant is installed you'll want two plugins to update your local hosts fil
 The following websites come pre-configured in the system:
 
 * [The mail menu](http://pv)
-
 * WordPress (latest stable release) at [http://wordpress.stable.pv](http://wordpress.stable.pv)
 * WordPress Trunk at [http://wordpress.trunk.pv](http://wordpress.trunk.pv)
 * WordPress Core Development at [http://wordpress.core.pv](http://wordpress.core.pv)
 * Search Replace DB [https://www.virtualbox.org/wiki/Downloads](https://replacedb.pv)
-
-*Note: WordPress Core dev is taken from git://develop.git.wordpress.org/. Only the src folder is mapped. You can manually set up a build site if desired.
+* Note: WordPress Core dev is taken from git://develop.git.wordpress.org/. Only the src folder is mapped. You can manually set up a build site if desired.
 
 ###Configure your Apache VirtualHosts
 
