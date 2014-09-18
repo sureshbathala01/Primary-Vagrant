@@ -29,6 +29,7 @@ The repository contains a basic Vagrant configuration that will configure the fo
 * [webgrind](https://github.com/jokkedk/webgrind/)
 * [oh-my-zsh](http://ohmyz.sh)
 * [MailCatcher](http://mailcatcher.me)
+* Test data from [WP Test](http://wptest.io)
 
 ##Contributors
 
@@ -123,6 +124,9 @@ To create a new database use the following example to edit manifests/mysql.pp
 ###Postfix Configuration
 
 Postfix is configured and set to use your host computer as a mail relay. To receive messages you can use the built in [MailCatcher installation](http://mailcatcher.pv:1080) (this will prevent your real SMTP mail server and mailbox from getting too much abuse).
+
+###WP Test Data
+WP Test can be installed via the instructions at (https://github.com/manovotny/wptest). Test data is found in *[Primary Vagrant Folder]/sites/wordpress/wptest* on your host machine.
 
 ##Note
 
