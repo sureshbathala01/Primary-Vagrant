@@ -76,3 +76,6 @@
 [submodule "sites/wordpress/content/plugins/query-monitor"]
 	path = sites/wordpress/content/plugins/query-monitor
 	url = git@github.com:johnbillion/query-monitor.git
+[submodule "sites/wordpress/wptest"]
+	path = sites/wordpress/wptest
+	url = git@github.com:manovotny/wptest.git
