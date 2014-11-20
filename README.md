@@ -30,6 +30,9 @@ The repository contains a basic Vagrant configuration that will configure the fo
 * [oh-my-zsh](http://ohmyz.sh)
 * [MailCatcher](http://mailcatcher.me)
 * Test data from [WP Test](http://wptest.io)
+* Composer
+* GIT
+* Subversion
 
 ##Contributors
 
