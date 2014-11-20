@@ -79,3 +79,6 @@
 [submodule "sites/wordpress/wptest"]
 	path = sites/wordpress/wptest
 	url = git@github.com:manovotny/wptest.git
+[submodule "modules/composer"]
+	path = modules/composer
+	url = git@github.com:willdurand/puppet-composer.git
