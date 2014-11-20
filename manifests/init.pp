@@ -193,6 +193,12 @@ php::augeas {
 
 class { 'wp-cli': }
 
+class { 'composer':
+	command_name => 'composer',
+	target_dir   => '/usr/local/bin',
+	auto_update  => true,
+}
+
 class { 'postfix':
 	relayhost      => '127.0.0.1',
 	relayhost_port => '1025',
