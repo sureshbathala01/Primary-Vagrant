@@ -54,8 +54,8 @@ Current development of the project is focusing on instituting multiple PHP versi
 * phpmyadmin.pv - phpMyAdmin
 * replacedb.pv - Search Replace DB
 * wordpress.core.pv - WordPress Development (for core dev)
-* wordpress.legacy.pv - Last version of WordPress (currently 3.9.2)
-* wordpress.stable.pv - latest WordPress stable (currently 4.0)
+* wordpress.legacy.pv - Last version of WordPress (currently 3.9.3)
+* wordpress.stable.pv - latest WordPress stable (currently 4.0.1)
 * wordpress.trunk.pv - WordPress trunk
 * webgrind.pv - webgrind
 * mailcatcher.pv - MailCatcher
