@@ -16,6 +16,14 @@ package { 'vim':
 	ensure => 'installed'
 }
 
+package { 'git':
+	ensure => 'installed'
+}
+
+package { 'subversion':
+	ensure => 'installed'
+}
+
 package { 'ntp':
 	ensure => 'installed'
 }
