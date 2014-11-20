@@ -82,3 +82,6 @@
 [submodule "modules/composer"]
 	path = modules/composer
 	url = git@github.com:willdurand/puppet-composer.git
+[submodule "modules/wget"]
+	path = modules/wget
+	url = git@github.com:maestrodev/puppet-wget.git
