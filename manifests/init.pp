@@ -27,6 +27,10 @@ class { 'apache': }
 
 include apache::ssl
 
+apache::dotconf { 'fqdn':
+	content => template( '/var/vagrant/conf/fqdn.conf.erb' )
+}
+
 apache::vhost { 'pv':
 	docroot => '/var/www/pv',
 }
