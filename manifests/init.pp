@@ -212,9 +212,7 @@ class { 'postfix':
 	relayhost_port => '1025',
 }
 
-class { 'mysql::server':
-	remove_default_accounts => true,
-}
+class { 'mysql::server': }
 
 mysql_database { 'wordpress.stable.pv':
 	ensure  => 'present',
