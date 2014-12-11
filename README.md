@@ -9,7 +9,7 @@ I've done some heavy updates to Primary Vagrant to utilize Ubuntu 14.04 as well 
 
 Primary Vagrant is intended for WordPress plugin, theme, and core development, as well as general PHP development, and can be used as a replacement for local development stacks such as MAMP, XAMPP, and others.
 
-Although [Varying Vagrant Vagrants](https://github.com/Varying-Vagrant-Vagrants/VVV) by 10up is great (and I still use it for NGINX work), I wanted a few major changes. First, I wanted Apache instead of NGINX and, second, I wanted to use Puppet instead of Bash. Using VVV and Puppet as a base this repository attempts to address their shortcomings for my own work with a Vagrant configuration that is ready to go for WordPress plugin or theme development.
+Although [Varying Vagrant Vagrants](https://github.com/Varying-Vagrant-Vagrants/VVV) by 10up is great (and I still use it for NGINX work), I wanted a few major changes. First, I wanted Apache instead of NGINX and, second, I wanted to use Puppet instead of Bash. Using VVV and Puppet as a base, this repository attempts to address their shortcomings for my own work with a Vagrant configuration that is ready to go for WordPress plugin or theme development.
 
 The repository contains a basic Vagrant configuration that will configure the following goodies:
 
@@ -55,7 +55,7 @@ Current development of the project is focusing on instituting multiple PHP versi
 * replacedb.pv - Search Replace DB
 * wordpress.core.pv - WordPress Development (for core dev)
 * wordpress.legacy.pv - Last version of WordPress (currently 3.9.3)
-* wordpress.stable.pv - latest WordPress stable (currently 4.0.1)
+* wordpress.stable.pv - Latest WordPress stable (currently 4.0.1)
 * wordpress.trunk.pv - WordPress trunk
 * webgrind.pv - webgrind
 * mailcatcher.pv - MailCatcher
@@ -73,24 +73,25 @@ Once Vagrant is installed you'll want two plugins to update your local hosts fil
 ###Launch your VM
 
 1. Download or clone this repo on your local machine
-2. run ```vagrant up``` from the folder where you're storing this repository
+2. Run ```vagrant up``` from the folder where you're storing this repository
 
 ###Preconfigured Sites
 
 The following websites come pre-configured in the system:
 
-* [The mail menu](http://pv)
+* [Default menu](http://pv)
 * WordPress (latest stable release) at [http://wordpress.stable.pv](http://wordpress.stable.pv)
 * WordPress Trunk at [http://wordpress.trunk.pv](http://wordpress.trunk.pv)
 * WordPress Core Development at [http://wordpress.core.pv](http://wordpress.core.pv)
-* Search Replace DB [https://www.virtualbox.org/wiki/Downloads](https://replacedb.pv)
-* Note: WordPress Core dev is taken from git://develop.git.wordpress.org/. Only the src folder is mapped. You can manually set up a build site if desired.
+* Search Replace DB [https://replacedb.pv](https://replacedb.pv)
+
+*Note: WordPress Core dev is taken from git://develop.git.wordpress.org/. Only the src folder is mapped. You can manually set up a build site if desired.
 
 ###Configure your Apache VirtualHosts
 
 Edit the file **Vagrantfile** and add paths to your own websites as well as a host entry to reach it.
 
-Edit **manifests/whosts.pp**. This is where you define virtualhosts and databases. Copy what is there and ask me if you have any questions.
+Edit **manifests/vhosts.pp**. This is where you define virtualhosts and databases. Copy what is there and ask me if you have any questions.
 
 Example:
 
@@ -102,7 +103,7 @@ Example:
 	template                    => '/var/vagrant/conf/vhost.conf.erb',
 }```
 
-*Note: I've provided a top-level wildcard SSL certificatate. No further SSL certificate should be needed.
+*Note: I've provided a top-level wildcard SSL certificate. No further SSL certificate should be needed.
 
 ###Change PHP Versions
 
