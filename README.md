@@ -31,6 +31,7 @@ The repository contains a basic Vagrant configuration that will configure the fo
 * [MailCatcher](http://mailcatcher.me)
 * Test data from [WP Test](http://wptest.io)
 * Composer
+* node.js
 * GIT
 * Subversion
 
@@ -131,6 +132,19 @@ Postfix is configured and set to use your host computer as a mail relay. To rece
 
 ###WP Test Data
 WP Test can be installed via the instructions at (https://github.com/manovotny/wptest). Test data is found in *[Primary Vagrant Folder]/sites/wordpress/wptest* on your host machine.
+
+###node.js
+
+The latest stable node.js version is installed, if you want to pre-installed packages just add them to *manifests/nodejs.pp*.
+
+Example:
+
+```
+package { 'ungit':
+  provider => npm,
+  require  => Class['nodejs']
+}
+```
 
 ##Note
 
