@@ -207,6 +207,10 @@ class { 'composer':
 	auto_update  => true,
 }
 
+class { 'nodejs':
+	version => 'stable',
+}
+
 class { 'postfix':
 	relayhost      => '127.0.0.1',
 	relayhost_port => '1025',
@@ -262,6 +266,21 @@ class { 'mailcatcher': }
 file { '/var/www/phpmyadmin.pv/phpmyadmin/config.inc.php':
 	ensure => 'link',
 	target => '/var/www/phpmyadmin.pv/config.inc.php',
+}
+
+file { '.zshrc':
+	path    => '/home/vagrant/.zshrc',
+	ensure  => file,
+	owner => 'vagrant',
+	group => 'vagrant',
+	source => '/var/vagrant/conf/.zshrc',
+}
+
+file { 'sudoers':
+	path    => '/etc/sudoers',
+	ensure  => file,
+	mode => '440',
+	source => '/var/vagrant/conf/sudoers',
 }
 
 import 'custom/*.pp'
