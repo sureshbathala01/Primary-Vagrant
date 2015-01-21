@@ -135,7 +135,7 @@ WP Test can be installed via the instructions at (https://github.com/manovotny/w
 
 ###node.js
 
-The latest stable node.js version is installed, if you want to pre-installed packages just add them to *manifests/nodejs.pp*.
+The latest stable node.js version is installed, if you want to pre-install packages just add them to *manifests/nodejs.pp*.
 
 Example:
 
@@ -148,4 +148,4 @@ package { 'ungit':
 
 ##Note
 
-This server configuration is designed for developmental use only. Please don't put it on a production server as some of these settings would cause serious security issues.
+This server configuration is designed for development use only. Please don't put it on a production server as some of these settings would cause serious security issues.
