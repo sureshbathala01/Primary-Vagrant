@@ -123,7 +123,7 @@ To create a new database use the following example to edit manifests/mysql.pp
 ```mysql_database { 'database_name':
      ensure  => 'present',
      charset => 'utf8',
-     collate => 'utf8_swedish_ci',
+     collate => 'utf8_general_ci',
 }```
 
 ###Postfix Configuration
