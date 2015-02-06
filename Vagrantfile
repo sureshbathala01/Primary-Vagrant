@@ -1,13 +1,13 @@
 # Note: that much of the documentation in this file is from Varying Vagrant Vagrants, the original base for this project
 
 Vagrant.configure("2") do |config|
-	
+
 	# Store the current version of Vagrant for use in conditionals when dealing
 	# with possible backward compatible issues.
 	vagrant_version = Vagrant::VERSION.sub(/^v/, '')
 
 	# Default Ubuntu Box
-	# 
+	#
 	# This box is provided directly by Canonical and is updated almost nightly. Currently it is
 	# configured to use Ubuntu 12.04 x64. For a full list of boxes provided by Canonical visit
 	# http://cloud-images.ubuntu.com/vagrant/
@@ -25,7 +25,7 @@ Vagrant.configure("2") do |config|
 	# If you are running more than one VM through Virtualbox, different subnets should be used
 	# for those as well. This includes other Vagrant boxes.
 	config.vm.network :private_network, ip: "192.168.13.101"
-	
+
 	# Local Machine Hosts
 	#
 	# If the Vagrant plugin hostsupdater (https://github.com/cogitatio/vagrant-hostsupdater) is
@@ -34,7 +34,7 @@ Vagrant.configure("2") do |config|
 	# required to enter a password for Vagrant to access your hosts file.
 	if defined? VagrantPlugins::HostsUpdater
 		config.hostsupdater.aliases = [
-		    "mailcatcher.pv",
+			"mailcatcher.pv",
 			"phpmyadmin.pv",
 			"replacedb.pv",
 			"wordpress.stable.pv",
@@ -68,9 +68,9 @@ Vagrant.configure("2") do |config|
 	# environment.
 
 	# /var/www/
-	# 
+	#
 	# For each project you're working on map a folder to it. The first argument is the location
-	# on the host computer. The second argument is the location on the guest matching. Finally the 
+	# on the host computer. The second argument is the location on the guest matching. Finally the
 	# 3rd arguement is a unique ID given to each folder mapped
 	config.vm.synced_folder "sites/default", "/var/www/pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "sites/wordpress/stable", "/var/www/wordpress.stable.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
@@ -85,7 +85,7 @@ Vagrant.configure("2") do |config|
 	config.vm.synced_folder "sites/webgrind", "/var/www/webgrind.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 
 	# /Vagrant Data
-	# 
+	#
 	# Specify a folder for various vagrant data. A MySQL data folder would be appropriate here (for example).
 	config.vm.synced_folder "xdebug", "/var/xdebug", :mount_options => [ "dmode=777", "fmode=777" ]
  	config.vm.synced_folder "ssl", "/etc/apache2/ssl", :mount_options => [ "dmode=777", "fmode=777" ]
@@ -94,12 +94,12 @@ Vagrant.configure("2") do |config|
 
  	# Custom Mappings
  	#
- 	# Use this section to specifiy custom mapptings for your own development.
+ 	# Use this section to specify custom mapptings for your own development.
 
 	# Provisioning
 	#
 	# Process one or more provisioning scripts depending on the existence of custom files.
-	# 
+	#
 	# Provisioning uses the Puppet configuration tool (http://puppetlabs.com/). This tool
 	# relies on modules in the modules/ folder which are configures in manifests/default.pp.
 	config.vm.provision "puppet", run: "always" do |puppet|
