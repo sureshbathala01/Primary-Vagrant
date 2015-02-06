@@ -96,13 +96,15 @@ Edit **manifests/vhosts.pp**. This is where you define virtualhosts and database
 
 Example:
 
-```apache::vhost { 'mysite.pv':
-	docroot       				=> 'path/to/your/site',
-	directory					=> 'path/to/your/site',
-	directory_allow_override	=> 'All',
-	ssl							=> true,
-	template                    => '/var/vagrant/conf/vhost.conf.erb',
-}```
+```
+apache::vhost { 'mysite.pv':
+	docroot							=> 'path/to/your/site',
+	directory						=> 'path/to/your/site',
+	directory_allow_override		=> 'All',
+	ssl								=> true,
+	template						=> '/var/vagrant/conf/vhost.conf.erb',
+}
+```
 
 *Note: I've provided a top-level wildcard SSL certificate. No further SSL certificate should be needed.
 
@@ -120,11 +122,13 @@ In addition to the *root* MySQL account the account *username* with the password
 
 To create a new database use the following example to edit manifests/mysql.pp
 
-```mysql_database { 'database_name':
-     ensure  => 'present',
-     charset => 'utf8',
-     collate => 'utf8_swedish_ci',
-}```
+```
+mysql_database { 'database_name':
+	ensure  => 'present',
+	charset => 'utf8',
+	collate => 'utf8_swedish_ci',
+}
+```
 
 ###Postfix Configuration
 

@@ -221,28 +221,28 @@ class { 'mysql::server': }
 mysql_database { 'wordpress.stable.pv':
 	ensure  => 'present',
 	charset => 'utf8',
-	collate => 'utf8_swedish_ci',
+	collate => 'utf8_general_ci',
 	require => Class['mysql::server'],
 }
 
 mysql_database { 'wordpress.legacy.pv':
 	ensure  => 'present',
 	charset => 'utf8',
-	collate => 'utf8_swedish_ci',
+	collate => 'utf8_general_ci',
 	require => Class['mysql::server'],
 }
 
 mysql_database { 'wordpress.trunk.pv':
 	ensure  => 'present',
 	charset => 'utf8',
-	collate => 'utf8_swedish_ci',
+	collate => 'utf8_general_ci',
 	require => Class['mysql::server'],
 }
 
 mysql_database { 'wordpress.core.pv':
 	ensure  => 'present',
 	charset => 'utf8',
-	collate => 'utf8_swedish_ci',
+	collate => 'utf8_general_ci',
 	require => Class['mysql::server'],
 }
 
