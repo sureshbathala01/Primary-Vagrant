@@ -73,7 +73,10 @@ Once Vagrant is installed you'll want two plugins to update your local hosts fil
 
 ###Launch your VM
 
-1. Download or clone this repo on your local machine
+1. Download or clone this repo onto your local machine
+
+`$ git clone --recursive git@github.com:ChrisWiegman/Primary-Vagrant.git`	
+
 2. Run ```vagrant up``` from the folder where you're storing this repository
 
 ###Preconfigured Sites
