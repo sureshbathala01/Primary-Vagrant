@@ -154,6 +154,24 @@ package { 'ungit':
 }
 ```
 
+###Keep your fork up to date with the PV `upstream/master` repo 
+
+* Configure a remote that points to the upstream repository in Git: `git remote add upstream https://github.com/ChrisWiegman/Primary-Vagrant.git` 
+
+See: https://help.github.com/articles/configuring-a-remote-for-a-fork 
+
+The following commands should bring you up to speed: 
+* `git checkout <localbranch>`
+* `git stash` -- save local changes
+* `git pull https://github.com/ChrisWiegman/Primary-Vagrant.git upstream/master`
+* `git submodule update --recursive`
+* `git stash pop` -- saved local changes are available to be committed 
+* Use `git merge tool` if you have any conflicts 
+
+See: https://www.atlassian.com/git/tutorials/syncing/git-pull 
+
+Now, you will be free to PR against Primary Vagrant.
+
 ##Note
 
 This server configuration is designed for development use only. Please don't put it on a production server as some of these settings would cause serious security issues.
