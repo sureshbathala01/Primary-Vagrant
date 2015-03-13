@@ -246,6 +246,13 @@ mysql_database { 'wordpress.core.pv':
 	require => Class['mysql::server'],
 }
 
+mysql_database { 'wordpress.core.pv.tests':
+	ensure  => 'present',
+	charset => 'utf8',
+	collate => 'utf8_general_ci',
+	require => Class['mysql::server'],
+}
+
 mysql_user { 'username@localhost':
 	ensure        => 'present',
 	require       => Class['mysql::server'],
