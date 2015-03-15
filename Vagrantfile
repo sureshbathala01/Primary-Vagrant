@@ -1,4 +1,4 @@
-# Note: that much of the documentation in this file is from Varying Vagrant Vagrants, the original base for this project
+# Note: that much of the documentation and code in this file is from Varying Vagrant Vagrants, the original base for this project
 
 Vagrant.configure("2") do |config|
 
@@ -108,6 +108,5 @@ Vagrant.configure("2") do |config|
 		puppet.module_path = "modules"
 		puppet.facter = { "fqdn" => "pv" }
 	end
-
 
 end
