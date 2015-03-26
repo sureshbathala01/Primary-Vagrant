@@ -4,3 +4,4 @@ mysql
 *.log
 .vagrant
 .idea
+sites/wordpress/content/plugins
