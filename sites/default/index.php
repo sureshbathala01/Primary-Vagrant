@@ -27,9 +27,9 @@
 
 	<ul>
 		<li><a href="http://core.wordpress.pv" target="_blank">WordPress Core (src folder for WordPress core development)</a></li>
-		<li><a href="http://legacy.wordpress.pv/wordpress" target="_blank">WordPress Legacy Branch (old version - 4.0.1)</a></li>
-		<li><a href="http://stable.wordpress.pv/wordpress" target="_blank">WordPress Stable Branch (current version - 4.1.1)</a></li>
-		<li><a href="http://trunk.wordpress.pv/wordpress" target="_blank">WordPress Trunk (development) Version</a></li>
+		<li><a href="http://legacy.wordpress.pv" target="_blank">WordPress Legacy Branch (old version - 4.0.1)</a></li>
+		<li><a href="http://stable.wordpress.pv" target="_blank">WordPress Stable Branch (current version - 4.1.1)</a></li>
+		<li><a href="http://trunk.wordpress.pv" target="_blank">WordPress Trunk (development) Version</a></li>
 	</ul>
 
 </body>
