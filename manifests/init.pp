@@ -222,7 +222,7 @@ class { 'postfix':
 
 class { 'mysql::server': }
 
-mysql_database { 'stable.stable.pv':
+mysql_database { 'stable.wordpress.pv':
 	ensure  => 'present',
 	charset => 'utf8',
 	collate => 'utf8_general_ci',
