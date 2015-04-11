@@ -54,10 +54,10 @@ Current development of the project is focusing on instituting multiple PHP versi
 * pv - Default menu
 * phpmyadmin.pv - phpMyAdmin
 * replacedb.pv - Search Replace DB
-* wordpress.core.pv - WordPress Development (for core dev)
-* wordpress.legacy.pv - Last version of WordPress (currently 4.0.1)
-* wordpress.stable.pv - Latest WordPress stable (currently 4.1.1)
-* wordpress.trunk.pv - WordPress trunk
+* core.wordpress.pv - WordPress Development (for core dev)
+* legacy.wordpress.pv - Last version of WordPress (currently 4.0.1)
+* stable.wordpress.pv - Latest WordPress stable (currently 4.1.1)
+* trunk.wordpress.pv - WordPress trunk
 * webgrind.pv - webgrind
 * mailcatcher.pv - MailCatcher
 
@@ -84,9 +84,10 @@ Once Vagrant is installed you'll want two plugins to update your local hosts fil
 The following websites come pre-configured in the system:
 
 * [Default menu](http://pv)
-* WordPress (latest stable release) at [http://wordpress.stable.pv](http://wordpress.stable.pv)
-* WordPress Trunk at [http://wordpress.trunk.pv](http://wordpress.trunk.pv)
-* WordPress Core Development at [http://wordpress.core.pv](http://wordpress.core.pv)
+* WordPress (last major release) at [http://legacy.wordpress.pv](http://legacy.wordpress.pv)
+* WordPress (latest stable release) at [http://stable.wordpress.pv](http://stable.wordpress.pv)
+* WordPress Trunk at [http://trunk.wordpress.pv](http://trunk.wordpress.pv)
+* WordPress Core Development at [http://core.wordpress.pv](http://core.wordpress.pv)
 * Search Replace DB [https://replacedb.pv](https://replacedb.pv)
 
 *Note: WordPress Core dev is taken from git://develop.git.wordpress.org/. Only the src folder is mapped. You can manually set up a build site if desired.

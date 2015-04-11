@@ -41,6 +41,10 @@ Vagrant.configure("2") do |config|
 			"wordpress.core.pv",
 			"wordpress.legacy.pv",
 			"wordpress.trunk.pv",
+			"stable.wordpress.pv",
+			"core.wordpress.pv",
+			"trunk.wordpress.pv",
+			"legacy.wordpress.pv",
 			"webgrind.pv",
 		]
 	end
@@ -73,13 +77,13 @@ Vagrant.configure("2") do |config|
 	# on the host computer. The second argument is the location on the guest matching. Finally the
 	# 3rd arguement is a unique ID given to each folder mapped
 	config.vm.synced_folder "sites/default", "/var/www/pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "sites/wordpress/stable", "/var/www/wordpress.stable.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "sites/wordpress/legacy", "/var/www/wordpress.legacy.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "sites/wordpress/trunk", "/var/www/wordpress.trunk.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-    config.vm.synced_folder "sites/wordpress/core", "/var/www/wordpress.core.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "sites/wordpress/content", "/var/www/wordpress.stable.pv/htdocs/content", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "sites/wordpress/content", "/var/www/wordpress.trunk.pv/htdocs/content", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "sites/wordpress/content", "/var/www/wordpress.legacy.pv/htdocs/content", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "sites/wordpress/stable", "/var/www/stable.wordpress.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "sites/wordpress/legacy", "/var/www/legacy.wordpress.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "sites/wordpress/trunk", "/var/www/trunk.wordpress.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+    config.vm.synced_folder "sites/wordpress/core", "/var/www/core.wordpress.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "sites/wordpress/content", "/var/www/stable.wordpress.pv/htdocs/content", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "sites/wordpress/content", "/var/www/trunk.wordpress.pv/htdocs/content", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "sites/wordpress/content", "/var/www/legacy.wordpress.pv/htdocs/content", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "sites/Search-Replace-DB", "/var/www/replacedb.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "sites/phpmyadmin", "/var/www/phpmyadmin.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "sites/webgrind", "/var/www/webgrind.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]

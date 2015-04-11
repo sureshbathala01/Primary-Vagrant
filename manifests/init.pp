@@ -58,33 +58,37 @@ apache::vhost { 'replacedb.pv':
 	template                 => '/var/vagrant/conf/vhost.conf.erb',
 }
 
-apache::vhost { 'wordpress.core.pv':
-	docroot                  => '/var/www/wordpress.core.pv/src',
-	directory                => '/var/www/wordpress.core.pv/src',
+apache::vhost { 'core.wordpress.pv':
+	serveraliases            => 'wordpress.core.pv',
+	docroot                  => '/var/www/core.wordpress.pv/src',
+	directory                => '/var/www/core.wordpress.pv/src',
 	directory_allow_override => 'All',
 	ssl                      => true,
 	template                 => '/var/vagrant/conf/vhost.conf.erb',
 }
 
-apache::vhost { 'wordpress.legacy.pv':
-	docroot                  => '/var/www/wordpress.legacy.pv/htdocs',
-	directory                => '/var/www/wordpress.legacy.pv/htdocs',
+apache::vhost { 'legacy.wordpress.pv':
+	serveraliases            => 'wordpress.legacy.pv',
+	docroot                  => '/var/www/legacy.wordpress.pv/htdocs',
+	directory                => '/var/www/legacy.wordpress.pv/htdocs',
 	directory_allow_override => 'All',
 	ssl                      => true,
 	template                 => '/var/vagrant/conf/vhost.conf.erb',
 }
 
-apache::vhost { 'wordpress.stable.pv':
-	docroot                  => '/var/www/wordpress.stable.pv/htdocs',
-	directory                => '/var/www/wordpress.stable.pv/htdocs',
+apache::vhost { 'stable.wordpress.pv':
+	serveraliases            => 'wordpress.stable.pv',
+	docroot                  => '/var/www/stable.wordpress.pv/htdocs',
+	directory                => '/var/www/stable.wordpress.pv/htdocs',
 	directory_allow_override => 'All',
 	ssl                      => true,
 	template                 => '/var/vagrant/conf/vhost.conf.erb',
 }
 
-apache::vhost { 'wordpress.trunk.pv':
-	docroot                  => '/var/www/wordpress.trunk.pv/htdocs',
-	directory                => '/var/www/wordpress.trunk.pv/htdocs',
+apache::vhost { 'trunk.wordpress.pv':
+	serveraliases            => 'wordpress.trunk.pv',
+	docroot                  => '/var/www/trunk.wordpress.pv/htdocs',
+	directory                => '/var/www/trunk.wordpress.pv/htdocs',
 	directory_allow_override => 'All',
 	ssl                      => true,
 	template                 => '/var/vagrant/conf/vhost.conf.erb',
@@ -218,35 +222,35 @@ class { 'postfix':
 
 class { 'mysql::server': }
 
-mysql_database { 'wordpress.stable.pv':
+mysql_database { 'stable.stable.pv':
 	ensure  => 'present',
 	charset => 'utf8',
 	collate => 'utf8_general_ci',
 	require => Class['mysql::server'],
 }
 
-mysql_database { 'wordpress.legacy.pv':
+mysql_database { 'legacy.wordpress.pv':
 	ensure  => 'present',
 	charset => 'utf8',
 	collate => 'utf8_general_ci',
 	require => Class['mysql::server'],
 }
 
-mysql_database { 'wordpress.trunk.pv':
+mysql_database { 'trunk.wordpress.pv':
 	ensure  => 'present',
 	charset => 'utf8',
 	collate => 'utf8_general_ci',
 	require => Class['mysql::server'],
 }
 
-mysql_database { 'wordpress.core.pv':
+mysql_database { 'core.wordpress.pv':
 	ensure  => 'present',
 	charset => 'utf8',
 	collate => 'utf8_general_ci',
 	require => Class['mysql::server'],
 }
 
-mysql_database { 'wordpress.core.pv.tests':
+mysql_database { 'tests.core.wordpress.pv':
 	ensure  => 'present',
 	charset => 'utf8',
 	collate => 'utf8_general_ci',
