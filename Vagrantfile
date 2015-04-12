@@ -108,9 +108,9 @@ Vagrant.configure("2") do |config|
 	# relies on modules in the modules/ folder which are configures in manifests/default.pp.
 	config.vm.provision "puppet", run: "always" do |puppet|
 		puppet.manifests_path = "manifests"
-		puppet.manifest_file = "init.pp"
-		puppet.module_path = "modules"
-		puppet.facter = { "fqdn" => "pv" }
+		puppet.manifest_file  = "init.pp"
+		puppet.module_path    = "modules"
+		puppet.facter         = { "fqdn" => "pv" }
 	end
 
 end
