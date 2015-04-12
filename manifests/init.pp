@@ -320,4 +320,4 @@ file { 'sudoers':
 	source  => '/var/vagrant/conf/sudoers',
 }
 
-import 'custom/*.pp'
+import 'sites/*.pp'
