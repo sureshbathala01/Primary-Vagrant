@@ -215,6 +215,10 @@ php::augeas {
 		entry   => 'XDEBUG/xdebug.var_display_max_depth',
 		value   => '-1',
 		require => Class['php'];
+	'php-memory_limit':
+		entry   => 'PHP/memory_limit',
+		value   => '256M',
+		require => Class['php'];
 	'php-post_max_size':
 		entry   => 'PHP/post_max_size',
 		value   => '100M',
