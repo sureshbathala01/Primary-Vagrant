@@ -207,6 +207,14 @@ php::augeas {
 		entry   => 'XDEBUG/xdebug.var_display_max_depth',
 		value   => '-1',
 		require => Class['php'];
+	'php-post_max_size':
+		entry   => 'PHP/post_max_size',
+		value   => '100M',
+		require => Class['php'];
+	'php-upload_max_filesize':
+		entry   => 'PHP/upload_max_filesize',
+		value   => '100M',
+		require => Class['php'];
 }
 
 class { 'wp-cli': }
