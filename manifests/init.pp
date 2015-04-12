@@ -103,9 +103,7 @@ apache::vhost { 'webgrind.pv':
 }
 
 class { 'php':
-	service             => 'apache',
-	service_autorestart => false,
-	module_prefix       => '',
+	service => 'apache'
 }
 
 class { 'php::devel':
