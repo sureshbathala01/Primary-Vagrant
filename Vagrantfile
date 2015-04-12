@@ -1,5 +1,7 @@
 # Note: much of the documentation and code in this file is from Varying Vagrant Vagrants, the original base for this project
 
+vagrant_dir = File.expand_path(File.dirname(__FILE__))
+
 Vagrant.configure("2") do |config|
 
 	# Store the current version of Vagrant for use in conditionals when dealing
@@ -30,23 +32,32 @@ Vagrant.configure("2") do |config|
 	#
 	# If the Vagrant plugin hostsupdater (https://github.com/cogitatio/vagrant-hostsupdater) is
 	# installed, the following will automatically configure your local machine's hosts file to
-	# be aware of the domains specified below. Watch the provisioning script as you may be
-	# required to enter a password for Vagrant to access your hosts file.
-	if defined? VagrantPlugins::HostsUpdater
-		config.hostsupdater.aliases = [
-			"mailcatcher.pv",
-			"phpmyadmin.pv",
-			"replacedb.pv",
-			"wordpress.stable.pv",
-			"wordpress.core.pv",
-			"wordpress.legacy.pv",
-			"wordpress.trunk.pv",
-			"stable.wordpress.pv",
-			"core.wordpress.pv",
-			"trunk.wordpress.pv",
-			"legacy.wordpress.pv",
-			"webgrind.pv",
-		]
+	# be aware of the domains specified below. Watch the provisioning script as you may need to
+	# enter a password for Vagrant to access your hosts file.
+	#
+	# By default, we'll include the domains set up by Primary Vagrant through the pv-hosts file
+	# located in the www/ directory.
+	#
+	# Other domains can be automatically added by including a vvv-hosts file containing
+	# individual domains separated by whitespace in subdirectories of www/.
+	if defined?(VagrantPlugins::HostsUpdater)
+		# Recursively fetch the paths to all vvv-hosts files under the www/ directory.
+		paths = Dir[File.join(vagrant_dir, 'www', '**', 'pv-hosts')]
+
+		# Parse the found vvv-hosts files for host names.
+		hosts = paths.map do |path|
+
+		# Read line from file and remove line breaks
+		lines = File.readlines(path).map(&:chomp)
+
+		# Filter out comments starting with "#"
+		lines.grep(/\A[^#]/)
+
+		end.flatten.uniq # Remove duplicate entries
+
+		# Pass the found host names to the hostsupdater plugin so it can perform magic.
+		config.hostsupdater.aliases = hosts
+		config.hostsupdater.remove_on_suspend = true
 	end
 
 	# Forward Agent
@@ -76,17 +87,17 @@ Vagrant.configure("2") do |config|
 	# For each project you're working on map a folder to it. The first argument is the location
 	# on the host computer. The second argument is the location on the guest matching. Finally the
 	# 3rd arguement is a unique ID given to each folder mapped
-	config.vm.synced_folder "sites/default", "/var/www/pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "sites/wordpress/stable", "/var/www/stable.wordpress.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "sites/wordpress/legacy", "/var/www/legacy.wordpress.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "sites/wordpress/trunk", "/var/www/trunk.wordpress.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-    config.vm.synced_folder "sites/wordpress/core", "/var/www/core.wordpress.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "sites/wordpress/content", "/var/www/stable.wordpress.pv/htdocs/content", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "sites/wordpress/content", "/var/www/trunk.wordpress.pv/htdocs/content", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "sites/wordpress/content", "/var/www/legacy.wordpress.pv/htdocs/content", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "sites/Search-Replace-DB", "/var/www/replacedb.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "sites/phpmyadmin", "/var/www/phpmyadmin.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "sites/webgrind", "/var/www/webgrind.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "www/sites/default/pv", "/var/www/pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "www/sites/default/wordpress/stable", "/var/www/stable.wordpress.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "www/sites/default/wordpress/legacy", "/var/www/legacy.wordpress.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "www/sites/default/wordpress/trunk", "/var/www/trunk.wordpress.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+    config.vm.synced_folder "www/sites/default/wordpress/core", "/var/www/core.wordpress.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "www/sites/default/wordpress/content", "/var/www/stable.wordpress.pv/htdocs/content", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "www/sites/default/wordpress/content", "/var/www/trunk.wordpress.pv/htdocs/content", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "www/sites/default/wordpress/content", "/var/www/legacy.wordpress.pv/htdocs/content", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "www/sites/default/Search-Replace-DB", "/var/www/replacedb.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "www/sites/default/phpmyadmin", "/var/www/phpmyadmin.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "www/sites/default/webgrind", "/var/www/webgrind.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 
 	# /Vagrant Data
 	#
