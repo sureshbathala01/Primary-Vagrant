@@ -119,10 +119,16 @@ php::module { 'cli': }
 php::module { 'curl': }
 php::module { 'gd': }
 php::module { 'imagick': }
+php::module { 'mcrypt': }
 php::module { 'apc':
 	module_prefix => 'php-'
 }
 php::pecl::module { 'xdebug': }
+
+exec { 'enabling_mcrypt':
+	command => 'php5enmod mcrypt && service apache2 reload',
+	require => Package['php5-mcrypt'],
+}
 
 php::augeas {
 	'php-xdebug.trace_enable_trigger':
