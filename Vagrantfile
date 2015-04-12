@@ -94,6 +94,8 @@ Vagrant.configure("2") do |config|
 	config.vm.synced_folder "xdebug", "/var/xdebug", :mount_options => [ "dmode=777", "fmode=777" ]
  	config.vm.synced_folder "ssl", "/etc/apache2/ssl", :mount_options => [ "dmode=777", "fmode=777" ]
  	config.vm.synced_folder "conf", "/var/vagrant/conf", :mount_options => [ "dmode=777", "fmode=777" ]
+ 	config.vm.synced_folder "mysql", "/var/vagrant/mysql", :mount_options => [ "dmode=777", "fmode=777" ]
+ 	config.vm.synced_folder "bin", "/var/vagrant/bin", :mount_options => [ "dmode=777", "fmode=777" ]
 
  	# Custom Mappings
  	#
@@ -110,6 +112,27 @@ Vagrant.configure("2") do |config|
 		puppet.manifest_file  = "init.pp"
 		puppet.module_path    = "modules"
 		puppet.facter         = { "fqdn" => "pv" }
+	end
+
+	# Vagrant Triggers
+	#
+	# If the vagrant-triggers plugin is installed, we can run various scripts on Vagrant
+	# state changes like `vagrant up`, `vagrant halt`, `vagrant suspend`, and `vagrant destroy`
+	#
+	# These scripts are run on the host machine, so we use `vagrant ssh` to tunnel back
+	# into the VM and execute things. By default, each of these scripts calls db_backup
+	# to create backups of all current databases. This can be overridden with custom
+	# scripting. See the individual files in config/homebin/ for details.
+	if defined? VagrantPlugins::Triggers
+		config.trigger.before :halt, :stdout => true do
+			run "vagrant ssh -c '/var/vagrant/bin/vagrant_halt'"
+		end
+		config.trigger.before :suspend, :stdout => true do
+			run "vagrant ssh -c '/var/vagrant/bin/vagrant_suspend'"
+		end
+		config.trigger.before :destroy, :stdout => true do
+			run "vagrant ssh -c '/var/vagrant/bin/vagrant_destroy'"
+		end
 	end
 
 end
