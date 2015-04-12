@@ -114,12 +114,14 @@ class { 'phpunit':
 	require => Class['php'],
 }
 
-php::module { 'php5-mysql': }
-php::module { 'php5-cli': }
-php::module { 'php5-curl': }
-php::module { 'php5-gd': }
-php::module { 'php5-imagick': }
-php::module { 'php-apc': }
+php::module { 'mysql': }
+php::module { 'cli': }
+php::module { 'curl': }
+php::module { 'gd': }
+php::module { 'imagick': }
+php::module { 'apc':
+	module_prefix => 'php-'
+}
 php::pecl::module { 'xdebug': }
 
 php::augeas {
