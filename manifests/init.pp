@@ -296,16 +296,16 @@ file { '/var/www/phpmyadmin.pv/phpmyadmin/config.inc.php':
 file { '.zshrc':
 	path    => '/home/vagrant/.zshrc',
 	ensure  => file,
-	owner => 'vagrant',
-	group => 'vagrant',
-	source => '/var/vagrant/conf/.zshrc',
+	owner   => 'vagrant',
+	group   => 'vagrant',
+	source  => '/var/vagrant/conf/.zshrc',
 }
 
 file { 'sudoers':
 	path    => '/etc/sudoers',
 	ensure  => file,
-	mode => '440',
-	source => '/var/vagrant/conf/sudoers',
+	mode    => '440',
+	source  => '/var/vagrant/conf/sudoers',
 }
 
 import 'custom/*.pp'
