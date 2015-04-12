@@ -1,7 +1,21 @@
-xdebug
-mysql
-.DS_Store
-*.log
-.vagrant
+# Ignore text editor files
 .idea
+*sublime*
+
+# Ignore file system files
+.DS_Store
+
+# Ignore debugging files
+xdebug
+*.log
+
+mysql
+
+# Ignore vagrant files
+.vagrant
+Customfile
+
+# Ignore changes made to sites and plugins
 sites/wordpress/content/plugins
+manifests/sites
+www
