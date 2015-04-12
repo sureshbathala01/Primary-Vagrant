@@ -19,9 +19,6 @@
 [submodule "modules/mysql"]
 	path = modules/mysql
 	url = git@github.com:puppetlabs/puppetlabs-mysql.git
-[submodule "sites/Search-Replace-DB"]
-	path = sites/Search-Replace-DB
-	url = git@github.com:interconnectit/Search-Replace-DB.git
 [submodule "modules/phpunit"]
 	path = modules/phpunit
 	url = git@github.com:ChrisWiegman/puppet-phpunit.git
