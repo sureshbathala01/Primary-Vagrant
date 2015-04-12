@@ -39,6 +39,14 @@ apache::dotconf { 'fqdn':
 	content => template( '/var/vagrant/conf/fqdn.conf.erb' )
 }
 
+apache::module { 'rewrite': }
+apache::module { 'cache': }
+apache::module { 'cgid': }
+apache::module { 'expires': }
+apache::module { 'headers': }
+apache::module { 'suexec': }
+apache::module { 'unique_id': }
+
 apache::vhost { 'pv':
 	docroot => '/var/www/pv',
 }
