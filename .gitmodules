@@ -46,39 +46,3 @@
 [submodule "modules/nodejs"]
 	path = modules/nodejs
 	url = git://github.com/willdurand/puppet-nodejs.git
-[submodule "www/sites/default/Search-Replace-DB"]
-	path = www/sites/default/Search-Replace-DB
-	url = git@github.com:interconnectit/Search-Replace-DB.git
-[submodule "www/sites/default/webgrind"]
-	path = www/sites/default/webgrind
-	url = git@github.com:jokkedk/webgrind.git
-[submodule "www/sites/default/wordpress/legacy/htdocs/wordpress"]
-	path = www/sites/default/wordpress/legacy/htdocs/wordpress
-	url = git@github.com:WordPress/WordPress.git
-[submodule "www/sites/default/wordpress/trunk/htdocs/wordpress"]
-	path = www/sites/default/wordpress/trunk/htdocs/wordpress
-	url = git@github.com:WordPress/WordPress.git
-[submodule "www/sites/default/wordpress/stable/htdocs/wordpress"]
-	path = www/sites/default/wordpress/stable/htdocs/wordpress
-	url = git@github.com:WordPress/WordPress.git
-[submodule "www/sites/default/wordpress/core"]
-	path = www/sites/default/wordpress/core
-	url = git://develop.git.wordpress.org/
-[submodule "www/sites/default/phpmyadmin/phpmyadmin"]
-	path = www/sites/default/phpmyadmin/phpmyadmin
-	url = git@github.com:phpmyadmin/phpmyadmin.git
-[submodule "www/sites/default/wordpress/content/plugins/debug-bar"]
-	path = www/sites/default/wordpress/content/plugins/debug-bar
-	url = git@github.com:wp-mirrors/debug-bar.git
-[submodule "www/sites/default/wordpress/content/plugins/whats-running"]
-	path = www/sites/default/wordpress/content/plugins/whats-running
-	url = git@github.com:szepeviktor/whats-running.git
-[submodule "www/sites/default/wordpress/content/plugins/query-monitor"]
-	path = www/sites/default/wordpress/content/plugins/query-monitor
-	url = git@github.com:johnbillion/query-monitor.git
-[submodule "www/sites/default/wordpress/content/wptest"]
-	path = www/sites/default/wordpress/content/wptest
-	url = git@github.com:manovotny/wptest.git
-[submodule "www/sites/default/wordpress/content/plugins/heartbeat-control"]
-	path = www/sites/default/wordpress/content/plugins/heartbeat-control
-	url = git@github.com:JeffMatson/heartbeat-control.git
