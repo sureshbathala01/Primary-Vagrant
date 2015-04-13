@@ -46,3 +46,39 @@
 [submodule "modules/nodejs"]
 	path = modules/nodejs
 	url = git://github.com/willdurand/puppet-nodejs.git
+[submodule "www/default/Search-Replace-DB"]
+	path = www/default/Search-Replace-DB
+	url = git@github.com:interconnectit/Search-Replace-DB.git
+[submodule "www/default/webgrind"]
+	path = www/default/webgrind
+	url = git@github.com:jokkedk/webgrind.git
+[submodule "www/default/wordpress/legacy/htdocs/wordpress"]
+	path = www/default/wordpress/legacy/htdocs/wordpress
+	url = git@github.com:WordPress/WordPress.git
+[submodule "www/default/wordpress/trunk/htdocs/wordpress"]
+	path = www/default/wordpress/trunk/htdocs/wordpress
+	url = git@github.com:WordPress/WordPress.git
+[submodule "www/default/wordpress/stable/htdocs/wordpress"]
+	path = www/default/wordpress/stable/htdocs/wordpress
+	url = git@github.com:WordPress/WordPress.git
+[submodule "www/default/wordpress/core"]
+	path = www/default/wordpress/core
+	url = git://develop.git.wordpress.org/
+[submodule "www/default/phpmyadmin/phpmyadmin"]
+	path = www/default/phpmyadmin/phpmyadmin
+	url = git@github.com:phpmyadmin/phpmyadmin.git
+[submodule "www/default/wordpress/content/plugins/debug-bar"]
+	path = www/default/wordpress/content/plugins/debug-bar
+	url = git@github.com:wp-mirrors/debug-bar.git
+[submodule "www/default/wordpress/content/plugins/whats-running"]
+	path = www/default/wordpress/content/plugins/whats-running
+	url = git@github.com:szepeviktor/whats-running.git
+[submodule "www/default/wordpress/content/plugins/query-monitor"]
+	path = www/default/wordpress/content/plugins/query-monitor
+	url = git@github.com:johnbillion/query-monitor.git
+[submodule "www/default/wordpress/content/plugins/heartbeat-control"]
+	path = www/default/wordpress/content/plugins/heartbeat-control
+	url = git@github.com:JeffMatson/heartbeat-control.git
+[submodule "www/default/wordpress/content/wptest"]
+	path = www/default/wordpress/content/wptest
+	url = git@github.com:manovotny/wptest.git
