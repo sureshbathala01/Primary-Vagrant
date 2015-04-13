@@ -113,7 +113,9 @@ Vagrant.configure("2") do |config|
 	# Use this to insert your own (and possibly rewrite) Vagrant config lines. Helpful
 	# for mapping additional drives. If a file 'mappings' exists in the www folder
 	# it will be evaluated as ruby inline as it loads.
-	eval(IO.read(File.join(vagrant_dir, 'www', 'mappings')), binding)
+	if File.exists?(File.join(vagrant_dir,'www', 'mappings')) then
+		eval(IO.read(File.join(vagrant_dir, 'www', 'mappings')), binding)
+	end
 
 	# Provisioning
 	#
