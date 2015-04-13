@@ -79,3 +79,6 @@
 [submodule "www/sites/default/wordpress/content/wptest"]
 	path = www/sites/default/wordpress/content/wptest
 	url = git@github.com:manovotny/wptest.git
+[submodule "www/sites/default/wordpress/content/plugins/heartbeat-control"]
+	path = www/sites/default/wordpress/content/plugins/heartbeat-control
+	url = git@github.com:JeffMatson/heartbeat-control.git
