@@ -108,9 +108,12 @@ Vagrant.configure("2") do |config|
  	config.vm.synced_folder "mysql", "/var/vagrant/mysql", :mount_options => [ "dmode=777", "fmode=777" ]
  	config.vm.synced_folder "bin", "/var/vagrant/bin", :mount_options => [ "dmode=777", "fmode=777" ]
 
- 	# Custom Mappings
- 	#
- 	# Use this section to specify custom mapptings for your own development.
+	# Custom Mappings - POSSIBLY UNSTABLE
+	#
+	# Use this to insert your own (and possibly rewrite) Vagrant config lines. Helpful
+	# for mapping additional drives. If a file 'mappings' exists in the www folder
+	# it will be evaluated as ruby inline as it loads.
+	eval(IO.read(File.join(vagrant_dir, 'www', 'mappings')), binding)
 
 	# Provisioning
 	#
