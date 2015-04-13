@@ -76,7 +76,7 @@ Vagrant.configure("2") do |config|
 	config.vm.synced_folder "sites/wordpress/stable", "/var/www/wordpress.stable.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "sites/wordpress/legacy", "/var/www/wordpress.legacy.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "sites/wordpress/trunk", "/var/www/wordpress.trunk.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-    config.vm.synced_folder "sites/wordpress/core", "/var/www/wordpress.core.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+    	config.vm.synced_folder "sites/wordpress/core", "/var/www/wordpress.core.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "sites/wordpress/content", "/var/www/wordpress.stable.pv/htdocs/content", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "sites/wordpress/content", "/var/www/wordpress.trunk.pv/htdocs/content", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "sites/wordpress/content", "/var/www/wordpress.legacy.pv/htdocs/content", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
