@@ -136,6 +136,7 @@ php::pecl::module { 'xdebug': }
 exec { 'enabling_mcrypt':
 	command => 'php5enmod mcrypt && service apache2 reload',
 	require => Package['php5-mcrypt'],
+	creates => '/etc/php5/apache2/conf.d/20-mcrypt.ini',
 }
 
 php::augeas {
