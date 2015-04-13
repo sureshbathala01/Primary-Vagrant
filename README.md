@@ -40,6 +40,7 @@ The repository contains a basic Vagrant configuration that will configure the fo
 * [ChrisWiegman](https://github.com/ChrisWiegman)
 * [kraftner](https://github.com/kraftner)
 * [michaelbeil](https://github.com/michaelbeil)
+* [NikV](https://github.com/NikV)
 
 ##Want to help?
 
