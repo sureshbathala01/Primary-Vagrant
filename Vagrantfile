@@ -124,10 +124,11 @@ Vagrant.configure("2") do |config|
 	# Provisioning uses the Puppet configuration tool (http://puppetlabs.com/). This tool
 	# relies on modules in the modules/ folder which are configures in manifests/default.pp.
 	config.vm.provision "puppet", run: "always" do |puppet|
-		puppet.manifests_path = "manifests"
-		puppet.manifest_file  = "init.pp"
-		puppet.module_path    = "modules"
-		puppet.facter         = { "fqdn" => "pv" }
+		puppet.manifests_path    = "manifests"
+		puppet.manifest_file     = "init.pp"
+		puppet.module_path       = "modules"
+		puppet.facter            = { "fqdn" => "pv" }
+		puppet.hiera_config_path = "hiera.yaml"
 	end
 
 	# Vagrant Triggers
