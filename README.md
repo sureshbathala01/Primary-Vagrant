@@ -70,7 +70,7 @@ Once Vagrant is installed you'll want two plugins to update your local hosts fil
 
 ```vagrant plugin install vagrant-vbguest```
 
-```vagrant plugin install vagrant-hostsupdater```
+```vagrant plugin install vagrant-ghost```
 
 ###Launch your VM
 

@@ -30,7 +30,7 @@ Vagrant.configure("2") do |config|
 
 	# Local Machine Hosts
 	#
-	# If the Vagrant plugin hostsupdater (https://github.com/cogitatio/vagrant-hostsupdater) is
+	# If the Vagrant plugin Ghost (https://github.com/10up/vagrant-ghost) is
 	# installed, the following will automatically configure your local machine's hosts file to
 	# be aware of the domains specified below. Watch the provisioning script as you may need to
 	# enter a password for Vagrant to access your hosts file.
@@ -38,13 +38,13 @@ Vagrant.configure("2") do |config|
 	# By default, we'll include the domains set up by Primary Vagrant through the pv-hosts file
 	# located in the www/ directory.
 	#
-	# Other domains can be automatically added by including a vvv-hosts file containing
+	# Other domains can be automatically added by including a pv-hosts file containing
 	# individual domains separated by whitespace in subdirectories of www/.
-	if defined?(VagrantPlugins::HostsUpdater)
-		# Recursively fetch the paths to all vvv-hosts files under the www/ directory.
+	if defined?(VagrantPlugins::Ghost)
+		# Recursively fetch the paths to all pv-hosts files under the www/ directory.
 		paths = Dir[File.join(vagrant_dir, 'www', '**', 'pv-hosts')]
 
-		# Parse the found vvv-hosts files for host names.
+		# Parse the found pv-hosts files for host names.
 		hosts = paths.map do |path|
 
 		# Read line from file and remove line breaks
@@ -55,9 +55,8 @@ Vagrant.configure("2") do |config|
 
 		end.flatten.uniq # Remove duplicate entries
 
-		# Pass the found host names to the hostsupdater plugin so it can perform magic.
-		config.hostsupdater.aliases = hosts
-		config.hostsupdater.remove_on_suspend = true
+		# Pass the found host names to the ghost plugin so it can perform magic.
+		config.ghost.hosts = hosts
 	end
 
 	# Forward Agent
