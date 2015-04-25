@@ -3,14 +3,7 @@ group { 'puppet': ensure => present }
 Exec { path => [ '/bin/', '/sbin/', '/usr/bin/', '/usr/sbin/' ] }
 File { owner => 0, group => 0, mode => 0644 }
 
-class { 'apt':
-	always_apt_update => true,
-}
-
-Class['::apt::update'] -> Package <|
-	title != 'python-software-properties'
-	and title != 'software-properties-common'
-|>
+class { 'apt': }
 
 package { 'vim':
 	ensure => 'installed'
