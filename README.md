@@ -127,7 +127,7 @@ In addition to the *root* MySQL account the account *username* with the password
 
 To create a new database use the following example to edit manifests/mysql.pp
 
-```
+``` mysql
 mysql_database { 'database_name':
 	ensure  => 'present',
 	charset => 'utf8',
@@ -149,7 +149,7 @@ The latest stable node.js version is installed, if you want to pre-install packa
 
 Example:
 
-```
+``` javascript
 package { 'ungit':
   provider => npm,
   require  => Class['nodejs']
@@ -173,6 +173,9 @@ The following commands should bring you up to speed:
 See: https://www.atlassian.com/git/tutorials/syncing/git-pull 
 
 Now, you will be free to PR against Primary Vagrant.
+
+### Contributions
+Contributions are more than welcome. Please read our current [guidelines for contributing](https://github.com/ChrisWiegman/Primary-Vagrant/blob/master/CONTRIBUTING.md) to this repository. Many thanks in advance!
 
 ##Note
 
