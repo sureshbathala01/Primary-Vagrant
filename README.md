@@ -14,26 +14,26 @@ Although [Varying Vagrant Vagrants](https://github.com/Varying-Vagrant-Vagrants/
 The repository contains a basic Vagrant configuration that will configure the following goodies:
 
 * Ubuntu 14.04 LTS
-* Apache
-* PHP 5.5
-* phpbrew (experimental but will eventually allow for multiple PHP versions)
-* MySQL
-* Xdebug
-* PHPUnit
-* Postfix
-* wp-cli
-* phpMyAdmin
-* WordPress (Last, Stable, Core and Dev)
+* [Apache](http://httpd.apache.org)
+* [PHP](http://php.net) 5.5
+* [phpbrew](https://github.com/phpbrew/phpbrew) (experimental but will eventually allow for multiple PHP versions)
+* [MySQL](https://www.mysql.com)
+* [Xdebug](http://xdebug.org)
+* [PHPUnit](https://phpunit.de)
+* [Postfix](http://www.postfix.org)
+* [wp-cli](http://wp-cli.org)
+* [phpMyAdmin](http://www.phpmyadmin.net)
+* [WordPress](https://wordpress.org) (Last, Stable, Core, and Dev)
 * wp-debug plugin
 * [Search Replace DB](http://interconnectit.com/products/search-and-replace-for-wordpress-databases/)
 * [webgrind](https://github.com/jokkedk/webgrind/)
 * [oh-my-zsh](http://ohmyz.sh)
 * [MailCatcher](http://mailcatcher.me)
 * Test data from [WP Test](http://wptest.io)
-* Composer
-* node.js
-* GIT
-* Subversion
+* [Composer](https://getcomposer.org)
+* [node.js](https://nodejs.org)
+* [Git](http://git-scm.com)
+* [Subversion](https://subversion.apache.org)
 
 ##Contributors
 
@@ -44,7 +44,7 @@ The repository contains a basic Vagrant configuration that will configure the fo
 
 ##Want to help?
 
-If you find any issues please don't hesitate to submit a pull request.
+If you find any issues, please don't hesitate to submit a [pull request](https://github.com/ChrisWiegman/Primary-Vagrant/blob/master/CONTRIBUTING.md).
 
 Current development of the project is focusing on instituting multiple PHP versions using (at least for now) [phpbrew](https://github.com/phpbrew/phpbrew). It needs a lot of work, so if you have a few minutes head on over to the [phpbrew puppet module](https://github.com/ChrisWiegman/puppet-phpbrew) and dig in.
 
@@ -55,9 +55,9 @@ Current development of the project is focusing on instituting multiple PHP versi
 * pv - Default menu
 * phpmyadmin.pv - phpMyAdmin
 * replacedb.pv - Search Replace DB
-* core.wordpress.pv - WordPress Development (for core dev)
-* legacy.wordpress.pv - Last version of WordPress (currently 4.1.3)
-* stable.wordpress.pv - Latest WordPress stable (currently 4.2)
+* core.wordpress.pv - WordPress development (for core dev)
+* legacy.wordpress.pv - Last version of WordPress (currently 4.1.4)
+* stable.wordpress.pv - Latest WordPress stable (currently 4.2.1)
 * trunk.wordpress.pv - WordPress trunk
 * webgrind.pv - webgrind
 * mailcatcher.pv - MailCatcher
@@ -76,7 +76,7 @@ Once Vagrant is installed you'll want two plugins to update your local hosts fil
 
 1.  [Download](https://github.com/ChrisWiegman/Primary-Vagrant/archive/master.zip) or clone this repo onto your local machine:
 
-    ```$ git clone --recursive git@github.com:ChrisWiegman/Primary-Vagrant.git```	
+    ```$ git clone --recursive git@github.com:ChrisWiegman/Primary-Vagrant.git Primary-Vagrant```
 
 2.  Run ```vagrant up``` from the folder where you're storing this repository
 
@@ -103,11 +103,11 @@ Example:
 
 ```
 apache::vhost { 'mysite.pv':
-	docroot							=> 'path/to/your/site',
-	directory						=> 'path/to/your/site',
-	directory_allow_override		=> 'All',
-	ssl								=> true,
-	template						=> '/var/vagrant/conf/vhost.conf.erb',
+    docroot                         => 'path/to/your/site',
+    directory                       => 'path/to/your/site',
+    directory_allow_override        => 'All',
+    ssl                             => true,
+    template                        => '/var/vagrant/conf/vhost.conf.erb',
 }
 ```
 
@@ -129,10 +129,10 @@ To create a new database use the following example to edit manifests/mysql.pp
 
 ``` mysql
 mysql_database { 'database_name':
-	ensure  => 'present',
-	charset => 'utf8',
-	collate => 'utf8_general_ci',
-	require => Class['mysql::server'],
+    ensure  => 'present',
+    charset => 'utf8',
+    collate => 'utf8_general_ci',
+    require => Class['mysql::server'],
 }
 ```
 
@@ -156,21 +156,21 @@ package { 'ungit':
 }
 ```
 
-###Keep your fork up to date with the PV `upstream/master` repo 
+###Keep your fork up to date with the PV `upstream/master` repo
 
-* Configure a remote that points to the upstream repository in Git: `git remote add upstream https://github.com/ChrisWiegman/Primary-Vagrant.git` 
+* Configure a remote that points to the upstream repository in Git: `git remote add upstream https://github.com/ChrisWiegman/Primary-Vagrant.git`
 
-See: https://help.github.com/articles/configuring-a-remote-for-a-fork 
+See: https://help.github.com/articles/configuring-a-remote-for-a-fork
 
-The following commands should bring you up to speed: 
+The following commands should bring you up to speed:
 * `git checkout <localbranch>`
 * `git stash` -- save local changes
 * `git pull https://github.com/ChrisWiegman/Primary-Vagrant.git upstream/master`
 * `git submodule update --recursive`
-* `git stash pop` -- saved local changes are available to be committed 
-* Use `git merge tool` if you have any conflicts 
+* `git stash pop` -- saved local changes are available to be committed
+* Use `git merge tool` if you have any conflicts
 
-See: https://www.atlassian.com/git/tutorials/syncing/git-pull 
+See: https://www.atlassian.com/git/tutorials/syncing/git-pull
 
 Now, you will be free to PR against Primary Vagrant.
 
