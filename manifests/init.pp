@@ -25,9 +25,7 @@ class { 'ohmyzsh': }
 
 ohmyzsh::install { 'vagrant': }
 
-class { 'apache':
-	template => '/var/vagrant/conf/vhost.conf.erb',
-}
+class { 'apache': }
 
 include apache::ssl
 
@@ -52,12 +50,15 @@ apache::vhost { 'phpmyadmin.pv':
 	directory                => '/var/www/phpmyadmin.pv/phpmyadmin',
 	directory_allow_override => 'All',
 	ssl                      => true,
+	template                 => '/var/vagrant/conf/vhost.conf.erb',
 }
 
 apache::vhost { 'replacedb.pv':
 	docroot                  => '/var/www/replacedb.pv',
 	directory                => '/var/www/replacedb.pv',
 	directory_allow_override => 'All',
+	ssl                      => true,
+	template                 => '/var/vagrant/conf/vhost.conf.erb',
 }
 
 apache::vhost { 'core.wordpress.pv':
@@ -66,6 +67,7 @@ apache::vhost { 'core.wordpress.pv':
 	directory                => '/var/www/core.wordpress.pv/src',
 	directory_allow_override => 'All',
 	ssl                      => true,
+	template                 => '/var/vagrant/conf/vhost.conf.erb',
 }
 
 apache::vhost { 'legacy.wordpress.pv':
@@ -74,6 +76,7 @@ apache::vhost { 'legacy.wordpress.pv':
 	directory                => '/var/www/legacy.wordpress.pv/htdocs',
 	directory_allow_override => 'All',
 	ssl                      => true,
+	template                 => '/var/vagrant/conf/vhost.conf.erb',
 }
 
 apache::vhost { 'stable.wordpress.pv':
@@ -82,6 +85,7 @@ apache::vhost { 'stable.wordpress.pv':
 	directory                => '/var/www/stable.wordpress.pv/htdocs',
 	directory_allow_override => 'All',
 	ssl                      => true,
+	template                 => '/var/vagrant/conf/vhost.conf.erb',
 }
 
 apache::vhost { 'trunk.wordpress.pv':
@@ -90,6 +94,7 @@ apache::vhost { 'trunk.wordpress.pv':
 	directory                => '/var/www/trunk.wordpress.pv/htdocs',
 	directory_allow_override => 'All',
 	ssl                      => true,
+	template                 => '/var/vagrant/conf/vhost.conf.erb',
 }
 
 apache::vhost { 'webgrind.pv':
@@ -97,6 +102,7 @@ apache::vhost { 'webgrind.pv':
 	directory                => '/var/www/webgrind.pv',
 	directory_allow_override => 'All',
 	ssl                      => true,
+	template                 => '/var/vagrant/conf/vhost.conf.erb',
 }
 
 class { 'php':
