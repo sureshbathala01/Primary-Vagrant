@@ -123,9 +123,6 @@ php::module { 'curl': }
 php::module { 'gd': }
 php::module { 'imagick': }
 php::module { 'mcrypt': }
-php::module { 'apc':
-	module_prefix => 'php-'
-}
 php::pecl::module { 'xdebug': }
 
 exec { 'enabling_mcrypt':
