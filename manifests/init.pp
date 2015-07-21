@@ -131,6 +131,18 @@ exec { 'enabling_mcrypt':
 	creates => '/etc/php5/apache2/conf.d/20-mcrypt.ini',
 }
 
+exec { 'php_codesniffer':
+	command => 'pear install PHP_CodeSniffer',
+	require => Package['php5-mcrypt'],
+	creates => '/usr/bin/phpcs',
+}
+
+exec { 'wp_code_standards':
+	command => 'git clone -b master https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git /var/wpcs && phpcs --config-set installed_paths /var/wpcs',
+	require => Package['php5-mcrypt'],
+	creates => '/var/wpcs/README.md',
+}
+
 php::augeas {
 	'php-xdebug.trace_enable_trigger':
 		entry   => 'XDEBUG/xdebug.trace_enable_trigger',
