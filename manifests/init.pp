@@ -220,6 +220,10 @@ php::augeas {
 		entry   => 'XDEBUG/xdebug.var_display_max_depth',
 		value   => '-1',
 		require => Class['php'];
+	'php-xdebug.max_nesting_level':
+		entry   => 'XDEBUG/xdebug.max_nesting_level',
+		value   => '256',
+		require => Class['php'];
 	'php-memory_limit':
 		entry   => 'PHP/memory_limit',
 		value   => '256M',
