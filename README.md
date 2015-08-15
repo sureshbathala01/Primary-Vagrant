@@ -55,8 +55,8 @@ Current development of the project is focusing on instituting multiple PHP versi
 * phpmyadmin.pv - phpMyAdmin
 * replacedb.pv - Search Replace DB
 * core.wordpress.pv - WordPress development (for core dev)
-* legacy.wordpress.pv - Last version of WordPress (currently 4.1.4)
-* stable.wordpress.pv - Latest WordPress stable (currently 4.2.1)
+* legacy.wordpress.pv - Last version of WordPress (currently 4.1.x)
+* stable.wordpress.pv - Latest WordPress stable (currently 4.2.x)
 * trunk.wordpress.pv - WordPress trunk
 * webgrind.pv - webgrind
 * mailcatcher.pv - MailCatcher
@@ -65,11 +65,13 @@ Current development of the project is focusing on instituting multiple PHP versi
 
 Install [Vagrant](http://vagrantup.com), [VirtualBox](http://virtualbox.org), and the [VirtualBox extensions](https://www.virtualbox.org/wiki/Downloads) for your environment.
 
-Once Vagrant is installed you'll want two plugins to update your local hosts file and update the VirtualBox Guest additions in the Ubuntu install.
+Once Vagrant is installed you'll want three plugins to update your local hosts, and update the VirtualBox Guest additions in the Ubuntu install and handle various tasks like backing up your databases when you're done for the day.
 
 ```vagrant plugin install vagrant-vbguest```
 
 ```vagrant plugin install vagrant-ghost```
+
+```vagrant plugin install vagrant-triggers```
 
 ### Launch your VM
 
@@ -96,42 +98,42 @@ The following websites come pre-configured in the system:
 
 *Note: WordPress Core dev is taken from git://develop.git.wordpress.org/. Only the src folder is mapped. You can manually set up a build site if desired.
 
-### Configure your Apache VirtualHosts
+### Configure Additional Sites
 
-Edit the file **Vagrantfile** and add paths to your own websites as well as a host entry to reach it.
+First, create a file called mappings in the www directory. This will map any sites you create to the appropriate folder on PV.
 
-Edit **manifests/vhosts.pp**. This is where you define virtualhosts and databases. Copy what is there and ask me if you have any questions.
+Example Mapping:
+
+```
+config.vm.synced_folder "/Users/MyUser/Sites/Mysite/htdocs", "/var/www/mysite.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774"]
+```
+
+Note that if you're working on a WordPress plugin or theme I would recommend to simply map it to the three pre-installed WordPress sites. This will make it easy for you to test it on multiple versions of WordPress.
+
+Example:
+
+```
+config.vm.synced_folder "/Users/MyUser/my-awesome-plugin", "/var/www/legacy.wordpress.pv/htdocs/content/plugins/my-awesome-plugin", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774"]
+config.vm.synced_folder "/Users/MyUser/my-awesome-plugin", "/var/www/stable.wordpress.pv/htdocs/content/plugins/my-awesome-plugin", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774"]
+config.vm.synced_folder "/Users/MyUser/my-awesome-plugin", "/var/www/trunk.wordpress.pv/htdocs/content/plugins/my-awesome-plugin", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774"]
+```
+
+Next Edit **manifests/sites/``[your-site-domain].pp**. This is where you define virtualhosts and databases. Copy what is below and ask me if you have any questions. Of course these aren't the only configuration options you have either. You can find a [full list of Apache configuration options here](http://github.com/example42/puppet-apache) and a [full list of mysql configuration options here](https://github.com/puppetlabs/puppetlabs-mysql).
 
 Example:
 
 ```
 apache::vhost { 'mysite.pv':
-    docroot                         => 'path/to/your/site',
-    directory                       => 'path/to/your/site',
+    docroot                         => '/var/www/mysite.pv',
+    directory                       => '/var/www/mysite.pv',
     directory_allow_override        => 'All',
     ssl                             => true,
     template                        => '/var/vagrant/conf/vhost.conf.erb',
 }
 ```
 
-*Note: I've provided a top-level wildcard SSL certificate. No further SSL certificate should be needed.
-
-### Change PHP Versions
-
-To change from PHP 5.5 I recommend using a PGP package from [https://launchpad.net/~ondrej/+archive/php5](https://launchpad.net/~ondrej/+archive/php5). You can do so by adding ```apt::ppa { 'ppa:ondrej/php5': }``` to *manifests/php.pp*. Make sure to choose the correct repository for the PHP version you want to use.
-
-Note: this file can also be used to change any php.ini value following the example included in the file.
-
-### Database Access
-
-You can access the database via ssh tunnel into the machine using the *local.vagrant* hostname, the username *vagrant*, the password *vagrant* for ssh, and the username *root* without a password for MySQL.
-
-In addition to the *root* MySQL account the account *username* with the password *password* has also been created and has been granted all privileges.
-
-To create a new database use the following example to edit manifests/mysql.pp
-
 ``` mysql
-mysql_database { 'database_name':
+mysql_database { 'mysite.pv':
     ensure  => 'present',
     charset => 'utf8',
     collate => 'utf8_general_ci',
@@ -139,14 +141,32 @@ mysql_database { 'database_name':
 }
 ```
 
-### Postfix Configuration
+*Note: I've provided a top-level wildcard SSL certificate. No further SSL certificate should be needed.
+
+### Changing configuration options
+
+The default installation configuration is found in *manifests/init.pp*. While you could edit this if you like I would, instead, recommend adding any additional configuration to *manifests/sites/custom.pp*
+
+#### Change PHP Versions
+
+To change from PHP 5.5 I recommend using a PGP package from [https://launchpad.net/~ondrej/+archive/php5](https://launchpad.net/~ondrej/+archive/php5). You can do so by adding ```apt::ppa { 'ppa:ondrej/php5': }``` to *manifests/php.pp*. Make sure to choose the correct repository for the PHP version you want to use.
+
+Note: this file can also be used to change any php.ini value following the example included in the file.
+
+#### Database Access
+
+You can access the database via ssh tunnel into the machine using the *local.vagrant* hostname, the username *vagrant*, the password *vagrant* for ssh, and the username *root* without a password for MySQL.
+
+In addition to the *root* MySQL account the account *username* with the password *password* has also been created and has been granted all privileges.
+
+#### Postfix Configuration
 
 Postfix is configured and set to use your host computer as a mail relay. To receive messages you can use the built in [MailCatcher installation](http://mailcatcher.pv:1080) (this will prevent your real SMTP mail server and mailbox from getting too much abuse).
 
-### WP Test Data
+#### WP Test Data
 WP Test can be installed via the instructions at (https://github.com/manovotny/wptest). Test data is found in *[Primary Vagrant Folder]/sites/wordpress/wptest* on your host machine.
 
-### node.js
+#### node.js
 
 The latest stable node.js version is installed, if you want to pre-install packages just add them to *manifests/nodejs.pp*.
 
@@ -158,6 +178,13 @@ package { 'ungit':
   require  => Class['nodejs']
 }
 ```
+
+### Debugging Code ###
+
+Primary Vagrant comes pre-configured with two awesome tools for helping debug your code. The first is [Xdebug](http://xdebug.org/) and the second is [PHP_Codesniffer](https://github.com/squizlabs/PHP_CodeSniffer) (which comes complete with the [WordPress coding standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards) already pre-configured). While configuration is dependant on the code editor you use here are some notes that might help you get started with them.
+
+* Xdebug uses VAGRANT_DEBUG as its IDE key
+* Many modern tools will let you access both of these tools easily with just a bit of configuration. For example, [here's a great post on using remote debugging in PhpStorm.](http://blog.jetbrains.com/phpstorm/2015/07/remote-tools-via-remote-php-interpreters-in-phpstorm-9/)
 
 ###Keep your fork up to date with the PV `upstream/master` repo
 
