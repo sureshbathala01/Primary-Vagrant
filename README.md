@@ -108,7 +108,7 @@ Example Mapping:
 config.vm.synced_folder "/Users/MyUser/Sites/Mysite/htdocs", "/var/www/mysite.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774"]
 ```
 
-Note that if you're working on a WordPress plugin or theme I would recommend to simply map it to the three pre-installed WordPress sites. This will make it easy for you to test it on multiple versions of WordPress.
+*Note that if you're working on a WordPress plugin or theme I would recommend to simply map it to the three pre-installed WordPress sites. This will make it easy for you to test it on multiple versions of WordPress.
 
 Example:
 
@@ -142,6 +142,8 @@ mysql_database { 'mysite.pv':
 ```
 
 *Note: I've provided a top-level wildcard SSL certificate. No further SSL certificate should be needed.
+
+Finally, and you can do this two ways... If you've created your site as a folder in the Primary Vagrant www folder just add a file callend *pv-hosts* to it that includes the domain name(s) (one per line) for your project. If your site is outside of the Primary Vagrant folder I would recommend creating *www/my-sites/pv-hosts* to hold the domain names. This will make sure you can access your sites by whatever domain names you need.
 
 ### Changing configuration options
 
@@ -205,7 +207,16 @@ See: https://www.atlassian.com/git/tutorials/syncing/git-pull
 Now, you will be free to PR against Primary Vagrant.
 
 ### Contributions
+
 Contributions are more than welcome. Please read our current [guidelines for contributing](CONTRIBUTING.md) to this repository. Many thanks in advance!
+
+### Future Development
+
+Some ideas I'm working on for future features:
+
+* PHPBrew or a similar script that will allow you to change PHP versions on the fly.
+* A site builder script that will let you avoid having to edit any text to add a new site.
+* Anything else (applicable to the project) that the community would like to contribute.
 
 ## Note
 
