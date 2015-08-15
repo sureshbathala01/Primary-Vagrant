@@ -18,6 +18,8 @@ The repository contains a basic Vagrant configuration that will configure the fo
 * [PHP](http://php.net) 5.5
 * [MySQL](https://www.mysql.com)
 * [Xdebug](http://xdebug.org)
+* [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
+* [WordPress Coding Standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards) *for PHP_CodeSniffer*
 * [PHPUnit](https://phpunit.de)
 * [Postfix](http://www.postfix.org)
 * [wp-cli](http://wp-cli.org)
