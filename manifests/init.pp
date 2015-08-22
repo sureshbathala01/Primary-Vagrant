@@ -247,7 +247,8 @@ class { 'composer':
 }
 
 class { 'nodejs':
-	version => 'stable',
+	version      => 'stable',
+	make_install => false,
 }
 
 class { 'postfix':
