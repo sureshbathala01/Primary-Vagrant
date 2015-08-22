@@ -70,6 +70,8 @@ Vagrant.configure("2") do |config|
 		v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
 		v.customize ["modifyvm", :id, "--memory", 768]
 		v.customize ["modifyvm", :id, "--name", "Primary Vagrant"]
+		v.customize ["modifyvm", :id, "--cpus", 1]
+		v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
 	end
 
 	# Drive mapping
