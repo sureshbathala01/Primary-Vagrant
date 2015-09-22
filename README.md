@@ -147,6 +147,8 @@ mysql_database { 'mysite.pv':
 
 Finally, and you can do this two ways... If you've created your site as a folder in the Primary Vagrant www folder just add a file callend *pv-hosts* to it that includes the domain name(s) (one per line) for your project. If your site is outside of the Primary Vagrant folder I would recommend creating *www/my-sites/pv-hosts* to hold the domain names. This will make sure you can access your sites by whatever domain names you need.
 
+After the configuration above has been added, simply run `vagrant halt` and then `vagrant up` to trigger the changes and host file updates.
+
 ### Changing configuration options
 
 The default installation configuration is found in *manifests/init.pp*. While you could edit this if you like I would, instead, recommend adding any additional configuration to *manifests/sites/custom.pp*
