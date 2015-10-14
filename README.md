@@ -15,7 +15,7 @@ The repository contains a basic Vagrant configuration that will configure the fo
 
 * Ubuntu 14.04 LTS
 * [Apache](http://httpd.apache.org)
-* [PHP](http://php.net) 5.5
+* [PHP](http://php.net) 5.6
 * [MySQL](https://www.mysql.com)
 * [Xdebug](http://xdebug.org)
 * [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
@@ -155,7 +155,7 @@ The default installation configuration is found in *manifests/init.pp*. While yo
 
 #### Change PHP Versions
 
-To change from PHP 5.5 I recommend using a PGP package from [https://launchpad.net/~ondrej/+archive/php5](https://launchpad.net/~ondrej/+archive/php5). You can do so by adding ```apt::ppa { 'ppa:ondrej/php5': }``` to *manifests/php.pp*. Make sure to choose the correct repository for the PHP version you want to use.
+To change from PHP 5.6 I recommend using a PGP package from [https://launchpad.net/~ondrej/+archive/php5](https://launchpad.net/~ondrej/+archive/php5). You can do so by adding ```apt::ppa { 'ppa:ondrej/php5': }``` to *manifests/php.pp*. Make sure to choose the correct repository for the PHP version you want to use.
 
 Note: this file can also be used to change any php.ini value following the example included in the file.
 
