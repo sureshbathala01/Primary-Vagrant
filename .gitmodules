@@ -82,3 +82,6 @@
 [submodule "modules/apt"]
 	path = modules/apt
 	url = git@github.com:example42/puppet-apt.git
+[submodule "www/default/wordpress/content/plugins/any-ipsum"]
+	path = www/default/wordpress/content/plugins/any-ipsum
+	url = git@github.com:petenelson/wp-any-ipsum.git
