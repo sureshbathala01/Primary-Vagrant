@@ -19,3 +19,4 @@ Customfile
 sites/wordpress/content/plugins
 manifests/sites
 www
+.bundle
