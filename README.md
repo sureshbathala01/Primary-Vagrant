@@ -81,6 +81,12 @@ Once Vagrant is installed you'll want three plugins to update your local hosts, 
 
     ```$ git clone --recursive https://github.com/ChrisWiegman/Primary-Vagrant/ PV```
 
+    or
+
+    ```$ git clone --recursive git@github.com:ChrisWiegman/Primary-Vagrant.git PV```
+
+    *Note: you will need to have []your public RSA key on file with GitHub](https://help.github.com/articles/generating-ssh-keys/) to use this either way.*
+
 1. In a command prompt, change into the new directory with `cd PV`
 
 1. Start the Vagrant environment with `vagrant up`
