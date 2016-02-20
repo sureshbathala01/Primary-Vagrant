@@ -196,7 +196,7 @@ package { 'ungit':
 Primary Vagrant comes pre-configured with two awesome tools for helping debug your code. The first is [Xdebug](http://xdebug.org/) and the second is [PHP_Codesniffer](https://github.com/squizlabs/PHP_CodeSniffer) (which comes complete with the [WordPress coding standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards) already pre-configured). While configuration is dependant on the code editor you use here are some notes that might help you get started with them.
 
 * Xdebug uses VAGRANT_DEBUG as its IDE key
-* Many modern tools will let you access both of these tools easily with just a bit of configuration. For example, [here's a great post on using remote debugging in PhpStorm.](http://blog.jetbrains.com/phpstorm/2015/07/remote-tools-via-remote-php-interpreters-in-phpstorm-9/)
+* Many modern tools will let you access both of these tools easily with just a bit of configuration. For example, [here's a great post on using remote debugging in PHPStorm.](http://blog.jetbrains.com/phpstorm/2015/07/remote-tools-via-remote-php-interpreters-in-phpstorm-9/)
 * [PHPStorm configuration suggestions are in the wiki](https://github.com/ChrisWiegman/Primary-Vagrant/wiki/XDEBUG-Setup-in-PHPStorm).
 
 ###Keep your fork up to date with the PV `upstream/master` repo
