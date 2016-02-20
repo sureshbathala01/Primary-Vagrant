@@ -79,7 +79,7 @@ Once Vagrant is installed you'll want three plugins to update your local hosts, 
 
 1. [Download](https://github.com/ChrisWiegman/Primary-Vagrant/archive/master.zip) or clone this repo onto your local machine:
 
-    ```$ git clone --recursive https://github.com/ChrisWiegman/Primary-Vagrant/ PV```
+    ```$ git clone --recursive https://github.com/ChrisWiegman/Primary-Vagrant.git PV```
 
     or
 
