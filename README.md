@@ -167,7 +167,7 @@ Note: this file can also be used to change any php.ini value following the examp
 
 #### Database Access
 
-You can access the database via ssh tunnel into the machine using the *local.vagrant* hostname, the username *vagrant*, the password *vagrant* for ssh, and the username *root* without a password for MySQL.
+You can access the database via ssh tunnel into the machine using the *pv* hostname, the username *vagrant*, the password *vagrant* for ssh, and the username *root* without a password for MySQL.
 
 In addition to the *root* MySQL account the account *username* with the password *password* has also been created and has been granted all privileges.
 
