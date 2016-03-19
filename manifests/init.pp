@@ -23,6 +23,10 @@ package { 'ntp':
   ensure => 'installed'
 }
 
+package { 'memcached':
+  ensure => 'installed'
+}
+
 class { 'ohmyzsh': }
 
 ohmyzsh::install { 'vagrant': }
@@ -125,6 +129,7 @@ php::module { 'curl': }
 php::module { 'gd': }
 php::module { 'imagick': }
 php::module { 'mcrypt': }
+php::module { 'memcache': }
 php::pecl::module { 'xdebug': }
 
 exec { 'enabling_mcrypt':
