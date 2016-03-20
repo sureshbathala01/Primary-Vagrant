@@ -74,6 +74,9 @@ Vagrant.configure("2") do |config|
 		v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
 	end
 
+	# Don't check for updates with every vagrant up
+	config.vm.box_check_update = false
+
 	# Drive mapping
 	#
 	# The following config.vm.share_folder settings will map directories in your Vagrant
