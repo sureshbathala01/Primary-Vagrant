@@ -326,7 +326,7 @@ mysql_grant { 'username@localhost/*.*':
   require    => Class['mysql::server'],
 }
 
-#class { 'mailcatcher': }
+class { 'mailcatcher': }
 
 file { '/var/www/phpmyadmin.pv/phpmyadmin/config.inc.php':
   ensure => 'link',
