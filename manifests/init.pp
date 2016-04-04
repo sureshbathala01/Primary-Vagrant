@@ -6,12 +6,13 @@ File { owner => 0, group => 0, mode => 0644 }
 class { 'apt': }
 
 apt::ppa { 'ppa:ondrej/php5-5.6': }
-apt::ppa{ 'ppa:brightbox/ruby-ng-experimental': }
 
-class{ 'ruby':
-  version        => '2.3.0',
-  latest_release => true,
-  require        => Apt::Ppa['ppa:brightbox/ruby-ng-experimental'],
+class { '::rvm': }
+
+rvm_system_ruby {
+  'ruby-2.3':
+    ensure      => 'present',
+    default_use => true,
 }
 
 package { 'vim':
