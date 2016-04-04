@@ -7,14 +7,6 @@ class { 'apt': }
 
 apt::ppa { 'ppa:ondrej/php5-5.6': }
 
-class { 'rvm': }
-
-rvm_system_ruby {
-  'ruby-2.3':
-    ensure      => 'present',
-    default_use => true,
-}
-
 package { 'vim':
   ensure => 'installed'
 }
@@ -326,8 +318,6 @@ mysql_grant { 'username@localhost/*.*':
   require    => Class['mysql::server'],
 }
 
-class { 'mailcatcher': }
-
 file { '/var/www/phpmyadmin.pv/phpmyadmin/config.inc.php':
   ensure => 'link',
   target => '/var/www/phpmyadmin.pv/config.inc.php',
@@ -347,5 +337,7 @@ file { 'sudoers':
   mode    => '440',
   source  => '/var/vagrant/conf/sudoers',
 }
+
+class { 'mailcatcher': }
 
 import 'sites/*.pp'

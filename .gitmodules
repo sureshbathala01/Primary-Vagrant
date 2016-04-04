@@ -85,9 +85,3 @@
 [submodule "www/default/wordpress/content/plugins/any-ipsum"]
 	path = www/default/wordpress/content/plugins/any-ipsum
 	url = git@github.com:petenelson/wp-any-ipsum.git
-[submodule "modules/git"]
-	path = modules/git
-	url = git@github.com:example42/puppet-git.git
-[submodule "modules/rvm"]
-	path = modules/rvm
-	url = git@github.com:ChrisWiegman/puppet-rvm.git
