@@ -3,7 +3,8 @@ group { 'puppet': ensure => present }
 Exec { path => [ '/bin/', '/sbin/', '/usr/bin/', '/usr/sbin/' ] }
 File { owner => 0, group => 0, mode => 0644 }
 
-class { 'apt': } ->
+class { 'apt': }
+
 apt::ppa { 'ppa:ondrej/php5-5.6': }
 apt::ppa { 'ppa:brightbox/ruby-ng': }
 
@@ -14,7 +15,8 @@ package { 'ruby2.3':
 
 package { 'ruby2.3-dev':
   ensure    => 'installed',
-  require   => Package['ruby2.3']
+  require   => Package['ruby2.3'],
+  before    => Class['mailcatcher'],
 }
 
 package { 'vim':
@@ -346,10 +348,6 @@ file { 'sudoers':
   ensure  => file,
   mode    => '440',
   source  => '/var/vagrant/conf/sudoers',
-}
-
-class { 'mailcatcher':
-  require   => Package['ruby2.3-dev']
 }
 
 import 'sites/*.pp'
