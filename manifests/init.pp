@@ -6,19 +6,6 @@ File { owner => 0, group => 0, mode => 0644 }
 class { 'apt': }
 
 apt::ppa { 'ppa:ondrej/php5-5.6': }
-apt::ppa { 'ppa:brightbox/ruby-ng': }
-
-package { 'ruby2.3':
-  ensure    => 'installed',
-  require   => Apt::Ppa['ppa:brightbox/ruby-ng'],
-}
-
-package { 'ruby2.3-dev':
-  ensure    => 'installed',
-  require   => Package['ruby2.3'],
-  before    => Class['mailcatcher'],
-}
-
 package { 'vim':
   ensure => 'installed'
 }
