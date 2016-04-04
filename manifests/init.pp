@@ -6,6 +6,7 @@ File { owner => 0, group => 0, mode => 0644 }
 class { 'apt': }
 
 apt::ppa { 'ppa:ondrej/php5-5.6': }
+
 package { 'vim':
   ensure => 'installed'
 }
