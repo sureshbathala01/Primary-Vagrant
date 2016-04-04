@@ -88,3 +88,6 @@
 [submodule "modules/git"]
 	path = modules/git
 	url = git@github.com:example42/puppet-git.git
+[submodule "modules/rvm"]
+	path = modules/rvm
+	url = git@github.com:ChrisWiegman/puppet-rvm.git
