@@ -6,11 +6,12 @@ File { owner => 0, group => 0, mode => 0644 }
 class { 'apt': }
 
 apt::ppa { 'ppa:ondrej/php5-5.6': }
+apt::ppa{ 'ppa:brightbox/ruby-ng-experimental': }
 
-class{'ruby':
-  version         => '2.3.0',
-  switch          => true,
-  latest_release  => true,
+class{ 'ruby':
+  version        => '2.3.0',
+  latest_release => true,
+  require        => Apt::Ppa['ppa:brightbox/ruby-ng-experimental'],
 }
 
 package { 'vim':
@@ -37,7 +38,9 @@ class { 'ohmyzsh': }
 
 ohmyzsh::install { 'vagrant': }
 
-class { 'apache': }
+class { 'apache':
+  require => Apt::Ppa['ppa:ondrej/php5-5.6'],
+}
 
 include apache::ssl
 
@@ -118,7 +121,7 @@ apache::vhost { 'webgrind.pv':
 }
 
 class { 'php':
-  service => 'apache'
+  service => 'apache',
 }
 
 class { 'php::devel':
