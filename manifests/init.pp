@@ -338,4 +338,6 @@ file { 'sudoers':
   source  => '/var/vagrant/conf/sudoers',
 }
 
+class { 'mailcatcher': }
+
 import 'sites/*.pp'
