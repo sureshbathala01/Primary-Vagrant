@@ -31,14 +31,6 @@ class { 'ohmyzsh': }
 
 ohmyzsh::install { 'vagrant': }
 
-class { '::rvm': }
-
-rvm_system_ruby {
-  'ruby-2.3':
-    ensure      => 'present',
-    default_use => true;
-}
-
 class { 'apache': }
 
 include apache::ssl
