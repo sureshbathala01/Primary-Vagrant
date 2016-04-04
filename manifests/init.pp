@@ -7,14 +7,6 @@ class { 'apt': }
 
 apt::ppa { 'ppa:ondrej/php5-5.6': }
 
-class { '::rvm': }
-
-rvm_system_ruby {
-  'ruby-2.3':
-    ensure      => 'present',
-    default_use => true,
-}
-
 package { 'vim':
   ensure => 'installed'
 }
