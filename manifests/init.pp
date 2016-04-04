@@ -7,6 +7,12 @@ class { 'apt': }
 
 apt::ppa { 'ppa:ondrej/php5-5.6': }
 
+class{'ruby':
+  version         => '2.3.0',
+  switch          => true,
+  latest_release  => true,
+}
+
 package { 'vim':
   ensure => 'installed'
 }
