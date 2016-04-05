@@ -5,6 +5,10 @@ Primary Vagrant
 
 I've done some heavy updates to Primary Vagrant to utilize Ubuntu 14.04 as well as a few other goodies. If you don't want to or can't update for some reason you can find the old version in the [Precise](https://github.com/ChrisWiegman/Primary-Vagrant/tree/Precise) branch.
 
+## Warning
+
+Currently [Mailcatcher](http://mailcatcher.me) is partially broken due to a change in the required Ruby version for an upstream dependency. The catch is, I can't update Ruby as it breaks Puppet. As a new version of Ubuntu is due out in a few weeks (and it uses an appropriate version of Ruby) I've elected to wait to fix the problem until then. __For the time being you will need to run a 2nd ```vagrant provision``` or reload the vagrant box to finish the Mailcatcher installation. The warning message can then be ignored.__
+
 ## About
 
 Primary Vagrant is intended for WordPress plugin, theme, and core development, as well as general PHP development, and can be used as a replacement for local development stacks such as MAMP, XAMPP, and others.
