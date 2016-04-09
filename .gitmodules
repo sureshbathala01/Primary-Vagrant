@@ -1,87 +1,87 @@
 [submodule "modules/apache"]
 	path = modules/apache
-	url = git@github.com:example42/puppet-apache.git
+	url = https://github.com/example42/puppet-apache.git
 [submodule "modules/concat"]
 	path = modules/concat
-	url = git@github.com:puppetlabs/puppetlabs-concat.git
+	url = https://github.com/puppetlabs/puppetlabs-concat.git
 [submodule "modules/php"]
 	path = modules/php
-	url = git@github.com:example42/puppet-php.git
+	url = https://github.com/example42/puppet-php.git
 [submodule "modules/puppi"]
 	path = modules/puppi
-	url = git@github.com:example42/puppi.git
+	url = https://github.com/example42/puppi.git
 [submodule "modules/stdlib"]
 	path = modules/stdlib
-	url = git@github.com:puppetlabs/puppetlabs-stdlib.git
+	url = https://github.com/puppetlabs/puppetlabs-stdlib.git
 [submodule "modules/mysql"]
 	path = modules/mysql
-	url = git@github.com:puppetlabs/puppetlabs-mysql.git
+	url = https://github.com/puppetlabs/puppetlabs-mysql.git
 [submodule "modules/phpunit"]
 	path = modules/phpunit
-	url = git@github.com:ChrisWiegman/puppet-phpunit.git
+	url = https://github.com/ChrisWiegman/puppet-phpunit.git
 [submodule "modules/wp-cli"]
 	path = modules/wp-cli
-	url = git@github.com:ChrisWiegman/puppet-wpcli.git
+	url = https://github.com/ChrisWiegman/puppet-wpcli.git
 [submodule "modules/postfix"]
 	path = modules/postfix
-	url = git@github.com:Aethylred/puppet-postfix.git
+	url = https://github.com/Aethylred/puppet-postfix.git
 [submodule "modules/augeas"]
 	path = modules/augeas
-	url = git@github.com:camptocamp/puppet-augeas.git
+	url = https://github.com/camptocamp/puppet-augeas.git
 [submodule "modules/ohmyzsh"]
 	path = modules/ohmyzsh
-	url = git@github.com:acme/puppet-acme-oh-my-zsh.git
+	url = https://github.com/acme/puppet-acme-oh-my-zsh.git
 [submodule "modules/mailcatcher"]
 	path = modules/mailcatcher
-	url = git@github.com:ChrisWiegman/puppet-mailcatcher.git
+	url = https://github.com/ChrisWiegman/puppet-mailcatcher.git
 [submodule "modules/composer"]
 	path = modules/composer
-	url = git@github.com:willdurand/puppet-composer.git
+	url = https://github.com/willdurand/puppet-composer.git
 [submodule "modules/wget"]
 	path = modules/wget
-	url = git@github.com:maestrodev/puppet-wget.git
+	url = https://github.com/maestrodev/puppet-wget.git
 [submodule "modules/nodejs"]
 	path = modules/nodejs
 	url = git://github.com/willdurand/puppet-nodejs.git
 [submodule "www/default/Search-Replace-DB"]
 	path = www/default/Search-Replace-DB
-	url = git@github.com:interconnectit/Search-Replace-DB.git
+	url = https://github.com/interconnectit/Search-Replace-DB.git
 [submodule "www/default/webgrind"]
 	path = www/default/webgrind
-	url = git@github.com:jokkedk/webgrind.git
+	url = https://github.com/jokkedk/webgrind.git
 [submodule "www/default/wordpress/legacy/htdocs/wordpress"]
 	path = www/default/wordpress/legacy/htdocs/wordpress
-	url = git@github.com:WordPress/WordPress.git
+	url = https://github.com/WordPress/WordPress.git
 [submodule "www/default/wordpress/stable/htdocs/wordpress"]
 	path = www/default/wordpress/stable/htdocs/wordpress
-	url = git@github.com:WordPress/WordPress.git
+	url = https://github.com/WordPress/WordPress.git
 [submodule "www/default/wordpress/core"]
 	path = www/default/wordpress/core
 	url = git://develop.git.wordpress.org/
 [submodule "www/default/phpmyadmin/phpmyadmin"]
 	path = www/default/phpmyadmin/phpmyadmin
-	url = git@github.com:phpmyadmin/phpmyadmin.git
+	url = https://github.com/phpmyadmin/phpmyadmin.git
 [submodule "www/default/wordpress/content/plugins/debug-bar"]
 	path = www/default/wordpress/content/plugins/debug-bar
-	url = git@github.com:wp-mirrors/debug-bar.git
+	url = https://github.com/wp-mirrors/debug-bar.git
 [submodule "www/default/wordpress/content/plugins/whats-running"]
 	path = www/default/wordpress/content/plugins/whats-running
-	url = git@github.com:szepeviktor/whats-running.git
+	url = https://github.com/szepeviktor/whats-running.git
 [submodule "www/default/wordpress/content/plugins/query-monitor"]
 	path = www/default/wordpress/content/plugins/query-monitor
-	url = git@github.com:johnbillion/query-monitor.git
+	url = https://github.com/johnbillion/query-monitor.git
 [submodule "www/default/wordpress/content/plugins/heartbeat-control"]
 	path = www/default/wordpress/content/plugins/heartbeat-control
-	url = git@github.com:JeffMatson/heartbeat-control.git
+	url = https://github.com/JeffMatson/heartbeat-control.git
 [submodule "www/default/wordpress/content/wptest"]
 	path = www/default/wordpress/content/wptest
-	url = git@github.com:manovotny/wptest.git
+	url = https://github.com/manovotny/wptest.git
 [submodule "modules/apt"]
 	path = modules/apt
-	url = git@github.com:example42/puppet-apt.git
+	url = https://github.com/example42/puppet-apt.git
 [submodule "www/default/wordpress/content/plugins/any-ipsum"]
 	path = www/default/wordpress/content/plugins/any-ipsum
-	url = git@github.com:petenelson/wp-any-ipsum.git
+	url = https://github.com/petenelson/wp-any-ipsum.git
 [submodule "modules/git"]
 	path = modules/git
 	url = https://github.com/example42/puppet-git.git
