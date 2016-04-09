@@ -379,6 +379,36 @@ vcsrepo { '/var/www/phpmyadmin.pv/phpmyadmin':
   source   => 'https://github.com/phpmyadmin/phpmyadmin.git',
 }
 
+vcsrepo { '/var/www/trunk.wordpress.pv/htdocs/content/plugins/any-ipsum':
+  ensure   => latest,
+  provider => git,
+  source   => 'https://github.com/petenelson/wp-any-ipsum.git',
+}
+
+vcsrepo { '/var/www/trunk.wordpress.pv/htdocs/content/plugins/debug-bar':
+  ensure   => latest,
+  provider => git,
+  source   => 'https://github.com/wp-mirrors/debug-bar.git',
+}
+
+vcsrepo { '/var/www/trunk.wordpress.pv/htdocs/content/plugins/heartbeat-control':
+  ensure   => latest,
+  provider => git,
+  source   => 'https://github.com/JeffMatson/heartbeat-control.git',
+}
+
+vcsrepo { '/var/www/trunk.wordpress.pv/htdocs/content/plugins/query-monitor':
+  ensure   => latest,
+  provider => git,
+  source   => 'https://github.com/johnbillion/query-monitor.git',
+}
+
+vcsrepo { '/var/www/trunk.wordpress.pv/htdocs/content/plugins/whats-running':
+  ensure   => latest,
+  provider => git,
+  source   => 'https://github.com/szepeviktor/whats-running.git',
+}
+
 vcsrepo { '/var/www/webgrind.pv':
   ensure   => latest,
   provider => git,
