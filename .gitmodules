@@ -34,12 +34,6 @@
 [submodule "modules/nodejs"]
 	path = modules/nodejs
 	url = git://github.com/willdurand/puppet-nodejs.git
-[submodule "www/default/Search-Replace-DB"]
-	path = www/default/Search-Replace-DB
-	url = https://github.com/interconnectit/Search-Replace-DB.git
-[submodule "www/default/webgrind"]
-	path = www/default/webgrind
-	url = https://github.com/jokkedk/webgrind.git
 [submodule "www/default/wordpress/content/plugins/debug-bar"]
 	path = www/default/wordpress/content/plugins/debug-bar
 	url = https://github.com/wp-mirrors/debug-bar.git
