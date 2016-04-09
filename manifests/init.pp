@@ -379,4 +379,16 @@ vcsrepo { '/var/www/phpmyadmin.pv/phpmyadmin':
   source   => 'https://github.com/phpmyadmin/phpmyadmin.git',
 }
 
+vcsrepo { '/var/www/webgrind.pv':
+  ensure   => latest,
+  provider => git,
+  source   => 'https://github.com/jokkedk/webgrind.git',
+}
+
+vcsrepo { '/var/www/replacedb.pv':
+  ensure   => latest,
+  provider => git,
+  source   => 'https://github.com/interconnectit/Search-Replace-DB.git',
+}
+
 import 'sites/*.pp'
