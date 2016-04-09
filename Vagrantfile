@@ -101,7 +101,6 @@ Vagrant.configure("2") do |config|
 	config.vm.synced_folder "www/default/wordpress/content", "/var/www/legacy.wordpress.pv/htdocs/content", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "www/default/phpmyadmin", "/var/www/phpmyadmin.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 
-
 	# /Vagrant Data
 	#
 	# Specify a folder for various vagrant data. A MySQL data folder would be appropriate here (for example).
