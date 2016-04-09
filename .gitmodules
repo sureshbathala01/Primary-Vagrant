@@ -34,27 +34,12 @@
 [submodule "modules/nodejs"]
 	path = modules/nodejs
 	url = git://github.com/willdurand/puppet-nodejs.git
-[submodule "www/default/wordpress/content/plugins/debug-bar"]
-	path = www/default/wordpress/content/plugins/debug-bar
-	url = https://github.com/wp-mirrors/debug-bar.git
-[submodule "www/default/wordpress/content/plugins/whats-running"]
-	path = www/default/wordpress/content/plugins/whats-running
-	url = https://github.com/szepeviktor/whats-running.git
-[submodule "www/default/wordpress/content/plugins/query-monitor"]
-	path = www/default/wordpress/content/plugins/query-monitor
-	url = https://github.com/johnbillion/query-monitor.git
-[submodule "www/default/wordpress/content/plugins/heartbeat-control"]
-	path = www/default/wordpress/content/plugins/heartbeat-control
-	url = https://github.com/JeffMatson/heartbeat-control.git
 [submodule "www/default/wordpress/content/wptest"]
 	path = www/default/wordpress/content/wptest
 	url = https://github.com/manovotny/wptest.git
 [submodule "modules/apt"]
 	path = modules/apt
 	url = https://github.com/example42/puppet-apt.git
-[submodule "www/default/wordpress/content/plugins/any-ipsum"]
-	path = www/default/wordpress/content/plugins/any-ipsum
-	url = https://github.com/petenelson/wp-any-ipsum.git
 [submodule "modules/vcsrepo"]
 	path = modules/vcsrepo
 	url = https://github.com/puppetlabs/puppetlabs-vcsrepo.git
