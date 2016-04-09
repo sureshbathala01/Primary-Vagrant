@@ -340,4 +340,16 @@ file { 'sudoers':
 
 class { 'mailcatcher': }
 
+exec { "phpunit-/usr/bin":
+  command => "wget https://phar.phpunit.de/phpunit.phar -O /usr/bin/phpunit && chmod +x /usr/bin/phpunit",
+  path    => ['/usr/bin' , '/bin'],
+  creates => "/usr/bin/phpunit",
+}
+
+exec { "wp-cli-/usr/bin":
+  command => "wget https://raw.github.com/wp-cli/builds/gh-pages/phar/wp-cli.phar -O /usr/bin/wp && chmod +x /usr/bin/wp",
+  path    => ['/usr/bin' , '/bin'],
+  creates => "/usr/bin/wp",
+}
+
 import 'sites/*.pp'
