@@ -16,9 +16,6 @@
 [submodule "modules/mysql"]
 	path = modules/mysql
 	url = https://github.com/puppetlabs/puppetlabs-mysql.git
-[submodule "modules/wp-cli"]
-	path = modules/wp-cli
-	url = https://github.com/ChrisWiegman/puppet-wpcli.git
 [submodule "modules/postfix"]
 	path = modules/postfix
 	url = https://github.com/Aethylred/puppet-postfix.git
