@@ -71,8 +71,8 @@ apache::vhost { 'replacedb.pv':
 
 apache::vhost { 'core.wordpress.pv':
   serveraliases            => 'wordpress.core.pv',
-  docroot                  => '/var/www/core.wordpress.pv/src',
-  directory                => '/var/www/core.wordpress.pv/src',
+  docroot                  => '/var/www/core.wordpress.pv/htdocs/src',
+  directory                => '/var/www/core.wordpress.pv/htdocs/src',
   directory_allow_override => 'All',
   ssl                      => true,
   template                 => '/var/vagrant/conf/vhost.conf.erb',
@@ -118,10 +118,6 @@ class { 'php':
 }
 
 class { 'php::devel':
-  require => Class['php'],
-}
-
-class { 'phpunit':
   require => Class['php'],
 }
 
@@ -247,8 +243,6 @@ php::augeas {
     require => Class['php'];
 }
 
-class { 'wp-cli': }
-
 class { 'composer':
   command_name => 'composer',
   target_dir   => '/usr/local/bin',
@@ -350,6 +344,18 @@ exec { "wp-cli-/usr/bin":
   command => "wget https://raw.github.com/wp-cli/builds/gh-pages/phar/wp-cli.phar -O /usr/bin/wp && chmod +x /usr/bin/wp",
   path    => ['/usr/bin' , '/bin'],
   creates => "/usr/bin/wp",
+}
+
+vcsrepo { '/var/www/trunk.wordpress.pv/htdocs/wordpress':
+  ensure   => latest,
+  provider => git,
+  source   => 'https://github.com/WordPress/WordPress.git',
+}
+
+vcsrepo { '/var/www/core.wordpress.pv/htdocs':
+  ensure   => latest,
+  provider => git,
+  source   => 'git://develop.git.wordpress.org/',
 }
 
 import 'sites/*.pp'
