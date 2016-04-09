@@ -338,4 +338,9 @@ file { 'sudoers':
 
 class { 'mailcatcher': }
 
+git::reposync { 'wordpress_trunk':
+  source_url      => 'https://github.com/WordPress/WordPress.git',
+  destination_dir => '/var/www/trunk.wordpress.pv/htdocs',
+}
+
 import 'sites/*.pp'
