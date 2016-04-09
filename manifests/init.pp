@@ -7,11 +7,9 @@ class { 'apt': }
 
 apt::ppa { 'ppa:ondrej/php5-5.6': }
 
-package { 'vim':
-  ensure => 'installed'
-}
+class { 'git': }
 
-package { 'git':
+package { 'vim':
   ensure => 'installed'
 }
 
