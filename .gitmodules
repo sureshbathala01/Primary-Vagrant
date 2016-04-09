@@ -34,9 +34,6 @@
 [submodule "modules/nodejs"]
 	path = modules/nodejs
 	url = git://github.com/willdurand/puppet-nodejs.git
-[submodule "www/default/wordpress/content/wptest"]
-	path = www/default/wordpress/content/wptest
-	url = https://github.com/manovotny/wptest.git
 [submodule "modules/apt"]
 	path = modules/apt
 	url = https://github.com/example42/puppet-apt.git

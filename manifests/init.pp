@@ -421,4 +421,10 @@ vcsrepo { '/var/www/replacedb.pv':
   source   => 'https://github.com/interconnectit/Search-Replace-DB.git',
 }
 
+vcsrepo { '/var/www/trunk.wordpress.pv/htdocs/content/wp-test':
+  ensure   => latest,
+  provider => git,
+  source   => 'https://github.com/manovotny/wptest.git',
+}
+
 import 'sites/*.pp'
