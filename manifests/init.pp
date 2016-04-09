@@ -7,7 +7,9 @@ class { 'apt': }
 
 apt::ppa { 'ppa:ondrej/php5-5.6': }
 
-class { 'git': }
+package { 'git':
+  ensure => 'installed'
+}
 
 package { 'vim':
   ensure => 'installed'
@@ -337,10 +339,5 @@ file { 'sudoers':
 }
 
 class { 'mailcatcher': }
-
-git::reposync { 'wordpress_trunk':
-  source_url      => 'https://github.com/WordPress/WordPress.git',
-  destination_dir => '/var/www/trunk.wordpress.pv/htdocs',
-}
 
 import 'sites/*.pp'

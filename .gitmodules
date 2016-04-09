@@ -85,3 +85,6 @@
 [submodule "modules/git"]
 	path = modules/git
 	url = https://github.com/example42/puppet-git.git
+[submodule "www/default/wordpress/trunk/htdocs/wordpress"]
+	path = www/default/wordpress/trunk/htdocs/wordpress
+	url = https://github.com/WordPress/WordPress.git
