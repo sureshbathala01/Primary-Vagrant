@@ -346,6 +346,20 @@ exec { "wp-cli-/usr/bin":
   creates => "/usr/bin/wp",
 }
 
+vcsrepo { '/var/www/legacy.wordpress.pv/htdocs/wordpress':
+  ensure   => present,
+  revision => '4.3.3',
+  provider => git,
+  source   => 'https://github.com/WordPress/WordPress.git',
+}
+
+vcsrepo { '/var/www/stable.wordpress.pv/htdocs/wordpress':
+  ensure   => present,
+  revision => '4.4.2',
+  provider => git,
+  source   => 'https://github.com/WordPress/WordPress.git',
+}
+
 vcsrepo { '/var/www/trunk.wordpress.pv/htdocs/wordpress':
   ensure   => latest,
   provider => git,
@@ -356,6 +370,13 @@ vcsrepo { '/var/www/core.wordpress.pv/htdocs':
   ensure   => latest,
   provider => git,
   source   => 'git://develop.git.wordpress.org/',
+}
+
+vcsrepo { '/var/www/phpmyadmin.pv/phpmyadmin':
+  ensure   => present,
+  revision => 'RELEASE_4_6_0',
+  provider => git,
+  source   => 'https://github.com/phpmyadmin/phpmyadmin.git',
 }
 
 import 'sites/*.pp'
