@@ -76,3 +76,6 @@
 [submodule "www/default/wordpress/trunk/htdocs/wordpress"]
 	path = www/default/wordpress/trunk/htdocs/wordpress
 	url = https://github.com/WordPress/WordPress.git
+[submodule "modules/vcsrepo"]
+	path = modules/vcsrepo
+	url = https://github.com/puppetlabs/puppetlabs-vcsrepo.git
