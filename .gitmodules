@@ -52,9 +52,6 @@
 [submodule "www/default/wordpress/legacy/htdocs/wordpress"]
 	path = www/default/wordpress/legacy/htdocs/wordpress
 	url = git@github.com:WordPress/WordPress.git
-[submodule "www/default/wordpress/trunk/htdocs/wordpress"]
-	path = www/default/wordpress/trunk/htdocs/wordpress
-	url = git@github.com:WordPress/WordPress.git
 [submodule "www/default/wordpress/stable/htdocs/wordpress"]
 	path = www/default/wordpress/stable/htdocs/wordpress
 	url = git@github.com:WordPress/WordPress.git
