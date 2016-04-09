@@ -40,15 +40,6 @@
 [submodule "www/default/webgrind"]
 	path = www/default/webgrind
 	url = https://github.com/jokkedk/webgrind.git
-[submodule "www/default/wordpress/legacy/htdocs/wordpress"]
-	path = www/default/wordpress/legacy/htdocs/wordpress
-	url = https://github.com/WordPress/WordPress.git
-[submodule "www/default/wordpress/stable/htdocs/wordpress"]
-	path = www/default/wordpress/stable/htdocs/wordpress
-	url = https://github.com/WordPress/WordPress.git
-[submodule "www/default/phpmyadmin/phpmyadmin"]
-	path = www/default/phpmyadmin/phpmyadmin
-	url = https://github.com/phpmyadmin/phpmyadmin.git
 [submodule "www/default/wordpress/content/plugins/debug-bar"]
 	path = www/default/wordpress/content/plugins/debug-bar
 	url = https://github.com/wp-mirrors/debug-bar.git
