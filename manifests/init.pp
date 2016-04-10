@@ -70,7 +70,6 @@ apache::vhost { 'replacedb.pv':
 }
 
 apache::vhost { 'core.wordpress.pv':
-  serveraliases            => 'wordpress.core.pv',
   docroot                  => '/var/www/core.wordpress.pv/src',
   directory                => '/var/www/core.wordpress.pv/src',
   directory_allow_override => 'All',
@@ -79,7 +78,6 @@ apache::vhost { 'core.wordpress.pv':
 }
 
 apache::vhost { 'legacy.wordpress.pv':
-  serveraliases            => 'wordpress.legacy.pv',
   docroot                  => '/var/www/legacy.wordpress.pv/htdocs',
   directory                => '/var/www/legacy.wordpress.pv/htdocs',
   directory_allow_override => 'All',
@@ -88,7 +86,6 @@ apache::vhost { 'legacy.wordpress.pv':
 }
 
 apache::vhost { 'stable.wordpress.pv':
-  serveraliases            => 'wordpress.stable.pv',
   docroot                  => '/var/www/stable.wordpress.pv/htdocs',
   directory                => '/var/www/stable.wordpress.pv/htdocs',
   directory_allow_override => 'All',
@@ -97,7 +94,6 @@ apache::vhost { 'stable.wordpress.pv':
 }
 
 apache::vhost { 'trunk.wordpress.pv':
-  serveraliases            => 'wordpress.trunk.pv',
   docroot                  => '/var/www/trunk.wordpress.pv/htdocs',
   directory                => '/var/www/trunk.wordpress.pv/htdocs',
   directory_allow_override => 'All',
