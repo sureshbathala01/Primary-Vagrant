@@ -71,8 +71,8 @@ apache::vhost { 'replacedb.pv':
 
 apache::vhost { 'core.wordpress.pv':
   serveraliases            => 'wordpress.core.pv',
-  docroot                  => '/var/www/core.wordpress.pv/htdocs/src',
-  directory                => '/var/www/core.wordpress.pv/htdocs/src',
+  docroot                  => '/var/www/core.wordpress.pv/src',
+  directory                => '/var/www/core.wordpress.pv/src',
   directory_allow_override => 'All',
   ssl                      => true,
   template                 => '/var/vagrant/conf/vhost.conf.erb',
@@ -312,11 +312,6 @@ mysql_grant { 'username@localhost/*.*':
   require    => Class['mysql::server'],
 }
 
-file { '/var/www/phpmyadmin.pv/phpmyadmin/config.inc.php':
-  ensure => 'link',
-  target => '/var/www/phpmyadmin.pv/config.inc.php',
-}
-
 file { '.zshrc':
   path    => '/home/vagrant/.zshrc',
   ensure  => file,
@@ -366,7 +361,7 @@ vcsrepo { '/var/www/trunk.wordpress.pv/htdocs/wordpress':
   source   => 'https://github.com/WordPress/WordPress.git',
 }
 
-vcsrepo { '/var/www/core.wordpress.pv/htdocs':
+vcsrepo { '/var/www/core.wordpress.pv':
   ensure   => latest,
   provider => git,
   source   => 'git://develop.git.wordpress.org/',
@@ -377,6 +372,10 @@ vcsrepo { '/var/www/phpmyadmin.pv/phpmyadmin':
   revision => 'RELEASE_4_6_0',
   provider => git,
   source   => 'https://github.com/phpmyadmin/phpmyadmin.git',
+} ->
+file { '/var/www/phpmyadmin.pv/phpmyadmin/config.inc.php':
+  ensure => 'link',
+  target => '/var/www/phpmyadmin.pv/config.inc.php',
 }
 
 vcsrepo { '/var/www/trunk.wordpress.pv/htdocs/content/plugins/any-ipsum':
