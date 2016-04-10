@@ -70,8 +70,8 @@ apache::vhost { 'replacedb.pv':
 }
 
 apache::vhost { 'core.wordpress.pv':
-  docroot                  => '/var/www/core.wordpress.pv/src',
-  directory                => '/var/www/core.wordpress.pv/src',
+  docroot                  => '/var/www/core.wordpress.pv/wordpress/src',
+  directory                => '/var/www/core.wordpress.pv/wordpress/src',
   directory_allow_override => 'All',
   ssl                      => true,
   template                 => '/var/vagrant/conf/vhost.conf.erb',
@@ -357,7 +357,7 @@ vcsrepo { '/var/www/trunk.wordpress.pv/htdocs/wordpress':
   source   => 'https://github.com/WordPress/WordPress.git',
 }
 
-vcsrepo { '/var/www/core.wordpress.pv':
+vcsrepo { '/var/www/core.wordpress.pv/wordpress':
   ensure   => latest,
   provider => git,
   source   => 'git://develop.git.wordpress.org/',
