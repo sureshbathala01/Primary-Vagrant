@@ -34,3 +34,6 @@
 [submodule "modules/php"]
 	path = modules/php
 	url = https://github.com/mayflower/puppet-php.git
+[submodule "modules/inifile"]
+	path = modules/inifile
+	url = https://github.com/puppetlabs/puppetlabs-inifile.git
