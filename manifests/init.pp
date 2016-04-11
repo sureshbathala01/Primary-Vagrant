@@ -148,7 +148,7 @@ class { '::php':
         'XDEBUG/xdebug.remote_mode'               => 'req',
         'XDEBUG/xdebug.remote_host'               => '192.168.13.1',
         'XDEBUG/xdebug.remote_log'                => '/var/xdebug/xdebug-remote.log',
-        'XDEBUG/#xdebug.remote_autostart'         => '1',
+        'XDEBUG/;xdebug.remote_autostart'         => '1',
         'XDEBUG/xdebug.remote_port'               => '9000',
         'XDEBUG/xdebug.var_display_max_children'  => '-1',
         'XDEBUG/xdebug.var_display_max_data'      => '-1',

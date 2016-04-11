@@ -1,4 +1,4 @@
 #!/bin/bash
-sudo sed -i 's/#xdebug.remote_autostart/xdebug.remote_autostart/g' /etc/php5/mods-available/xdebug.ini
+sudo sed -i 's/;xdebug.remote_autostart/xdebug.remote_autostart/g' /etc/php5/mods-available/xdebug.ini
 sudo service php5-fpm restart
 
