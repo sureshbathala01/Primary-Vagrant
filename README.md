@@ -29,7 +29,7 @@ The repository contains a basic Vagrant configuration that will configure the fo
 * [wp-cli](http://wp-cli.org)
 * [phpMyAdmin](http://www.phpmyadmin.net)
 * [WordPress](https://wordpress.org) (Last, Stable, Core, and Dev)
-* wp-debug plugin
+* Various debugging plugins for WordPress
 * [Search Replace DB](http://interconnectit.com/products/search-and-replace-for-wordpress-databases/)
 * [webgrind](https://github.com/jokkedk/webgrind/)
 * [oh-my-zsh](http://ohmyz.sh)
@@ -39,6 +39,8 @@ The repository contains a basic Vagrant configuration that will configure the fo
 * [node.js](https://nodejs.org)
 * [Git](http://git-scm.com)
 * [Subversion](https://subversion.apache.org)
+* [Memcached](https://memcached.org/)
+* [Redis](http://redis.io/)
 
 ## Contributors
 
@@ -202,6 +204,10 @@ Primary Vagrant comes pre-configured with two awesome tools for helping debug yo
 * Xdebug uses VAGRANT_DEBUG as its IDE key
 * Many modern tools will let you access both of these tools easily with just a bit of configuration. For example, [here's a great post on using remote debugging in PHPStorm.](http://blog.jetbrains.com/phpstorm/2015/07/remote-tools-via-remote-php-interpreters-in-phpstorm-9/)
 * [PHPStorm configuration suggestions are in the wiki](https://github.com/ChrisWiegman/Primary-Vagrant/wiki/XDEBUG-Setup-in-PHPStorm).
+
+You can now also turn xdebug on or off completely with the commands `xon` and `xoff`. This should help speed up complex composer or other operations.
+
+For debugging APIs or any other situation where sending a cookie with your request isn't ideal you can also turn on auto-listening for xdebug in which case it will try to connect automatically, even without a cookie. To do this simply use the commands `xlon` and `xloff` to enable or disable auto-remote. Note that this is disabled by default.
 
 ###Keep your fork up to date with the PV `upstream/master` repo
 
