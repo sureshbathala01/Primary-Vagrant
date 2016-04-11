@@ -16,18 +16,12 @@
 [submodule "modules/postfix"]
 	path = modules/postfix
 	url = https://github.com/Aethylred/puppet-postfix.git
-[submodule "modules/augeas"]
-	path = modules/augeas
-	url = https://github.com/camptocamp/puppet-augeas.git
 [submodule "modules/ohmyzsh"]
 	path = modules/ohmyzsh
 	url = https://github.com/acme/puppet-acme-oh-my-zsh.git
 [submodule "modules/mailcatcher"]
 	path = modules/mailcatcher
 	url = https://github.com/ChrisWiegman/puppet-mailcatcher.git
-[submodule "modules/composer"]
-	path = modules/composer
-	url = https://github.com/willdurand/puppet-composer.git
 [submodule "modules/nodejs"]
 	path = modules/nodejs
 	url = git://github.com/willdurand/puppet-nodejs.git
@@ -37,3 +31,6 @@
 [submodule "modules/vcsrepo"]
 	path = modules/vcsrepo
 	url = https://github.com/puppetlabs/puppetlabs-vcsrepo.git
+[submodule "modules/php"]
+	path = modules/php
+	url = https://github.com/mayflower/puppet-php.git
