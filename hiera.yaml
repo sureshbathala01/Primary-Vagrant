@@ -1,0 +1,8 @@
+---
+:backends:
+  - yaml
+  - json
+:yaml:
+  :datadir: /var/vagrant/yaml
+:hierarchy:
+  - common
