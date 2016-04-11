@@ -109,6 +109,7 @@ Vagrant.configure("2") do |config|
  	config.vm.synced_folder "conf", "/var/vagrant/conf", :mount_options => [ "dmode=777", "fmode=777" ]
  	config.vm.synced_folder "mysql", "/var/vagrant/mysql", :mount_options => [ "dmode=777", "fmode=777" ]
  	config.vm.synced_folder "bin", "/var/vagrant/bin", :mount_options => [ "dmode=777", "fmode=777" ]
+ 	config.vm.synced_folder "yaml", "/var/vagrant/yaml", :mount_options => [ "dmode=777", "fmode=777" ]
 
 	# Custom Mappings - POSSIBLY UNSTABLE
 	#
