@@ -1,6 +1,7 @@
 # File Managed by Puppet
 
 <VirtualHost <%= @ip_addr %>:<%= @port %>>
+	ProxyPassMatch ^/(.*\.php(/.*)?)$ fcgi://127.0.0.1:9042<%= @real_docroot %>/$1
     ServerAdmin <%= @server_admin_email ||= 'webmaster@localhost' %>
     DocumentRoot <%= @real_docroot %>
 <% if @server_name_value != false -%>
@@ -67,6 +68,7 @@
 
 <% if @ssl != false -%>
 <VirtualHost <%= @ip_addr %>:443>
+	ProxyPassMatch ^/(.*\.php(/.*)?)$ fcgi://127.0.0.1:9042<%= @real_docroot %>/$1
     ServerAdmin <%= @server_admin_email ||= 'webmaster@localhost' %>
     DocumentRoot <%= @real_docroot %>
 <% if @server_name_value != false -%>
