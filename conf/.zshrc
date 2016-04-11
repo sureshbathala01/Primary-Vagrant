@@ -80,5 +80,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias xon="xdebug_on"
 alias xoff="xdebug_off"
+alias xlon="xdebug_listen_on"
+alias xloff="xdebug_listen_off"
 
 export PATH="$PATH:/var/vagrant/bin"
