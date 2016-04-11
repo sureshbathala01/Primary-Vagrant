@@ -57,7 +57,8 @@ apache::module { 'proxy_fcgi': }
 apache::module { 'alias': }
 
 apache::vhost { 'pv':
-  docroot => '/var/www/pv',
+  docroot  => '/var/www/pv',
+  template => '/var/vagrant/conf/vhost.conf.erb',
 }
 
 apache::vhost { 'phpmyadmin.pv':
