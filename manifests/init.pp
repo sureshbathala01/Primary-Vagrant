@@ -27,6 +27,10 @@ package { 'memcached':
   ensure => 'installed'
 }
 
+package { 'redis-server':
+  ensure => 'installed'
+}
+
 class { 'ohmyzsh': }
 
 ohmyzsh::install { 'vagrant': }
@@ -123,6 +127,7 @@ class { '::php':
     gd           => { },
     memcache     => { },
     mcrypt       => { },
+    redis        => { },
     xdebug       => {
       zend            => true,
       provider        => 'pecl',
