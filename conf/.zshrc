@@ -78,3 +78,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias xon="xdebug_on"
+alias xoff="xdebug_off"
+
+export PATH="$PATH:/var/vagrant/bin"
