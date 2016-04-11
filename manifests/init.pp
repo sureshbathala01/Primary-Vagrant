@@ -114,7 +114,6 @@ apache::vhost { 'webgrind.pv':
 
 class { '::php':
   ensure       => latest,
-  listen       => '127.0.0.1:9042',
   manage_repos => true,
   phpunit      => true,
   extensions   => {
