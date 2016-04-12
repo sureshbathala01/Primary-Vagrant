@@ -269,14 +269,14 @@ exec { "wp-cli-/usr/bin":
 
 vcsrepo { '/var/www/legacy.wordpress.pv/htdocs/wordpress':
   ensure   => present,
-  revision => '4.3.3',
+  revision => '4.4.2',
   provider => git,
   source   => 'https://github.com/WordPress/WordPress.git',
 }
 
 vcsrepo { '/var/www/stable.wordpress.pv/htdocs/wordpress':
   ensure   => present,
-  revision => '4.4.2',
+  revision => '4.5',
   provider => git,
   source   => 'https://github.com/WordPress/WordPress.git',
 }
