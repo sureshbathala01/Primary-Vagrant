@@ -334,6 +334,12 @@ vcsrepo { '/var/www/trunk.wordpress.pv/htdocs/content/plugins/whats-running':
   source   => 'https://github.com/szepeviktor/whats-running.git',
 }
 
+vcsrepo { '/var/www/trunk.wordpress.pv/htdocs/content/plugins/debug-bar-remote-requests':
+  ensure   => latest,
+  provider => git,
+  source   => 'https://github.com/alleyinteractive/debug-bar-remote-requests.git',
+}
+
 vcsrepo { '/var/www/webgrind.pv':
   ensure   => latest,
   provider => git,
