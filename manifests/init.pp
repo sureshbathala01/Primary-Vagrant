@@ -164,12 +164,6 @@ class { '::php':
   },
 }
 
-exec { 'enabling_mcrypt':
-  command => 'php5enmod mcrypt && service apache2 reload',
-  require => Package['php5-mcrypt'],
-  creates => '/etc/php5/apache2/conf.d/20-mcrypt.ini',
-}
-
 exec { 'php_codesniffer':
   command => 'pear install PHP_CodeSniffer',
   require => Class['php'],
