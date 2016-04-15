@@ -104,12 +104,12 @@ Vagrant.configure("2") do |config|
 	# /Vagrant Data
 	#
 	# Specify a folder for various vagrant data. A MySQL data folder would be appropriate here (for example).
+	config.vm.synced_folder "lib/bin", "/var/vagrant/bin", :mount_options => [ "dmode=777", "fmode=777" ]
+	config.vm.synced_folder "lib/conf", "/var/vagrant/conf", :mount_options => [ "dmode=777", "fmode=777" ]
+	config.vm.synced_folder "lib/ssl", "/etc/apache2/ssl", :mount_options => [ "dmode=777", "fmode=777" ]
+	config.vm.synced_folder "lib/yaml", "/var/vagrant/yaml", :mount_options => [ "dmode=777", "fmode=777" ]
+	config.vm.synced_folder "mysql", "/var/vagrant/mysql", :mount_options => [ "dmode=777", "fmode=777" ]
 	config.vm.synced_folder "xdebug", "/var/xdebug", :mount_options => [ "dmode=777", "fmode=777" ]
- 	config.vm.synced_folder "ssl", "/etc/apache2/ssl", :mount_options => [ "dmode=777", "fmode=777" ]
- 	config.vm.synced_folder "conf", "/var/vagrant/conf", :mount_options => [ "dmode=777", "fmode=777" ]
- 	config.vm.synced_folder "mysql", "/var/vagrant/mysql", :mount_options => [ "dmode=777", "fmode=777" ]
- 	config.vm.synced_folder "bin", "/var/vagrant/bin", :mount_options => [ "dmode=777", "fmode=777" ]
- 	config.vm.synced_folder "yaml", "/var/vagrant/yaml", :mount_options => [ "dmode=777", "fmode=777" ]
 
 	# Custom Mappings - POSSIBLY UNSTABLE
 	#
