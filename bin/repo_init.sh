@@ -62,7 +62,7 @@ fi
 
 # VIP Plugin - VIP Scanner
 if [ ! -d "www/default/wordpress/vip/wp-content/plugins/vip-scanner/.git" ]; then
-  git clone https://github.com/Automattic/vip-scanner www/default/wordpress/vip/wp-content/plugins/vip-scanner
+  git clone --recursive https://github.com/Automattic/vip-scanner www/default/wordpress/vip/wp-content/plugins/vip-scanner
 fi
 
 # VIP Plugin - JetPack
