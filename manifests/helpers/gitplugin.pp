@@ -7,14 +7,13 @@ define gitplugin ( $git_urls ) {
     source   => $git_urls[$title],
     provider => git,
     require  => [
-      Wp::Site['/srv/www/wp'],
-      File['/srv/www/wp-content/plugins'],
+      Wp::Site['/var/www/vip.wordpress.pv/wp'],
     ]
   }
 
   wp::command { "plugin activate ${title}":
     command  => "plugin activate ${title} --network",
-    location => '/srv/www/wp',
-    require  => Vcsrepo["/srv/www/wp-content/plugins/${title}"],
+    location => '/var/www/vip.wordpress.pv/wp',
+    require  => Vcsrepo["/var/www/vip.wordpress.pv/wp-content/plugins/${title}"],
   }
 }
