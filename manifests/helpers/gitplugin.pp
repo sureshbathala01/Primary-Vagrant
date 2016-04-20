@@ -1,7 +1,7 @@
 # GitPlugin clones a git repo into the www/wp-content/plugins directory and activates it in WordPress
 # Taken from Automattic's VIP Quickstart (https://github.com/Automattic/vip-quickstart)
 define gitplugin ( $git_urls ) {
-  vcsrepo { "/srv/www/wp-content/plugins/${title}" :
+  vcsrepo { "/var/www/vip.wordpress.pv/wp-content/plugins/${title}" :
     ensure   => present,
     force    => true,
     source   => $git_urls[$title],
