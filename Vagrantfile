@@ -132,7 +132,7 @@ Vagrant.configure("2") do |config|
 		puppet.manifest_file     = "init.pp"
 		puppet.module_path       = "provision/modules"
 		puppet.facter            = { "fqdn" => "pv" }
-		puppet.hiera_config_path = "manifests/hiera.yaml"
+		puppet.hiera_config_path = "provision/manifests/hiera.yaml"
 	end
 
 	# Vagrant Triggers
