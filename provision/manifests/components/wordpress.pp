@@ -44,6 +44,7 @@ wp::site { '/var/www/vip.wordpress.pv/wp':
   network         => true,
   require         => [
     Vcsrepo['/var/www/vip.wordpress.pv/wp'],
+    Class['php'],
   ]
 }
 
