@@ -472,4 +472,4 @@ vcsrepo { '/var/www/vip.wordpress.pv/wp-content/themes/pub/twentyfifteen':
   provider => svn,
 }
 
-import 'sites/*.pp'
+import '/var/vagrant/siteconf/*.pp'

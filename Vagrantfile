@@ -105,10 +105,10 @@ Vagrant.configure("2") do |config|
 	# /Vagrant Data
 	#
 	# Specify a folder for various vagrant data. A MySQL data folder would be appropriate here (for example).
-	config.vm.synced_folder "lib/bin", "/var/vagrant/bin", :mount_options => [ "dmode=777", "fmode=777" ]
-	config.vm.synced_folder "lib/conf", "/var/vagrant/conf", :mount_options => [ "dmode=777", "fmode=777" ]
-	config.vm.synced_folder "lib/ssl", "/etc/apache2/ssl", :mount_options => [ "dmode=777", "fmode=777" ]
-	config.vm.synced_folder "lib/yaml", "/var/vagrant/yaml", :mount_options => [ "dmode=777", "fmode=777" ]
+	config.vm.synced_folder "provision/lib/bin", "/var/vagrant/bin", :mount_options => [ "dmode=777", "fmode=777" ]
+	config.vm.synced_folder "provision/lib/conf", "/var/vagrant/conf", :mount_options => [ "dmode=777", "fmode=777" ]
+	config.vm.synced_folder "provision/lib/ssl", "/etc/apache2/ssl", :mount_options => [ "dmode=777", "fmode=777" ]
+	config.vm.synced_folder "provision/lib/yaml", "/var/vagrant/yaml", :mount_options => [ "dmode=777", "fmode=777" ]
 	config.vm.synced_folder "mysql", "/var/vagrant/mysql", :mount_options => [ "dmode=777", "fmode=777" ]
 	config.vm.synced_folder "xdebug", "/var/xdebug", :mount_options => [ "dmode=777", "fmode=777" ]
 
@@ -128,9 +128,9 @@ Vagrant.configure("2") do |config|
 	# Provisioning uses the Puppet configuration tool (http://puppetlabs.com/). This tool
 	# relies on modules in the modules/ folder which are configures in manifests/default.pp.
 	config.vm.provision "puppet", run: "always" do |puppet|
-		puppet.manifests_path    = "manifests"
+		puppet.manifests_path    = "provision/manifests"
 		puppet.manifest_file     = "init.pp"
-		puppet.module_path       = "modules"
+		puppet.module_path       = "provision/modules"
 		puppet.facter            = { "fqdn" => "pv" }
 		puppet.hiera_config_path = "hiera.yaml"
 	end
@@ -146,7 +146,7 @@ Vagrant.configure("2") do |config|
 	# scripting. See the individual files in config/homebin/ for details.
 	if defined? VagrantPlugins::Triggers
 		config.trigger.before :up, :stdout => true do
-        	system('./bin/repo_init.sh')
+        	system('./provision/bin/repo_init.sh')
         end
 		config.trigger.before :halt, :stdout => true do
 			run "vagrant ssh -c '/var/vagrant/bin/vagrant_halt'"
