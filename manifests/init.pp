@@ -387,36 +387,6 @@ vcsrepo { '/var/www/trunk.wordpress.pv/htdocs/content/wp-test':
   source   => 'https://github.com/manovotny/wptest.git',
 }
 
-vcsrepo { '/var/www/vip.wordpress.pv/wp-content/plugins/vip-scanner':
-  ensure   => latest,
-  provider => git,
-  source   => 'https://github.com/Automattic/vip-scanner',
-}
-
-vcsrepo { '/var/www/vip.wordpress.pv/wp-content/plugins/jetpack':
-  ensure   => latest,
-  provider => git,
-  source   => 'https://github.com/Automattic/jetpack',
-}
-
-vcsrepo { '/var/www/vip.wordpress.pv/wp-content/plugins/media-explorer':
-  ensure   => latest,
-  provider => git,
-  source   => 'https://github.com/Automattic/media-explorer',
-}
-
-vcsrepo { '/var/www/vip.wordpress.pv/wp-content/plugins/writing-helper':
-  ensure   => latest,
-  provider => git,
-  source   => 'https://github.com/automattic/writing-helper',
-}
-
-vcsrepo { '/var/www/vip.wordpress.pv/wp-content/plugins/amp':
-  ensure   => latest,
-  provider => git,
-  source   => 'https://github.com/automattic/amp-wp',
-}
-
 $plugins = [
   'log-deprecated-notices',
   'monster-widget',
