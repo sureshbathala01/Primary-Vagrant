@@ -82,7 +82,7 @@ fi
 
 # VIP Plugin - VIP Scanner
 if [ ! -d "www/default/wordpress/vip/wp-content/plugins/amp/.git" ]; then
-  git clone https://github.com/automattic/amp-wp www/default/wordpress/vip/wp-content/plugins/amp-wp
+  git clone https://github.com/automattic/amp-wp www/default/wordpress/vip/wp-content/plugins/amp
 fi
 
 # VIP Theme - TwentyFifteen
