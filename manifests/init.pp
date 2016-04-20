@@ -111,6 +111,14 @@ apache::vhost { 'trunk.wordpress.pv':
   template                 => '/var/vagrant/conf/vhost.conf.erb',
 }
 
+apache::vhost { 'vip.wordpress.pv':
+  docroot                  => '/var/www/vip.wordpress.pv',
+  directory                => '/var/www/vip.wordpress.pv',
+  directory_allow_override => 'All',
+  ssl                      => true,
+  template                 => '/var/vagrant/conf/vhost.conf.erb',
+}
+
 apache::vhost { 'webgrind.pv':
   docroot                  => '/var/www/webgrind.pv',
   directory                => '/var/www/webgrind.pv',
@@ -218,6 +226,20 @@ mysql_database { 'core.wordpress.pv':
 }
 
 mysql_database { 'tests.core.wordpress.pv':
+  ensure  => 'present',
+  charset => 'utf8',
+  collate => 'utf8_general_ci',
+  require => Class['mysql::server'],
+}
+
+mysql_database { 'tests.vip.wordpress.pv':
+  ensure  => 'present',
+  charset => 'utf8',
+  collate => 'utf8_general_ci',
+  require => Class['mysql::server'],
+}
+
+mysql_database { 'vip.wordpress.pv':
   ensure  => 'present',
   charset => 'utf8',
   collate => 'utf8_general_ci',
