@@ -1,3 +1,5 @@
+import 'helpers/*.pp'
+
 group { 'puppet': ensure => present }
 
 Exec { path => [ '/bin/', '/sbin/', '/usr/bin/', '/usr/sbin/', '/var/vagrant/bin/' ] }
