@@ -98,7 +98,7 @@ require __DIR__ . '/config/vip-config.php';
 
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
-	define( 'ABSPATH', dirname( __FILE__ ) . '/' );
+	define( 'ABSPATH', dirname( __FILE__ ) . '/wp/' );
 }
 
 /** Sets up WordPress vars and included files. */
