@@ -109,17 +109,17 @@ Vagrant.configure("2") do |config|
 	config.vm.synced_folder "provision/lib/conf", "/var/vagrant/conf", :mount_options => [ "dmode=777", "fmode=777" ]
 	config.vm.synced_folder "provision/lib/ssl", "/etc/apache2/ssl", :mount_options => [ "dmode=777", "fmode=777" ]
 	config.vm.synced_folder "provision/lib/yaml", "/var/vagrant/yaml", :mount_options => [ "dmode=777", "fmode=777" ]
-	config.vm.synced_folder "www/database", "/var/vagrant/database", :mount_options => [ "dmode=777", "fmode=777" ]
-	config.vm.synced_folder "www/debug", "/var/vagrant/xdebug", :mount_options => [ "dmode=777", "fmode=777" ]
-	config.vm.synced_folder "www/siteconf", "/var/vagrant/siteconf", :mount_options => [ "dmode=777", "fmode=777" ]
+	config.vm.synced_folder "userdata/database", "/var/vagrant/database", :mount_options => [ "dmode=777", "fmode=777" ]
+	config.vm.synced_folder "userdata/debug", "/var/vagrant/xdebug", :mount_options => [ "dmode=777", "fmode=777" ]
+	config.vm.synced_folder "userdata/siteconf", "/var/vagrant/siteconf", :mount_options => [ "dmode=777", "fmode=777" ]
 
 	# Custom Mappings - POSSIBLY UNSTABLE
 	#
 	# Use this to insert your own (and possibly rewrite) Vagrant config lines. Helpful
 	# for mapping additional drives. If a file 'mappings' exists in the www folder
 	# it will be evaluated as ruby inline as it loads.
-	if File.exists?(File.join(vagrant_dir,'www', 'mappings')) then
-		eval(IO.read(File.join(vagrant_dir, 'www', 'mappings')), binding)
+	if File.exists?(File.join(vagrant_dir,'userdata', 'mappings')) then
+		eval(IO.read(File.join(vagrant_dir, 'userdata', 'mappings')), binding)
 	end
 
 	# Provisioning
