@@ -39,8 +39,8 @@ file { '/var/www/vip.wordpress.pv/wp-content/plugins/log-viewer':
 wp::site { '/var/www/vip.wordpress.pv/wp':
   url             => 'vip.wordpress.pv',
   sitename        => 'vip.wordpress.pv',
-  admin_user      => 'wordpress',
-  admin_password  => 'wordpress',
+  admin_user      => 'admin',
+  admin_password  => 'password',
   network         => true,
   require         => [
     Vcsrepo['/var/www/vip.wordpress.pv/wp'],
