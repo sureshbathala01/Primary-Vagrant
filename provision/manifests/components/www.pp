@@ -4,5 +4,3 @@ class { 'postfix':
 }
 
 class { 'mailcatcher': }
-
-import '/var/vagrant/siteconf/*.pp'
