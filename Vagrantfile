@@ -109,8 +109,9 @@ Vagrant.configure("2") do |config|
 	config.vm.synced_folder "provision/lib/conf", "/var/vagrant/conf", :mount_options => [ "dmode=777", "fmode=777" ]
 	config.vm.synced_folder "provision/lib/ssl", "/etc/apache2/ssl", :mount_options => [ "dmode=777", "fmode=777" ]
 	config.vm.synced_folder "provision/lib/yaml", "/var/vagrant/yaml", :mount_options => [ "dmode=777", "fmode=777" ]
-	config.vm.synced_folder "www/database", "/var/vagrant/mysql", :mount_options => [ "dmode=777", "fmode=777" ]
-	config.vm.synced_folder "www/debug", "/var/xdebug", :mount_options => [ "dmode=777", "fmode=777" ]
+	config.vm.synced_folder "www/database", "/var/vagrant/database", :mount_options => [ "dmode=777", "fmode=777" ]
+	config.vm.synced_folder "www/debug", "/var/vagrant/xdebug", :mount_options => [ "dmode=777", "fmode=777" ]
+	config.vm.synced_folder "www/siteconf", "/var/vagrant/siteconf", :mount_options => [ "dmode=777", "fmode=777" ]
 
 	# Custom Mappings - POSSIBLY UNSTABLE
 	#
