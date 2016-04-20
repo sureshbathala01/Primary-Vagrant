@@ -66,6 +66,7 @@ Current development of the project is focusing on instituting multiple PHP versi
 * legacy.wordpress.pv - Last version of WordPress (currently 4.4.x)
 * stable.wordpress.pv - Latest WordPress stable (currently 4.5.x)
 * trunk.wordpress.pv - WordPress trunk
+* vip.wordpress.pv - Simulates the WordPress VIP environment for development without VIP Quickstart
 * webgrind.pv - webgrind
 * mailcatcher.pv - MailCatcher
 
@@ -91,8 +92,6 @@ Once Vagrant is installed you'll want three plugins to update your local hosts, 
 
     ```$ git clone --recursive git@github.com:ChrisWiegman/Primary-Vagrant.git PV```
 
-    *Note: you will need to have [your public RSA key on file with GitHub](https://help.github.com/articles/generating-ssh-keys/) to use this either way.*
-
 1. In a command prompt, change into the new directory with `cd PV`
 
 1. Start the Vagrant environment with `vagrant up`
@@ -107,6 +106,7 @@ The following websites come pre-configured in the system:
 * WordPress (last major release) at [http://legacy.wordpress.pv](http://legacy.wordpress.pv)
 * WordPress (latest stable release) at [http://stable.wordpress.pv](http://stable.wordpress.pv)
 * WordPress Trunk at [http://trunk.wordpress.pv](http://trunk.wordpress.pv)
+* WordPress VIP Environment at [http://vip.wordpress.pv](http://vip.wordpress.pv)
 * WordPress Core Development at [http://core.wordpress.pv](http://core.wordpress.pv)
 * Search Replace DB [https://replacedb.pv](https://replacedb.pv)
 
@@ -114,7 +114,7 @@ The following websites come pre-configured in the system:
 
 ### Configure Additional Sites
 
-First, create a file called mappings in the www directory. This will map any sites you create to the appropriate folder on PV.
+First, create a file called mappings in the userdata directory. This will map any sites you create to the appropriate folder on PV.
 
 Example Mapping:
 
@@ -132,7 +132,7 @@ config.vm.synced_folder "/Users/MyUser/my-awesome-plugin", "/var/www/stable.word
 config.vm.synced_folder "/Users/MyUser/my-awesome-plugin", "/var/www/trunk.wordpress.pv/htdocs/content/plugins/my-awesome-plugin", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774"]
 ```
 
-Next Edit **manifests/sites/``[your-site-domain].pp**. This is where you define virtualhosts and databases. Copy what is below and ask me if you have any questions. Of course these aren't the only configuration options you have either. You can find a [full list of Apache configuration options here](http://github.com/example42/puppet-apache) and a [full list of mysql configuration options here](https://github.com/puppetlabs/puppetlabs-mysql).
+Next Edit **userdata/siteconf/``[your-site-domain].pp**. This is where you define virtualhosts and databases. Copy what is below and ask me if you have any questions. Of course these aren't the only configuration options you have either. You can find a [full list of Apache configuration options here](http://github.com/example42/puppet-apache) and a [full list of mysql configuration options here](https://github.com/puppetlabs/puppetlabs-mysql).
 
 Example:
 
@@ -163,11 +163,11 @@ After the configuration above has been added, simply run `vagrant halt` and then
 
 ### Changing configuration options
 
-The default installation configuration is found in *manifests/init.pp*. While you could edit this if you like I would, instead, recommend adding any additional configuration to *manifests/sites/custom.pp*
+The default installation configuration is found in *provision/manifests/init.pp*. While you could edit this if you like I would, instead, recommend adding any additional configuration to *userdata/siteconf/custom.pp*
 
 #### Change PHP Versions
 
-To change from PHP 5.6 I recommend using a PGP package from [https://launchpad.net/~ondrej/+archive/php5](https://launchpad.net/~ondrej/+archive/php5). You can do so by adding ```apt::ppa { 'ppa:ondrej/php5': }``` to *manifests/php.pp*. Make sure to choose the correct repository for the PHP version you want to use.
+To change from PHP 5.6 I recommend using a PGP package from [https://launchpad.net/~ondrej/+archive/php5](https://launchpad.net/~ondrej/+archive/php5). You can do so by adding ```apt::ppa { 'ppa:ondrej/php5': }``` to *userdata/siteconf/php.pp*. Make sure to choose the correct repository for the PHP version you want to use.
 
 Note: this file can also be used to change any php.ini value following the example included in the file.
 
@@ -186,7 +186,7 @@ WP Test can be installed via the instructions at (https://github.com/manovotny/w
 
 #### node.js
 
-The latest stable node.js version is installed, if you want to pre-install packages just add them to *manifests/nodejs.pp*.
+The latest stable node.js version is installed, if you want to pre-install packages just add them to *userdata/siteconf/nodejs.pp*.
 
 Example:
 
