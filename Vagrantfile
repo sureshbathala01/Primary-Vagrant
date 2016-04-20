@@ -92,6 +92,7 @@ Vagrant.configure("2") do |config|
 	# on the host computer. The second argument is the location on the guest matching. Finally the
 	# 3rd arguement is a unique ID given to each folder mapped
 	config.vm.synced_folder "www/default/pv", "/var/www/pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "www/default/wordpress/vip", "/var/www/vip.wordpress.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "www/default/wordpress/core", "/var/www/core.wordpress.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "www/default/wordpress/stable", "/var/www/stable.wordpress.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "www/default/wordpress/legacy", "/var/www/legacy.wordpress.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
