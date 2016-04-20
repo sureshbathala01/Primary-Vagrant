@@ -18,5 +18,5 @@ Customfile
 # Ignore changes made to sites and plugins
 sites/wordpress/content/plugins
 manifests/sites
-www
+
 .bundle
