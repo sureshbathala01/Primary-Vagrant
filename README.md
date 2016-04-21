@@ -28,7 +28,7 @@ The repository contains a basic Vagrant configuration that will configure the fo
 * [Postfix](http://www.postfix.org)
 * [wp-cli](http://wp-cli.org)
 * [phpMyAdmin](http://www.phpmyadmin.net)
-* [WordPress](https://wordpress.org) (Last, Stable, Core, and Dev)
+* [WordPress](https://wordpress.org) (Last, Stable, Core, Dev and VIP)
 * Various debugging plugins for WordPress
 * [Search Replace DB](http://interconnectit.com/products/search-and-replace-for-wordpress-databases/)
 * [webgrind](https://github.com/jokkedk/webgrind/)
@@ -40,7 +40,6 @@ The repository contains a basic Vagrant configuration that will configure the fo
 * [Git](http://git-scm.com)
 * [Subversion](https://subversion.apache.org)
 * [Memcached](https://memcached.org/)
-* [Redis](http://redis.io/)
 
 ## Contributors
 
@@ -88,10 +87,6 @@ Once Vagrant is installed you'll want three plugins to update your local hosts, 
 
     ```$ git clone --recursive https://github.com/ChrisWiegman/Primary-Vagrant.git PV```
 
-    or
-
-    ```$ git clone --recursive git@github.com:ChrisWiegman/Primary-Vagrant.git PV```
-
 1. In a command prompt, change into the new directory with `cd PV`
 
 1. Start the Vagrant environment with `vagrant up`
@@ -127,9 +122,7 @@ config.vm.synced_folder "/Users/MyUser/Sites/Mysite/htdocs", "/var/www/mysite.pv
 Example:
 
 ```
-config.vm.synced_folder "/Users/MyUser/my-awesome-plugin", "/var/www/legacy.wordpress.pv/htdocs/content/plugins/my-awesome-plugin", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774"]
-config.vm.synced_folder "/Users/MyUser/my-awesome-plugin", "/var/www/stable.wordpress.pv/htdocs/content/plugins/my-awesome-plugin", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774"]
-config.vm.synced_folder "/Users/MyUser/my-awesome-plugin", "/var/www/trunk.wordpress.pv/htdocs/content/plugins/my-awesome-plugin", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774"]
+config.vm.synced_folder "/Users/MyUser/my-awesome-plugin", "/var/www/wordpress/content/plugins/my-awesome-plugin", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774"]
 ```
 
 Next Edit **userdata/siteconf/``[your-site-domain].pp**. This is where you define virtualhosts and databases. Copy what is below and ask me if you have any questions. Of course these aren't the only configuration options you have either. You can find a [full list of Apache configuration options here](http://github.com/example42/puppet-apache) and a [full list of mysql configuration options here](https://github.com/puppetlabs/puppetlabs-mysql).
@@ -182,7 +175,7 @@ In addition to the *root* MySQL account the account *username* with the password
 Postfix is configured and set to use your host computer as a mail relay. To receive messages you can use the built in [MailCatcher installation](http://mailcatcher.pv:1080) (this will prevent your real SMTP mail server and mailbox from getting too much abuse).
 
 #### WP Test Data
-WP Test can be installed via the instructions at (https://github.com/manovotny/wptest). Test data is found in *[Primary Vagrant Folder]/sites/wordpress/wptest* on your host machine.
+WP Test can be installed via the instructions at (https://github.com/manovotny/wptest). Test data is found in *[Primary Vagrant Folder]/www/default/wordpress/content/wptest* on your host machine.
 
 #### WordPress VIP Development
 Primary Vagrant contains a full environment to help you work on WordPress VIP powered to sites without the need for VIP Quickstart. To access:
@@ -240,14 +233,6 @@ Now, you will be free to PR against Primary Vagrant.
 
 Contributions are more than welcome. Please read our current [guidelines for contributing](CONTRIBUTING.md) to this repository. Many thanks in advance!
 
-### Future Development
-
-Some ideas I'm working on for future features:
-
-* PHPBrew or a similar script that will allow you to change PHP versions on the fly.
-* A site builder script that will let you avoid having to edit any text to add a new site.
-* Anything else (applicable to the project) that the community would like to contribute.
-
-## Note
+## Important
 
 This server configuration is designed for development use only. Please don't put it on a production server as some of these settings would cause serious security issues.
