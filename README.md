@@ -184,6 +184,15 @@ Postfix is configured and set to use your host computer as a mail relay. To rece
 #### WP Test Data
 WP Test can be installed via the instructions at (https://github.com/manovotny/wptest). Test data is found in *[Primary Vagrant Folder]/sites/wordpress/wptest* on your host machine.
 
+#### WordPress VIP Development
+Primary Vagrant contains a full environment to help you work on WordPress VIP powered to sites without the need for VIP Quickstart. To access:
+
+**URL:** [http://vip.wordpress.pv](http://vip.wordpress.pv)
+
+**Username:** admin
+
+**Password:** password
+
 #### node.js
 
 The latest stable node.js version is installed, if you want to pre-install packages just add them to *userdata/siteconf/nodejs.pp*.
