@@ -38,9 +38,10 @@ class { '::php':
     },
   },
   settings     => {
-    'PHP/memory_limit'                       => '256M',
-    'PHP/post_max_size'                      => '100M',
-    'PHP/upload_max_filesize'                => '100M',
+    'PHP/memory_limit'        => '256M',
+    'PHP/post_max_size'       => '100M',
+    'PHP/upload_max_filesize' => '100M',
+    'PHP/max_execution_time'  => '90',
   },
 }
 
