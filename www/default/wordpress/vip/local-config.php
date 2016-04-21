@@ -8,4 +8,3 @@ define( 'SECURE_AUTH_SALT', 'LE!WgR-u>lt?oax+QnHH1+:i#ko*iAx0Ug]B7+nwxM{%z+ofm8r
 define( 'LOGGED_IN_SALT', 'cCRZC/@r<2un8-BPRbL]UG]HE@XK-avZr &sHNSu8P_J $6VYA:Aw~X5j-c{b&eq' );
 define( 'NONCE_SALT', '>]T-8(?3Bblg_4oL0iY|e*T{~Fs6 M0Kv/ORV!6v#DcOW!lQz^40%)cTt 79SS=,' );
 define( 'JETPACK_DEV_DEBUG', true );
-define( 'DB_PASSWORD', 'password' );
