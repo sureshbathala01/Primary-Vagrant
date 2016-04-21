@@ -6,7 +6,6 @@ class { '::php':
     mysql        => { },
     imagick      => { },
     curl         => { },
-    gd           => { },
     memcache     => { },
     mcrypt       => { },
     redis        => { },
