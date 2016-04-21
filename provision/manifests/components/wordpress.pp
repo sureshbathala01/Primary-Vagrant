@@ -78,7 +78,7 @@ file { '/var/www/vip.wordpress.pv/wp-content/db.php':
   require => Wp::Plugin['query-monitor']
 }
 
-wp::option { 'site_url':
+wp::option { 'siteurl':
   ensure   => equal,
   value    => 'http://vip.wordpress.pv/wp',
   location => '/var/www/vip.wordpress.pv/wp',
