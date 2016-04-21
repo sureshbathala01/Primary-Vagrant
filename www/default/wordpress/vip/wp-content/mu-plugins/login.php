@@ -1,5 +1,5 @@
 <?php
-add_filter( 'network_site_url', function ( $url, $path, $scheme ) {
+add_filter( 'network_site_url', function ( $url ) {
 
 	$urls_to_fix = array(
 		'/wp-admin/network/',
@@ -17,23 +17,25 @@ add_filter( 'network_site_url', function ( $url, $path, $scheme ) {
 	}
 
 	return $url;
-}, 10, 3 );
 
-add_filter( 'login_url', function ( $login_url, $redirect ) {
+} );
 
-	$login_url = str_replace( '/wp-login.php', '/wp/wp-login.php', $login_url );
+add_filter( 'login_url', function ( $login_url ) {
+
+	if ( false === strpos( $login_url, '/wp/wp-login.php' ) ) {
+		$login_url = str_replace( '/wp-login.php', '/wp/wp-login.php', $login_url );
+	}
 
 	return $login_url;
-}, 10, 2 );
+
+} );
 
 add_filter( 'site_url', function ( $url, $path ) {
 
-	if ( 'wp-login.php' === $path ) {
-
+	if ( 'wp-login.php' === $path && false === strpos( $url, '/wp/wp-login.php' ) ) {
 		$url = str_replace( '/wp-login.php', '/wp/wp-login.php', $url );
-
 	}
 
 	return $url;
 
-}, 10, 4 );
+}, 10, 2 );
