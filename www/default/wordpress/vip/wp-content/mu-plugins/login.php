@@ -26,6 +26,10 @@ add_filter( 'login_url', function ( $login_url ) {
 		$login_url = str_replace( '/wp-login.php', '/wp/wp-login.php', $login_url );
 	}
 
+	if ( false === strpos( $login_url, '/wp/wp-admin' ) ) {
+		$login_url = str_replace( '/wp-admin', '/wp/wp-admin', $login_url );
+	}
+
 	return $login_url;
 
 } );
@@ -36,6 +40,20 @@ add_filter( 'site_url', function ( $url, $path ) {
 		$url = str_replace( '/wp-login.php', '/wp/wp-login.php', $url );
 	}
 
+	if ( 'wp-admin' === $path && false === strpos( $url, '/wp/wp-admin' ) ) {
+		$url = str_replace( '/wp-admin', '/wp/wp-admin', $url );
+	}
+
 	return $url;
 
 }, 10, 2 );
+
+add_filter( 'admin_url', function ( $url ) {
+
+	if ( false === strpos( $url, '/wp/wp-admin' ) ) {
+		$url = str_replace( '/wp-admin', '/wp/wp-admin', $url );
+	}
+
+	return $url;
+
+} );
