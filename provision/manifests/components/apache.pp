@@ -5,7 +5,7 @@ class { 'apache':
 include apache::ssl
 
 apache::dotconf { 'fqdn':
-  content => template( '/var/vagrant/conf/fqdn.conf.erb' )
+  content => template( '/var/vagrant/lib/conf/fqdn.conf.erb' )
 }
 
 apache::module { 'rewrite': }
@@ -21,7 +21,7 @@ apache::module { 'alias': }
 
 apache::vhost { 'pv':
   docroot  => '/var/www/pv',
-  template => '/var/vagrant/conf/vhost.conf.erb',
+  template => '/var/vagrant/lib/conf/vhost.conf.erb',
 }
 
 apache::vhost { 'phpmyadmin.pv':
@@ -29,7 +29,7 @@ apache::vhost { 'phpmyadmin.pv':
   directory                => '/var/www/phpmyadmin.pv/phpmyadmin',
   directory_allow_override => 'All',
   ssl                      => true,
-  template                 => '/var/vagrant/conf/vhost.conf.erb',
+  template                 => '/var/vagrant/lib/conf/vhost.conf.erb',
 }
 
 apache::vhost { 'replacedb.pv':
@@ -37,7 +37,7 @@ apache::vhost { 'replacedb.pv':
   directory                => '/var/www/replacedb.pv',
   directory_allow_override => 'All',
   ssl                      => true,
-  template                 => '/var/vagrant/conf/vhost.conf.erb',
+  template                 => '/var/vagrant/lib/conf/vhost.conf.erb',
 }
 
 apache::vhost { 'core.wordpress.pv':
@@ -45,7 +45,7 @@ apache::vhost { 'core.wordpress.pv':
   directory                => '/var/www/core.wordpress.pv/wordpress/src',
   directory_allow_override => 'All',
   ssl                      => true,
-  template                 => '/var/vagrant/conf/vhost.conf.erb',
+  template                 => '/var/vagrant/lib/conf/vhost.conf.erb',
 }
 
 apache::vhost { 'legacy.wordpress.pv':
@@ -53,7 +53,7 @@ apache::vhost { 'legacy.wordpress.pv':
   directory                => '/var/www/legacy.wordpress.pv/htdocs',
   directory_allow_override => 'All',
   ssl                      => true,
-  template                 => '/var/vagrant/conf/vhost.conf.erb',
+  template                 => '/var/vagrant/lib/conf/vhost.conf.erb',
 }
 
 apache::vhost { 'stable.wordpress.pv':
@@ -61,7 +61,7 @@ apache::vhost { 'stable.wordpress.pv':
   directory                => '/var/www/stable.wordpress.pv/htdocs',
   directory_allow_override => 'All',
   ssl                      => true,
-  template                 => '/var/vagrant/conf/vhost.conf.erb',
+  template                 => '/var/vagrant/lib/conf/vhost.conf.erb',
 }
 
 apache::vhost { 'trunk.wordpress.pv':
@@ -69,7 +69,7 @@ apache::vhost { 'trunk.wordpress.pv':
   directory                => '/var/www/trunk.wordpress.pv/htdocs',
   directory_allow_override => 'All',
   ssl                      => true,
-  template                 => '/var/vagrant/conf/vhost.conf.erb',
+  template                 => '/var/vagrant/lib/conf/vhost.conf.erb',
 }
 
 apache::vhost { 'vip.wordpress.pv':
@@ -77,7 +77,7 @@ apache::vhost { 'vip.wordpress.pv':
   directory                => '/var/www/vip.wordpress.pv',
   directory_allow_override => 'All',
   ssl                      => true,
-  template                 => '/var/vagrant/conf/vhost.conf.erb',
+  template                 => '/var/vagrant/lib/conf/vhost.conf.erb',
 }
 
 apache::vhost { 'webgrind.pv':
@@ -85,5 +85,5 @@ apache::vhost { 'webgrind.pv':
   directory                => '/var/www/webgrind.pv',
   directory_allow_override => 'All',
   ssl                      => true,
-  template                 => '/var/vagrant/conf/vhost.conf.erb',
+  template                 => '/var/vagrant/lib/conf/vhost.conf.erb',
 }

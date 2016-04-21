@@ -106,13 +106,8 @@ Vagrant.configure("2") do |config|
 	# /Vagrant Data
 	#
 	# Specify a folder for various vagrant data. A MySQL data folder would be appropriate here (for example).
-	config.vm.synced_folder "provision/lib/bin", "/var/vagrant/bin", :mount_options => [ "dmode=777", "fmode=777" ]
-	config.vm.synced_folder "provision/lib/conf", "/var/vagrant/conf", :mount_options => [ "dmode=777", "fmode=777" ]
-	config.vm.synced_folder "provision/lib/ssl", "/etc/apache2/ssl", :mount_options => [ "dmode=777", "fmode=777" ]
-	config.vm.synced_folder "provision/lib/yaml", "/var/vagrant/yaml", :mount_options => [ "dmode=777", "fmode=777" ]
-	config.vm.synced_folder "userdata/database", "/var/vagrant/database", :mount_options => [ "dmode=777", "fmode=777" ]
-	config.vm.synced_folder "userdata/debug", "/var/vagrant/xdebug", :mount_options => [ "dmode=777", "fmode=777" ]
-	config.vm.synced_folder "userdata/siteconf", "/var/vagrant/siteconf", :mount_options => [ "dmode=777", "fmode=777" ]
+	config.vm.synced_folder "provision/lib", "/var/vagrant/lib", :mount_options => [ "dmode=777", "fmode=777" ]
+	config.vm.synced_folder "userdata", "/var/vagrant/userdata", :mount_options => [ "dmode=777", "fmode=777" ]
 
 	# Custom Mappings - POSSIBLY UNSTABLE
 	#
@@ -151,13 +146,13 @@ Vagrant.configure("2") do |config|
         	system('./provision/bin/repo_init.sh')
         end
 		config.trigger.before :halt, :stdout => true do
-			run "vagrant ssh -c '/var/vagrant/bin/vagrant_halt'"
+			run "vagrant ssh -c '/var/vagrant/lib/bin/vagrant_halt'"
 		end
 		config.trigger.before :suspend, :stdout => true do
-			run "vagrant ssh -c '/var/vagrant/bin/vagrant_suspend'"
+			run "vagrant ssh -c '/var/vagrant/lib/bin/vagrant_suspend'"
 		end
 		config.trigger.before :destroy, :stdout => true do
-			run "vagrant ssh -c '/var/vagrant/bin/vagrant_destroy'"
+			run "vagrant ssh -c '/var/vagrant/lib/bin/vagrant_destroy'"
 		end
 	end
 

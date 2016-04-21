@@ -40,12 +40,12 @@ file { '.zshrc':
   ensure  => file,
   owner   => 'vagrant',
   group   => 'vagrant',
-  source  => '/var/vagrant/conf/.zshrc',
+  source  => '/var/vagrant/lib/conf/.zshrc',
 }
 
 file { 'sudoers':
   path    => '/etc/sudoers',
   ensure  => file,
   mode    => '440',
-  source  => '/var/vagrant/conf/sudoers',
+  source  => '/var/vagrant/lib/conf/sudoers',
 }

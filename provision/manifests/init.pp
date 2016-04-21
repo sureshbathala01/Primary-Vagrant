@@ -13,4 +13,4 @@ import 'components/mysql.pp'
 import 'components/www.pp'
 import 'components/wordpress.pp'
 
-import '/var/vagrant/siteconf/*.pp'
+import '/var/vagrant/userdata/siteconf/*.pp'

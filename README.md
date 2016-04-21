@@ -142,7 +142,7 @@ apache::vhost { 'mysite.pv':
     directory                       => '/var/www/mysite.pv',
     directory_allow_override        => 'All',
     ssl                             => true,
-    template                        => '/var/vagrant/conf/vhost.conf.erb',
+    template                        => '/var/vagrant/lib/conf/vhost.conf.erb',
 }
 ```
 
