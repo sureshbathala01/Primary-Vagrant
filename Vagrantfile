@@ -42,8 +42,7 @@ Vagrant.configure("2") do |config|
 	# individual domains separated by whitespace in subdirectories of www/.
 	if defined?(VagrantPlugins::Ghost)
 		# Recursively fetch the paths to all pv-hosts files under the www/ directory.
-		paths = Dir[File.join(vagrant_dir, 'www', '**', 'pv-hosts')]
-		paths = Dir[File.join(vagrant_dir, 'userdata', 'pv-hosts')]
+		paths = Dir[File.join(vagrant_dir, 'www', '**', 'pv-hosts')] + Dir[File.join(vagrant_dir, 'userdata', 'pv-hosts')]
 
 		# Parse the found pv-hosts files for host names.
 		hosts = paths.map do |path|
