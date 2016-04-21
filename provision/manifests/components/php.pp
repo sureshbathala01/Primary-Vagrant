@@ -8,7 +8,6 @@ class { '::php':
     curl         => { },
     memcache     => { },
     mcrypt       => { },
-    redis        => { },
     xdebug       => {
       zend            => true,
       provider        => 'pecl',
