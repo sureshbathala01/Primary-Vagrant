@@ -69,11 +69,13 @@ Vagrant.configure("2") do |config|
 	# Configurations from 1.0.x can be placed in Vagrant 1.1.x specs like the following.
 	config.vm.provider :virtualbox do |v|
 		v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-		v.customize ["modifyvm", :id, "--memory", 1024]
+		v.customize ["modifyvm", :id, "--memory", 4096]
 		v.customize ["modifyvm", :id, "--name", "Primary Vagrant"]
-		v.customize ["modifyvm", :id, "--cpus", 1]
+		v.customize ["modifyvm", :id, "--cpus", 2]
 		v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
 	end
+
+	config.vbguest.auto_update = false
 
 	# Don't check for updates with every vagrant up
 	config.vm.box_check_update = false
@@ -98,9 +100,7 @@ Vagrant.configure("2") do |config|
 	config.vm.synced_folder "www/default/wordpress/stable", "/var/www/stable.wordpress.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "www/default/wordpress/legacy", "/var/www/legacy.wordpress.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "www/default/wordpress/trunk", "/var/www/trunk.wordpress.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "www/default/wordpress/content", "/var/www/stable.wordpress.pv/htdocs/content", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "www/default/wordpress/content", "/var/www/trunk.wordpress.pv/htdocs/content", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "www/default/wordpress/content", "/var/www/legacy.wordpress.pv/htdocs/content", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+	config.vm.synced_folder "www/default/wordpress/content", "/var/www/wordpress/content", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 	config.vm.synced_folder "www/default/phpmyadmin", "/var/www/phpmyadmin.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
 
 	# /Vagrant Data
