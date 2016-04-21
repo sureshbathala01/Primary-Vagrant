@@ -77,3 +77,10 @@ file { '/var/www/vip.wordpress.pv/wp-content/db.php':
   target  => 'plugins/query-monitor/wp-content/db.php',
   require => Wp::Plugin['query-monitor']
 }
+
+wp::option { 'site_url':
+  ensure   => equal,
+  value    => 'http://vip.wordpress.pv/wp',
+  location => '/var/www/vip.wordpress.pv/wp',
+  require  => Wp::Site['/var/www/vip.wordpress.pv/wp'],
+}
