@@ -64,6 +64,13 @@ wp::plugin { $plugins:
   ]
 }
 
+# Update all the plugins
+wp::command { 'plugin update --all':
+  command  => 'plugin update --all',
+  location => '/var/www/vip.wordpress.pv/wp',
+  require  => Wp::Site['/var/www/vip.wordpress.pv/wp'],
+}
+
 # Symlink db.php for Query Monitor
 file { '/var/www/vip.wordpress.pv/wp-content/db.php':
   ensure  => 'link',
