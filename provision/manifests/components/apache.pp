@@ -51,6 +51,7 @@ apache::vhost { 'core.wordpress.pv':
 apache::vhost { 'legacy.wordpress.pv':
   docroot                  => '/var/www/legacy.wordpress.pv/htdocs',
   directory                => '/var/www/legacy.wordpress.pv/htdocs',
+  aliases                  => '/content /var/www/wordpress/content',
   directory_allow_override => 'All',
   ssl                      => true,
   template                 => '/var/vagrant/lib/conf/vhost.conf.erb',
@@ -59,6 +60,7 @@ apache::vhost { 'legacy.wordpress.pv':
 apache::vhost { 'stable.wordpress.pv':
   docroot                  => '/var/www/stable.wordpress.pv/htdocs',
   directory                => '/var/www/stable.wordpress.pv/htdocs',
+  aliases                  => '/content /var/www/wordpress/content',
   directory_allow_override => 'All',
   ssl                      => true,
   template                 => '/var/vagrant/lib/conf/vhost.conf.erb',
@@ -67,6 +69,7 @@ apache::vhost { 'stable.wordpress.pv':
 apache::vhost { 'trunk.wordpress.pv':
   docroot                  => '/var/www/trunk.wordpress.pv/htdocs',
   directory                => '/var/www/trunk.wordpress.pv/htdocs',
+  aliases                  => '/content /var/www/wordpress/content',
   directory_allow_override => 'All',
   ssl                      => true,
   template                 => '/var/vagrant/lib/conf/vhost.conf.erb',
