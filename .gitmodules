@@ -37,6 +37,3 @@
 [submodule "provision/modules/wp"]
 	path = provision/modules/wp
 	url = https://github.com/joshbetz/puppet-wp.git
-[submodule "provision/modules/apache"]
-	path = provision/modules/apache
-	url = https://github.com/puppetlabs/puppetlabs-apache.git
