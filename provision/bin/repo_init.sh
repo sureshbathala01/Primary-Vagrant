@@ -84,13 +84,3 @@ fi
 if [ ! -d "www/default/wordpress/vip/wp-content/plugins/amp/.git" ]; then
   git clone https://github.com/automattic/amp-wp www/default/wordpress/vip/wp-content/plugins/amp
 fi
-
-# VIP Theme - TwentyFifteen
-if [ ! -d "www/default/wordpress/vip/wp-content/themes/pub/twentyfifteen/.svn" ]; then
-  svn checkout https://wpcom-themes.svn.automattic.com/twentyfifteen www/default/wordpress/vip/wp-content/themes/pub/twentyfifteen
-fi
-
-# VIP Plugins - VIP Plugins Repo
-if [ ! -d "www/default/wordpress/vip/wp-content/themes/vip/plugins/.svn" ]; then
-  svn checkout https://vip-svn.wordpress.com/plugins/ www/default/wordpress/vip/wp-content/themes/vip/plugins
-fi
