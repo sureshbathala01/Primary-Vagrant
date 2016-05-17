@@ -28,9 +28,6 @@
 [submodule "provision/modules/vcsrepo"]
 	path = provision/modules/vcsrepo
 	url = https://github.com/puppetlabs/puppetlabs-vcsrepo.git
-[submodule "provision/modules/php"]
-	path = provision/modules/php
-	url = https://github.com/mayflower/puppet-php.git
 [submodule "provision/modules/inifile"]
 	path = provision/modules/inifile
 	url = https://github.com/puppetlabs/puppetlabs-inifile.git
