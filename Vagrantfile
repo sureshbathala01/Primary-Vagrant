@@ -86,19 +86,6 @@ Vagrant.configure("2") do |config|
 	# virtual machine is destroyed with `vagrant destroy`, your files will remain in your local
 	# environment.
 
-	# /var/www/
-	#
-	# For each project you're working on map a folder to it. The first argument is the location
-	# on the host computer. The second argument is the location on the guest matching. Finally the
-	# 3rd arguement is a unique ID given to each folder mapped
-	config.vm.synced_folder "www/default/pv", "/var/www/pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "www/default/wordpress/core", "/var/www/core.wordpress.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "www/default/wordpress/stable", "/var/www/stable.wordpress.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "www/default/wordpress/legacy", "/var/www/legacy.wordpress.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "www/default/wordpress/trunk", "/var/www/trunk.wordpress.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "www/default/wordpress/content", "/var/www/wordpress/content", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-	config.vm.synced_folder "www/default/phpmyadmin", "/var/www/phpmyadmin.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
-
 	# /Vagrant Data
 	#
 	# Specify a folder for various vagrant data. A MySQL data folder would be appropriate here (for example).
@@ -108,10 +95,13 @@ Vagrant.configure("2") do |config|
 	# Custom Mappings - POSSIBLY UNSTABLE
 	#
 	# Use this to insert your own (and possibly rewrite) Vagrant config lines. Helpful
-	# for mapping additional drives. If a file 'mappings' exists in the www folder
+	# for mapping additional drives. If a file 'mappings' exists in the www folder or any of its subfolders
 	# it will be evaluated as ruby inline as it loads.
 	if File.exists?(File.join(vagrant_dir,'userdata', 'mappings')) then
 		eval(IO.read(File.join(vagrant_dir, 'userdata', 'mappings')), binding)
+	end
+	Dir[File.join( vagrant_dir, 'www', '**', 'mappings')].each do |file|
+		eval(IO.read(file), binding)
 	end
 
 	# Provisioning
