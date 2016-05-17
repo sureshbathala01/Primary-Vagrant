@@ -1,6 +1,6 @@
 class { 'apt': }
 
-apt::ppa { 'ppa:ondrej/php5-5.6': }
+apt::ppa { 'ppa:ondrej/php': }
 
 package { 'git':
   ensure => 'installed'
