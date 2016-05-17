@@ -35,20 +35,6 @@ mysql_database { 'tests.core.wordpress.pv':
   require => Class['mysql::server'],
 }
 
-mysql_database { 'tests.vip.wordpress.pv':
-  ensure  => 'present',
-  charset => 'utf8',
-  collate => 'utf8_general_ci',
-  require => Class['mysql::server'],
-}
-
-mysql_database { 'vip.wordpress.pv':
-  ensure  => 'present',
-  charset => 'utf8',
-  collate => 'utf8_general_ci',
-  require => Class['mysql::server'],
-}
-
 mysql_user { 'username@localhost':
   ensure        => 'present',
   require       => Class['mysql::server'],

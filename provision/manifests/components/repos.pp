@@ -83,32 +83,8 @@ vcsrepo { '/var/www/replacedb.pv':
   source   => 'https://github.com/interconnectit/Search-Replace-DB.git',
 }
 
-vcsrepo { '/var/www/vip.wordpress.pv/wp':
-  ensure   => present,
-  provider => svn,
-  source   => 'http://core.svn.wordpress.org/trunk/',
-}
-
-vcsrepo { '/var/www/vip.wordpress.pv/wp-tests':
-  ensure   => present,
-  provider => svn,
-  source   => 'http://develop.svn.wordpress.org/trunk/',
-}
-
 vcsrepo { '/var/www/trunk.wordpress.pv/htdocs/content/wp-test':
   ensure   => latest,
   provider => git,
   source   => 'https://github.com/manovotny/wptest.git',
-}
-
-vcsrepo { '/var/www/vip.wordpress.pv/wp-content/themes/vip/plugins':
-  ensure   => latest,
-  source   => 'https://vip-svn.wordpress.com/plugins/',
-  provider => svn,
-}
-
-vcsrepo { '/var/www/vip.wordpress.pv/wp-content/themes/pub/twentyfifteen':
-  ensure   => latest,
-  source   => 'https://wpcom-themes.svn.automattic.com/twentyfifteen',
-  provider => svn,
 }

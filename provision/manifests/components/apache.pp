@@ -75,14 +75,6 @@ apache::vhost { 'trunk.wordpress.pv':
   template                 => '/var/vagrant/lib/conf/vhost.conf.erb',
 }
 
-apache::vhost { 'vip.wordpress.pv':
-  docroot                  => '/var/www/vip.wordpress.pv',
-  directory                => '/var/www/vip.wordpress.pv',
-  directory_allow_override => 'All',
-  ssl                      => true,
-  template                 => '/var/vagrant/lib/conf/vhost.conf.erb',
-}
-
 apache::vhost { 'webgrind.pv':
   docroot                  => '/var/www/webgrind.pv',
   directory                => '/var/www/webgrind.pv',
