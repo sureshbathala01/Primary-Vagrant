@@ -43,3 +43,6 @@
 [submodule "provision/modules/augeas"]
 	path = provision/modules/augeas
 	url = https://github.com/camptocamp/puppet-augeas.git
+[submodule "provision/modules/phpunit"]
+	path = provision/modules/phpunit
+	url = https://github.com/ChrisWiegman/puppet-phpunit.git
