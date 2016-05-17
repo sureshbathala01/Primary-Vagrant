@@ -28,7 +28,7 @@ The repository contains a basic Vagrant configuration that will configure the fo
 * [Postfix](http://www.postfix.org)
 * [wp-cli](http://wp-cli.org)
 * [phpMyAdmin](http://www.phpmyadmin.net)
-* [WordPress](https://wordpress.org) (Last, Stable, Core, Dev and VIP)
+* [WordPress](https://wordpress.org) (Last, Stable, Core and Dev)
 * Various debugging plugins for WordPress
 * [Search Replace DB](http://interconnectit.com/products/search-and-replace-for-wordpress-databases/)
 * [webgrind](https://github.com/jokkedk/webgrind/)
@@ -65,7 +65,6 @@ Current development of the project is focusing on instituting multiple PHP versi
 * legacy.wordpress.pv - Last version of WordPress (currently 4.4.x)
 * stable.wordpress.pv - Latest WordPress stable (currently 4.5.x)
 * trunk.wordpress.pv - WordPress trunk
-* vip.wordpress.pv - Simulates the WordPress VIP environment for development without VIP Quickstart
 * webgrind.pv - webgrind
 * mailcatcher.pv - MailCatcher
 
@@ -101,7 +100,6 @@ The following websites come pre-configured in the system:
 * WordPress (last major release) at [http://legacy.wordpress.pv](http://legacy.wordpress.pv)
 * WordPress (latest stable release) at [http://stable.wordpress.pv](http://stable.wordpress.pv)
 * WordPress Trunk at [http://trunk.wordpress.pv](http://trunk.wordpress.pv)
-* WordPress VIP Environment at [http://vip.wordpress.pv](http://vip.wordpress.pv)
 * WordPress Core Development at [http://core.wordpress.pv](http://core.wordpress.pv)
 * Search Replace DB [https://replacedb.pv](https://replacedb.pv)
 
@@ -176,13 +174,8 @@ Postfix is configured and set to use your host computer as a mail relay. To rece
 WP Test can be installed via the instructions at (https://github.com/manovotny/wptest). Test data is found in *[Primary Vagrant Folder]/www/default/wordpress/content/wptest* on your host machine.
 
 #### WordPress VIP Development
-Primary Vagrant contains a full environment to help you work on WordPress VIP powered to sites without the need for VIP Quickstart. To access:
 
-**URL:** [http://vip.wordpress.pv](http://vip.wordpress.pv)
-
-**Username:** admin
-
-**Password:** password
+Looking to work on WordPress VIP sites? I've got a pre-configured site add-on that will take care of it all for you. Check out [Primary Vagrant VIP](https://github.com/ChrisWiegman/Primary-Vagrant-VIP)
 
 #### node.js
 
