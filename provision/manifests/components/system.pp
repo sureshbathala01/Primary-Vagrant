@@ -1,7 +1,5 @@
 class { 'apt': }
 
-apt::ppa { 'ppa:ondrej/php': }
-
 package { 'git':
   ensure => 'installed'
 }

@@ -1,5 +1,5 @@
 class { 'apache':
-  require => Apt::Ppa['ppa:ondrej/php5'],
+  require => Apt::Ppa['ppa:ondrej/php'],
 }
 
 include apache::ssl
