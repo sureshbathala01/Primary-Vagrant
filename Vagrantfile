@@ -95,12 +95,12 @@ Vagrant.configure("2") do |config|
 	# Custom Mappings - POSSIBLY UNSTABLE
 	#
 	# Use this to insert your own (and possibly rewrite) Vagrant config lines. Helpful
-	# for mapping additional drives. If a file 'mappings' exists in the www folder or any of its subfolders
+	# for mapping additional drives. If a file 'pv-mappings' exists in the www folder or any of its subfolders
 	# it will be evaluated as ruby inline as it loads.
-	if File.exists?(File.join(vagrant_dir,'userdata', 'mappings')) then
-		eval(IO.read(File.join(vagrant_dir, 'userdata', 'mappings')), binding)
+	if File.exists?(File.join(vagrant_dir,'userdata', 'pv-mappings')) then
+		eval(IO.read(File.join(vagrant_dir, 'userdata', 'pv-mappings')), binding)
 	end
-	Dir[File.join( vagrant_dir, 'www', '**', 'mappings')].each do |file|
+	Dir[File.join( vagrant_dir, 'www', '**', 'pv-mappings')].each do |file|
 		eval(IO.read(file), binding)
 	end
 
@@ -130,6 +130,10 @@ Vagrant.configure("2") do |config|
 	if defined? VagrantPlugins::Triggers
 		config.trigger.before :up, :stdout => true do
         	system('./provision/bin/repo_init.sh')
+        	Dir[File.join( 'www', '**', 'pv-init.sh')].each do |file|
+        	    print file
+            	system(file)
+            end
         end
 		config.trigger.before :halt, :stdout => true do
 			run "vagrant ssh -c '/var/vagrant/lib/bin/vagrant_halt'"
