@@ -40,3 +40,6 @@
 [submodule "provision/modules/php"]
 	path = provision/modules/php
 	url = https://github.com/ChrisWiegman/puppet-php.git
+[submodule "provision/modules/xhprof"]
+	path = provision/modules/xhprof
+	url = https://github.com/ChrisWiegman/puppet-xhprof.git
