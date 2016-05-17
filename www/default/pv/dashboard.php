@@ -30,7 +30,6 @@
 		<li><a href="http://legacy.wordpress.pv" target="_blank">WordPress Legacy Branch (old version - 4.4.x)</a></li>
 		<li><a href="http://stable.wordpress.pv" target="_blank">WordPress Stable Branch (current version - 4.5.x)</a></li>
 		<li><a href="http://trunk.wordpress.pv" target="_blank">WordPress Trunk (development) Version</a></li>
-		<li><a href="http://vip.wordpress.pv" target="_blank">WordPress VIP Environment</a></li>
 	</ul>
 
 </body>
