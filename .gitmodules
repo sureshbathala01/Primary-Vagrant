@@ -37,15 +37,3 @@
 [submodule "provision/modules/apache"]
 	path = provision/modules/apache
 	url = https://github.com/example42/puppet-apache.git
-[submodule "provision/modules/php"]
-	path = provision/modules/php
-	url = https://github.com/example42/puppet-php.git
-[submodule "provision/modules/augeas"]
-	path = provision/modules/augeas
-	url = https://github.com/camptocamp/puppet-augeas.git
-[submodule "provision/modules/phpunit"]
-	path = provision/modules/phpunit
-	url = https://github.com/ChrisWiegman/puppet-phpunit.git
-[submodule "provision/modules/composer"]
-	path = provision/modules/composer
-	url = https://github.com/willdurand/puppet-composer.git
