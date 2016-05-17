@@ -107,7 +107,7 @@ The following websites come pre-configured in the system:
 
 ### Configure Additional Sites
 
-First, create a file called mappings in the userdata directory. This will map any sites you create to the appropriate folder on PV.
+First, create a file called pv-mappings in the userdata directory. This will map any sites you create to the appropriate folder on PV.
 
 Example Mapping:
 
