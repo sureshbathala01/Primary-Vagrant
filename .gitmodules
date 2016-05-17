@@ -46,3 +46,6 @@
 [submodule "provision/modules/phpunit"]
 	path = provision/modules/phpunit
 	url = https://github.com/ChrisWiegman/puppet-phpunit.git
+[submodule "provision/modules/composer"]
+	path = provision/modules/composer
+	url = https://github.com/willdurand/puppet-composer.git
