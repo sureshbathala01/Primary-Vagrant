@@ -5,6 +5,7 @@ class { '::php':
   extensions   => {
     mysql        => { },
     imagick      => { },
+    gd           => { },
     curl         => { },
     memcache     => { },
     mcrypt       => { },
