@@ -8,6 +8,7 @@ class { '::php':
     gd           => { },
     curl         => { },
     memcache     => { },
+    mbstring     => { },
     mcrypt       => { },
     xdebug       => {
       zend            => true,
