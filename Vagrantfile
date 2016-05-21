@@ -116,22 +116,6 @@ Vagrant.configure("2") do |config|
 	config.vm.synced_folder "provision/lib", "/var/vagrant/lib", :mount_options => [ "dmode=777", "fmode=777" ]
 	config.vm.synced_folder "userdata", "/var/vagrant/userdata", :mount_options => [ "dmode=777", "fmode=777" ]
 
-	config.vm.provider :parallels do |v, override|
-		override.vm.synced_folder "provision/lib", "/var/vagrant/lib", :mount_options => []
-    	override.vm.synced_folder "userdata", "/var/vagrant/userdata", :mount_options => []
-	end
-
-	config.vm.provider :hyperv do |v, override|
-        override.vm.synced_folder "provision/lib", "/var/vagrant/lib", :mount_options => ["dir_mode=0777","file_mode=0777","forceuid","noperm","nobrl","mfsymlinks"]
-        override.vm.synced_folder "userdata", "/var/vagrant/userdata", :mount_options => ["dir_mode=0777","file_mode=0777","forceuid","noperm","nobrl","mfsymlinks"]
-        # Change all the folder to use SMB instead of Virtual Box shares
-        override.vm.synced_folders.each do |id, options|
-          if ! options[:type]
-            options[:type] = "smb"
-          end
-        end
-      end
-
 	# Custom Mappings - POSSIBLY UNSTABLE
 	#
 	# Use this to insert your own (and possibly rewrite) Vagrant config lines. Helpful
@@ -142,6 +126,23 @@ Vagrant.configure("2") do |config|
 	end
 	Dir[File.join( vagrant_dir, 'www', '**', 'pv-mappings')].each do |file|
 		eval(IO.read(file), binding)
+	end
+
+	config.vm.provider :parallels do |v, override|
+		override.vm.synced_folder "provision/lib", "/var/vagrant/lib", :mount_options => []
+		override.vm.synced_folder "userdata", "/var/vagrant/userdata", :mount_options => []
+	end
+
+	config.vm.provider :hyperv do |v, override|
+		override.vm.synced_folder "provision/lib", "/var/vagrant/lib", :mount_options => ["dir_mode=0777","file_mode=0777","forceuid","noperm","nobrl","mfsymlinks"]
+		override.vm.synced_folder "userdata", "/var/vagrant/userdata", :mount_options => ["dir_mode=0777","file_mode=0777","forceuid","noperm","nobrl","mfsymlinks"]
+
+		# Change all the folder to use SMB instead of Virtual Box shares
+		override.vm.synced_folders.each do |id, options|
+			if ! options[:type]
+				options[:type] = "smb"
+			end
+		end
 	end
 
 	# Provisioning
