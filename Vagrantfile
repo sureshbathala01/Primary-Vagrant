@@ -26,7 +26,7 @@ Vagrant.configure("2") do |config|
 	# If you are already on a network using the 192.168.13.x subnet, this should be changed.
 	# If you are running more than one VM through Virtualbox, different subnets should be used
 	# for those as well. This includes other Vagrant boxes.
-	config.vm.network :private_network, ip: "192.168.13.101"
+	config.vm.network :private_network, id: "pv_primary", ip: "192.168.13.101"
 
 	# Local Machine Hosts
 	#
@@ -95,6 +95,7 @@ Vagrant.configure("2") do |config|
 		v.memory = 1024
 		v.cpus = 1
 		override.vm.box = "ericmann/trusty64"
+		override.vm.network :private_network, id: "pv_primary", ip: nil
 	end
 
 	# Don't check for updates with every vagrant up
@@ -114,6 +115,22 @@ Vagrant.configure("2") do |config|
 	# Specify a folder for various vagrant data. A MySQL data folder would be appropriate here (for example).
 	config.vm.synced_folder "provision/lib", "/var/vagrant/lib", :mount_options => [ "dmode=777", "fmode=777" ]
 	config.vm.synced_folder "userdata", "/var/vagrant/userdata", :mount_options => [ "dmode=777", "fmode=777" ]
+
+	config.vm.provider :parallels do |v, override|
+		override.vm.synced_folder "provision/lib", "/var/vagrant/lib", :mount_options => []
+    	override.vm.synced_folder "userdata", "/var/vagrant/userdata", :mount_options => []
+	end
+
+	config.vm.provider :hyperv do |v, override|
+        override.vm.synced_folder "provision/lib", "/var/vagrant/lib", :mount_options => ["dir_mode=0777","file_mode=0777","forceuid","noperm","nobrl","mfsymlinks"]
+        override.vm.synced_folder "userdata", "/var/vagrant/userdata", :mount_options => ["dir_mode=0777","file_mode=0777","forceuid","noperm","nobrl","mfsymlinks"]
+        # Change all the folder to use SMB instead of Virtual Box shares
+        override.vm.synced_folders.each do |id, options|
+          if ! options[:type]
+            options[:type] = "smb"
+          end
+        end
+      end
 
 	# Custom Mappings - POSSIBLY UNSTABLE
 	#
