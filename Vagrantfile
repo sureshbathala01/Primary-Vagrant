@@ -74,6 +74,29 @@ Vagrant.configure("2") do |config|
 		v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
 	end
 
+	# Configuration options for the Parallels provider.
+	config.vm.provider :parallels do |v, override|
+		v.update_guest_tools = true
+		v.customize ["set", :id, "--longer-battery-life", "off"]
+		v.memory = 1024
+		v.cpus = 1
+		override.vm.box = "parallels/ubuntu-14.04"
+	end
+
+	# Configuration options for the VMware Fusion provider.
+	config.vm.provider :vmware_fusion do |v, override|
+		v.vmx["memsize"] = "1024"
+		v.vmx["numvcpus"] = "1"
+		override.vm.box = "netsensia/ubuntu-trusty64"
+	end
+
+	# Configuration options for Hyper-V provider.
+	config.vm.provider :hyperv do |v, override|
+		v.memory = 1024
+		v.cpus = 1
+		override.vm.box = "ericmann/trusty64"
+	end
+
 	# Don't check for updates with every vagrant up
 	config.vm.box_check_update = false
 
