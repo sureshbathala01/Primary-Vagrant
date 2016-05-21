@@ -82,9 +82,11 @@ Once Vagrant is installed you'll want three plugins to update your local hosts, 
 
 ### Launch your VM
 
-1. [Download](https://github.com/ChrisWiegman/Primary-Vagrant/archive/master.zip) or clone this repo onto your local machine:
+1. Clone this repo (and it's submodules) onto your local machine:
 
     ```$ git clone --recursive https://github.com/ChrisWiegman/Primary-Vagrant.git PV```
+
+    *Note: If you download it with the GitHub links you will not get the submodules and you'll wind up with a provisioning error.
 
 1. In a command prompt, change into the new directory with `cd PV`
 
