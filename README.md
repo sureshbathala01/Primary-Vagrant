@@ -1,17 +1,11 @@
 Primary Vagrant
 =============
 
-## Note
-
-I've done some heavy updates to Primary Vagrant to utilize Ubuntu 14.04 as well as a few other goodies. If you don't want to or can't update for some reason you can find the old version in the [Precise](https://github.com/ChrisWiegman/Primary-Vagrant/tree/Precise) branch.
-
-## About
-
 Primary Vagrant is intended for WordPress plugin, theme, and core development, as well as general PHP development, and can be used as a replacement for local development stacks such as MAMP, XAMPP, and others.
 
-Although [Varying Vagrant Vagrants](https://github.com/Varying-Vagrant-Vagrants/VVV) by 10up is great (and I still use it for NGINX work), I wanted a few major changes. First, I wanted Apache instead of NGINX and, second, I wanted to use Puppet instead of Bash. Using VVV and Puppet as a base, this repository attempts to address their shortcomings for my own work with a Vagrant configuration that is ready to go for WordPress plugin or theme development.
+Although [Varying Vagrant Vagrants](https://github.com/Varying-Vagrant-Vagrants/VVV) is great (and I still use it for some work), I wanted a few major changes. First, I wanted Apache instead of NGINX and, second, I wanted to use a more comprehensive provisioning tool like Puppet instead of Bash. Using VVV and Puppet as a base, this repository attempts to address these requirements for my own work with a Vagrant configuration that is ready to go for WordPress plugin or theme development.
 
-The repository contains a basic Vagrant configuration that will configure the following goodies:
+The repository contains a Vagrant configuration with Puppet modules that will configure the following goodies:
 
 * Ubuntu 14.04 LTS
 * [Apache](http://httpd.apache.org)
@@ -24,7 +18,7 @@ The repository contains a basic Vagrant configuration that will configure the fo
 * [Postfix](http://www.postfix.org)
 * [wp-cli](http://wp-cli.org)
 * [phpMyAdmin](http://www.phpmyadmin.net)
-* [WordPress](https://wordpress.org) (Last, Stable, Core and Dev)
+* [WordPress](https://wordpress.org) (Last, Stable, Trunk and Dev)
 * Various debugging plugins for WordPress
 * [Search Replace DB](http://interconnectit.com/products/search-and-replace-for-wordpress-databases/)
 * [webgrind](https://github.com/jokkedk/webgrind/)
@@ -48,8 +42,6 @@ The repository contains a basic Vagrant configuration that will configure the fo
 
 If you find any issues, please don't hesitate to submit a [pull request](https://github.com/ChrisWiegman/Primary-Vagrant/blob/master/CONTRIBUTING.md).
 
-Current development of the project is focusing on instituting multiple PHP versions using (at least for now) [phpbrew](https://github.com/phpbrew/phpbrew). It needs a lot of work, so if you have a few minutes head on over to the [phpbrew puppet module](https://github.com/ChrisWiegman/puppet-phpbrew) and dig in.
-
 ## Getting Started
 
 ### Default domains
@@ -67,7 +59,7 @@ Current development of the project is focusing on instituting multiple PHP versi
 
 Install [Vagrant](http://vagrantup.com), [VirtualBox](http://virtualbox.org), and the [VirtualBox extensions](https://www.virtualbox.org/wiki/Downloads) for your environment.
 
-Once Vagrant is installed you'll want three plugins to update your local hosts, and update the VirtualBox Guest additions in the Ubuntu install and handle various tasks like backing up your databases when you're done for the day.
+Once Vagrant is installed you'll want three plugins to update your local hosts and update the VirtualBox Guest additions in the Ubuntu install as well as for handling various tasks like backing up your databases when you're done for the day.
 
 ```vagrant plugin install vagrant-vbguest```
 
@@ -83,11 +75,11 @@ Once Vagrant is installed you'll want three plugins to update your local hosts, 
 
     *Note: If you download it with the GitHub links you will not get the submodules and you'll wind up with a provisioning error.
 
-1. In a command prompt, change into the new directory with `cd PV`
+1. Change into the new directory with `cd PV`
 
 1. Start the Vagrant environment with `vagrant up`
 	- Be patient as the magic happens. This could take a while on the first run as your local machine downloads the required files.
-	- Watch as the script ends, as an administrator or `su` ***password may be required*** to properly modify the hosts file on your local machine.
+	- Pay attention during execution as an administrator or `su` ***password may be required*** to properly modify the hosts file on your local machine.
 
 ### Preconfigured Sites
 
@@ -99,12 +91,15 @@ The following websites come pre-configured in the system:
 * WordPress Trunk at [http://trunk.wordpress.pv](http://trunk.wordpress.pv)
 * WordPress Core Development at [http://core.wordpress.pv](http://core.wordpress.pv)
 * Search Replace DB [https://replacedb.pv](https://replacedb.pv)
+* phpMyAdmin [http://phpmyadmin.pv](http://phpmyadmin.pv)
+* WebGrind [http://webgrind.pv](http://webgrind.pv)
+* MailHog [http://pv:8025](http://pv:8025)
 
 *Note: WordPress Core dev is taken from git://develop.git.wordpress.org/. Only the src folder is mapped. You can manually set up a build site if desired.
 
 ### Configure Additional Sites
 
-First, create a file called pv-mappings in the userdata directory. This will map any sites you create to the appropriate folder on PV.
+First, create a file called pv-mappings in the user-data directory. This will map any sites you create to the appropriate folder on PV.
 
 Example Mapping:
 
@@ -117,10 +112,10 @@ config.vm.synced_folder "/Users/MyUser/Sites/Mysite/htdocs", "/var/www/mysite.pv
 Example:
 
 ```
-config.vm.synced_folder "/Users/MyUser/my-awesome-plugin", "/var/www/wordpress/content/plugins/my-awesome-plugin", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774"]
+config.vm.synced_folder "/Users/MyUser/my-awesome-plugin", "/var/www/default-sites/wordpress/content/plugins/my-awesome-plugin", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774"]
 ```
 
-Next Edit **userdata/siteconf/``[your-site-domain].pp**. This is where you define virtualhosts and databases. Copy what is below and ask me if you have any questions. Of course these aren't the only configuration options you have either. You can find a [full list of Apache configuration options here](http://github.com/example42/puppet-apache) and a [full list of mysql configuration options here](https://github.com/puppetlabs/puppetlabs-mysql).
+Next Edit **user-data/vhosts/``[your-site-domain].pp**. This is where you define virtualhosts and databases. Copy what is below and ask me if you have any questions. Of course these aren't the only configuration options you have either. You can find a [full list of Apache configuration options here](http://github.com/example42/puppet-apache) and a [full list of mysql configuration options here](https://github.com/puppetlabs/puppetlabs-mysql).
 
 Example:
 
@@ -130,7 +125,7 @@ apache::vhost { 'mysite.pv':
     directory                       => '/var/www/mysite.pv',
     directory_allow_override        => 'All',
     ssl                             => true,
-    template                        => '/vagrant/provision/lib/conf/vhost.conf.erb',
+    template                        => '/vagrant/provision/lib/conf/vhost.conf.erb'
 }
 ```
 
@@ -151,7 +146,7 @@ After the configuration above has been added, simply run `vagrant halt` and then
 
 ### Changing configuration options
 
-The default installation configuration is found in *provision/manifests/init.pp*. While you could edit this if you like I would, instead, recommend adding any additional configuration to *userdata/siteconf/custom.pp*
+The default installation configuration is found in *provision/manifests/init.pp*. While you could edit this if you like I would, instead, recommend adding any additional configuration to your virtualhosts file such as *user-data/vhosts/custom.pp*
 
 #### Change PHP Versions
 
@@ -176,7 +171,7 @@ Looking to work on WordPress VIP sites? I've got a pre-configured site add-on th
 
 #### node.js
 
-The latest stable node.js version is installed, if you want to pre-install packages just add them to *userdata/siteconf/nodejs.pp*.
+The latest stable node.js version is installed, if you want to pre-install packages just add them to your sites virtualhost config such as *user-data/vhosts/nodejs.pp*.
 
 Example:
 
@@ -197,7 +192,7 @@ Primary Vagrant comes pre-configured with two awesome tools for helping debug yo
 
 You can now also turn xdebug on or off completely with the commands `xon` and `xoff`. This should help speed up complex composer or other operations.
 
-For debugging APIs or any other situation where sending a cookie with your request isn't ideal you can also turn on auto-listening for xdebug in which case it will try to connect automatically, even without a cookie. To do this simply use the commands `xlon` and `xloff` to enable or disable auto-remote. Note that this is disabled by default.
+For debugging APIs or any other situation where sending a cookie with your request isn't ideal you can turn on auto-listening for xdebug in which case it will try to connect automatically, even without a cookie. To do this simply use the commands `xlon` and `xloff` to enable or disable auto-remote. Note that this is disabled by default.
 
 ###Keep your fork up to date with the PV `upstream/master` repo
 
