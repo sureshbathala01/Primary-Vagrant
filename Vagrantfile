@@ -136,13 +136,13 @@ Vagrant.configure("2") do |config|
             end
         end
 		config.trigger.before :halt, :stdout => true do
-			run "vagrant ssh -c '/var/vagrant/lib/bin/vagrant_halt'"
+			run "vagrant ssh -c '/vagrant/provision/lib/bin/vagrant_halt'"
 		end
 		config.trigger.before :suspend, :stdout => true do
-			run "vagrant ssh -c '/var/vagrant/lib/bin/vagrant_suspend'"
+			run "vagrant ssh -c '/vagrant/provision/lib/bin/vagrant_suspend'"
 		end
 		config.trigger.before :destroy, :stdout => true do
-			run "vagrant ssh -c '/var/vagrant/lib/bin/vagrant_destroy'"
+			run "vagrant ssh -c '/vagrant/provision/lib/bin/vagrant_destroy'"
 		end
 	end
 

@@ -83,4 +83,4 @@ alias xoff="xdebug_off"
 alias xlon="xdebug_listen_on"
 alias xloff="xdebug_listen_off"
 
-export PATH="$PATH:/var/vagrant/lib/bin"
+export PATH="$PATH:/vagrant/provision/lib/bin"

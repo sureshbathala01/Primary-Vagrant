@@ -3,6 +3,6 @@
   - yaml
   - json
 :yaml:
-  :datadir: /var/vagrant/lib/yaml
+  :datadir: /vagrant/provision/lib/yaml
 :hierarchy:
   - common

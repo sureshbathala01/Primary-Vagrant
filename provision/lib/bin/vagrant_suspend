@@ -9,8 +9,8 @@
 # Look for a custom trigger file. If this exists, we'll assume that
 # all trigger actions should be handled by this custom script. If
 # it does not exist, then we'll handle some basic tasks.
-if [[ -f /var/vagrant/lib/bin/vagrant_suspend_custom ]]; then
-	/var/vagrant/lib/bin/vagrant_suspend_custom
+if [[ -f /vagrant/provision/lib/bin/vagrant_suspend_custom ]]; then
+	/vagrant/provision/lib/bin/vagrant_suspend_custom
 else
-	/var/vagrant/lib/bin/db_backup
+	/vagrant/provision/lib/bin/db_backup
 fi
