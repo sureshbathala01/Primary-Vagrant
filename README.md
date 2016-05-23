@@ -104,7 +104,7 @@ First, create a file called pv-mappings in the user-data directory. This will ma
 Example Mapping:
 
 ```
-config.vm.synced_folder "/Users/MyUser/Sites/Mysite/htdocs", "/var/www/mysite.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774"]
+config.vm.synced_folder "user-data/sites/my-site/htdocs", "/var/www/my-site.pv", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774"]
 ```
 
 *Note that if you're working on a WordPress plugin or theme I would recommend to simply map it to the three pre-installed WordPress sites. This will make it easy for you to test it on multiple versions of WordPress.
@@ -112,7 +112,7 @@ config.vm.synced_folder "/Users/MyUser/Sites/Mysite/htdocs", "/var/www/mysite.pv
 Example:
 
 ```
-config.vm.synced_folder "/Users/MyUser/my-awesome-plugin", "/var/www/default-sites/wordpress/content/plugins/my-awesome-plugin", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774"]
+config.vm.synced_folder "user-data/sites/my-awesome-plugin", "/var/www/default-sites/wordpress/content/plugins/my-awesome-plugin", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774"]
 ```
 
 Next Edit **user-data/vhosts/``[your-site-domain].pp**. This is where you define virtualhosts and databases. Copy what is below and ask me if you have any questions. Of course these aren't the only configuration options you have either. You can find a [full list of Apache configuration options here](http://github.com/example42/puppet-apache) and a [full list of mysql configuration options here](https://github.com/puppetlabs/puppetlabs-mysql).
