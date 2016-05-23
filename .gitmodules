@@ -43,3 +43,6 @@
 [submodule "provision/modules/mailhog"]
 	path = provision/modules/mailhog
 	url = https://github.com/ftaeger/ftaeger-mailhog.git
+[submodule "provision/modules/wget"]
+	path = provision/modules/wget
+	url = https://github.com/maestrodev/puppet-wget.git
