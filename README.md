@@ -5,10 +5,6 @@ Primary Vagrant
 
 I've done some heavy updates to Primary Vagrant to utilize Ubuntu 14.04 as well as a few other goodies. If you don't want to or can't update for some reason you can find the old version in the [Precise](https://github.com/ChrisWiegman/Primary-Vagrant/tree/Precise) branch.
 
-## Warning
-
-Currently [Mailcatcher](http://mailcatcher.me) is partially broken due to a change in the required Ruby version for an upstream dependency. The catch is, I can't update Ruby as it breaks Puppet. As a new version of Ubuntu is due out in a few weeks (and it uses an appropriate version of Ruby) I've elected to wait to fix the problem until then. __For the time being you will need to run a 2nd ```vagrant provision``` or reload the vagrant box to finish the Mailcatcher installation. The warning message can then be ignored.__
-
 ## About
 
 Primary Vagrant is intended for WordPress plugin, theme, and core development, as well as general PHP development, and can be used as a replacement for local development stacks such as MAMP, XAMPP, and others.
@@ -33,7 +29,7 @@ The repository contains a basic Vagrant configuration that will configure the fo
 * [Search Replace DB](http://interconnectit.com/products/search-and-replace-for-wordpress-databases/)
 * [webgrind](https://github.com/jokkedk/webgrind/)
 * [oh-my-zsh](http://ohmyz.sh)
-* [MailCatcher](http://mailcatcher.me)
+* [MailHog](https://github.com/mailhog/MailHog)
 * Test data from [WP Test](http://wptest.io)
 * [Composer](https://getcomposer.org)
 * [node.js](https://nodejs.org)
@@ -66,7 +62,6 @@ Current development of the project is focusing on instituting multiple PHP versi
 * stable.wordpress.pv - Latest WordPress stable (currently 4.5.x)
 * trunk.wordpress.pv - WordPress trunk
 * webgrind.pv - webgrind
-* mailcatcher.pv - MailCatcher
 
 ### Install the software
 
@@ -135,7 +130,7 @@ apache::vhost { 'mysite.pv':
     directory                       => '/var/www/mysite.pv',
     directory_allow_override        => 'All',
     ssl                             => true,
-    template                        => '/var/vagrant/lib/conf/vhost.conf.erb',
+    template                        => '/vagrant/provision/lib/conf/vhost.conf.erb',
 }
 ```
 
@@ -170,7 +165,7 @@ In addition to the *root* MySQL account the account *username* with the password
 
 #### Postfix Configuration
 
-Postfix is configured and set to use your host computer as a mail relay. To receive messages you can use the built in [MailCatcher installation](http://mailcatcher.pv:1080) (this will prevent your real SMTP mail server and mailbox from getting too much abuse).
+Postfix is configured and set to use your host computer as a mail relay. To receive messages you can use the built in [MailHog installation](http://pv:8025) (this will prevent your real SMTP mail server and mailbox from getting too much abuse).
 
 #### WP Test Data
 WP Test can be installed via the instructions at (https://github.com/manovotny/wptest). Test data is found in *[Primary Vagrant Folder]/www/default/wordpress/content/wptest* on your host machine.
