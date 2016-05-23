@@ -42,7 +42,7 @@ Vagrant.configure("2") do |config|
 	# individual domains separated by whitespace in subdirectories of www/.
 	if defined?(VagrantPlugins::Ghost)
 		# Recursively fetch the paths to all pv-hosts files under the www/ directory.
-		paths = Dir[File.join(vagrant_dir, 'www', '**', 'pv-hosts')] + Dir[File.join(vagrant_dir, 'userdata', 'pv-hosts')]
+		paths = Dir[File.join(vagrant_dir, 'default-sites', 'pv-hosts')] + Dir[File.join(vagrant_dir, 'user-data', 'pv-hosts')]
 
 		# Parse the found pv-hosts files for host names.
 		hosts = paths.map do |path|
@@ -94,35 +94,15 @@ Vagrant.configure("2") do |config|
 	# virtual machine is destroyed with `vagrant destroy`, your files will remain in your local
 	# environment.
 
-	# /Vagrant Data
-	#
-	# Specify a folder for various vagrant data. A MySQL data folder would be appropriate here (for example).
-	config.vm.synced_folder "provision/lib", "/var/vagrant/lib", :mount_options => [ "dmode=777", "fmode=777" ]
-	config.vm.synced_folder "userdata", "/var/vagrant/userdata", :mount_options => [ "dmode=777", "fmode=777" ]
-
 	# Custom Mappings - POSSIBLY UNSTABLE
 	#
 	# Use this to insert your own (and possibly rewrite) Vagrant config lines. Helpful
 	# for mapping additional drives. If a file 'pv-mappings' exists in the www folder or any of its subfolders
 	# it will be evaluated as ruby inline as it loads.
-	if File.exists?(File.join(vagrant_dir,'userdata', 'pv-mappings')) then
-		eval(IO.read(File.join(vagrant_dir, 'userdata', 'pv-mappings')), binding)
+	if File.exists?(File.join(vagrant_dir,'user-data', 'pv-mappings')) then
+		eval(IO.read(File.join(vagrant_dir, 'user-data', 'pv-mappings')), binding)
 	end
-	Dir[File.join( vagrant_dir, 'www', '**', 'pv-mappings')].each do |file|
-		eval(IO.read(file), binding)
-	end
-
-	config.vm.provider :hyperv do |v, override|
-		override.vm.synced_folder "provision/lib", "/var/vagrant/lib", :mount_options => ["dir_mode=0777","file_mode=0777","forceuid","noperm","nobrl","mfsymlinks"]
-		override.vm.synced_folder "userdata", "/var/vagrant/userdata", :mount_options => ["dir_mode=0777","file_mode=0777","forceuid","noperm","nobrl","mfsymlinks"]
-
-		# Change all the folder to use SMB instead of Virtual Box shares
-		override.vm.synced_folders.each do |id, options|
-			if ! options[:type]
-				options[:type] = "smb"
-			end
-		end
-	end
+    eval(IO.read(File.join(vagrant_dir, 'default-sites', 'pv-mappings')), binding)
 
 	# Provisioning
 	#
@@ -150,7 +130,7 @@ Vagrant.configure("2") do |config|
 	if defined? VagrantPlugins::Triggers
 		config.trigger.before :up, :stdout => true do
         	system('./provision/bin/repo_init.sh')
-        	Dir[File.join( 'www', '**', 'pv-init.sh')].each do |file|
+        	Dir[File.join( 'user-data/sites', '**', 'pv-init.sh')].each do |file|
         	    print file
             	system(file)
             end
