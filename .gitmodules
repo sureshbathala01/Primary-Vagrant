@@ -16,9 +16,6 @@
 [submodule "provision/modules/ohmyzsh"]
 	path = provision/modules/ohmyzsh
 	url = https://github.com/acme/puppet-acme-oh-my-zsh.git
-[submodule "provision/modules/mailcatcher"]
-	path = provision/modules/mailcatcher
-	url = https://github.com/ChrisWiegman/puppet-mailcatcher.git
 [submodule "provision/modules/nodejs"]
 	path = provision/modules/nodejs
 	url = git://github.com/willdurand/puppet-nodejs.git
