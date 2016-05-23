@@ -87,7 +87,7 @@ define( 'WP_LOCAL_DEV', true );
 
 define( 'WP_AUTO_UPDATE_CORE', false );
 
-define( 'WP_CONTENT_DIR', '/var/www/wordpress/content' );
+define( 'WP_CONTENT_DIR', '/var/www/default-sites/wordpress/content' );
 define( 'WP_CONTENT_URL', 'http://trunk.wordpress.pv/content' );
 
 /* That's all, stop editing! Happy blogging. */
