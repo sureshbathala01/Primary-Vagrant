@@ -30,9 +30,9 @@ vcsrepo { '/var/www/default-sites/phpmyadmin/phpmyadmin':
   provider => git,
   source   => 'https://github.com/phpmyadmin/phpmyadmin.git',
 } ->
-file { '/var/www/phpmyadmin.pv/phpmyadmin/config.inc.php':
+file { '/var/www/default-sites/phpmyadmin/phpmyadmin/config.inc.php':
   ensure => 'link',
-  target => '/var/www/phpmyadmin.pv/config.inc.php',
+  target => '/var/www/default-sites/phpmyadmin/config.inc.php',
 }
 
 vcsrepo { '/var/www/default-sites/wordpress/content/plugins/any-ipsum':
