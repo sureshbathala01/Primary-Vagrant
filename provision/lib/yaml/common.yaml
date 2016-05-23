@@ -1,3 +1,5 @@
+php::globals::php_version: '7.0'
+php::repo::ubuntu::ppa: 'ondrej/php'
 php::fpm::pools:
   www:
     listen: '127.0.0.1:9042'
