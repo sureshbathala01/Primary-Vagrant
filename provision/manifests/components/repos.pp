@@ -24,7 +24,7 @@ vcsrepo { '/var/www/default-sites/wordpress/core/wordpress':
   source   => 'git://develop.git.wordpress.org/',
 }
 
-vcsrepo { '/var/www/phpmyadmin/phpmyadmin':
+vcsrepo { '/var/www/default-sites/phpmyadmin/phpmyadmin':
   ensure   => present,
   revision => 'RELEASE_4_6_1',
   provider => git,
