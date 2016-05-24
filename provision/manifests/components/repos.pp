@@ -85,7 +85,7 @@ vcsrepo { '/var/www/internal-sites/replacedb':
   source   => 'https://github.com/interconnectit/Search-Replace-DB.git',
 }
 
-vcsrepo { '/var/www/trunk.wordpress.pv/htdocs/content/wp-test':
+vcsrepo { '/var/www/default-sites/wordpress/content/wp-test':
   ensure   => latest,
   provider => git,
   source   => 'https://github.com/manovotny/wptest.git',
