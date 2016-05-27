@@ -102,9 +102,9 @@ Vagrant.configure("2") do |config|
 	if File.exists?(File.join(vagrant_dir,'user-data', 'pv-mappings')) then
 		eval(IO.read(File.join(vagrant_dir, 'user-data', 'pv-mappings')), binding)
 	end
-	if File.exists?(File.join(vagrant_dir,'user-data', 'sites', '**', 'pv-mappings')) then
-    		eval(IO.read(File.join(vagrant_dir, 'user-data', 'sites', '**', 'pv-mappings')), binding)
-    	end
+	Dir[File.join( vagrant_dir, 'user-data', 'sites', '**', 'pv-mappings')].each do |file|
+    	eval(IO.read(file), binding)
+    end
     eval(IO.read(File.join(vagrant_dir, 'default-sites', 'pv-mappings')), binding)
 
 	# Provisioning
