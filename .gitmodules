@@ -42,4 +42,4 @@
 	url = https://github.com/maestrodev/puppet-wget.git
 [submodule "provision/modules/php"]
 	path = provision/modules/php
-	url = https://github.com/FutureSharks/puppet-php.git
+	url = https://github.com/mayflower/puppet-php.git
