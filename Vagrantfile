@@ -72,6 +72,11 @@ Vagrant.configure("2") do |config|
 		v.customize ["modifyvm", :id, "--name", "Primary Vagrant"]
 		v.customize ["modifyvm", :id, "--cpus", 1]
 		v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
+
+		# set auto_update to false, if you do NOT want to check the correct
+		# additions version when booting this machine
+		config.vbguest.auto_update = true
+
 	end
 
 	# Configuration options for Hyper-V provider.
