@@ -19,9 +19,6 @@
 [submodule "provision/modules/nodejs"]
 	path = provision/modules/nodejs
 	url = git://github.com/willdurand/puppet-nodejs.git
-[submodule "provision/modules/apt"]
-	path = provision/modules/apt
-	url = https://github.com/example42/puppet-apt.git
 [submodule "provision/modules/vcsrepo"]
 	path = provision/modules/vcsrepo
 	url = https://github.com/puppetlabs/puppetlabs-vcsrepo.git
