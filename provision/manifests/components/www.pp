@@ -3,6 +3,6 @@ class { 'postfix':
   relayhost_port => '1025',
 }
 
-class { 'mailhog':
-  smtp_bind_addr_port => '1025'
-}
+#class { 'mailhog':
+#  smtp_bind_addr_port => '1025'
+#}
